@@ -85,7 +85,7 @@ function Contact() {
                     <h1 className="contact-hero-banner-title">Contact</h1>
                     
                     <p className="contact-hero-banner-subtitle">
-                        Un projet d'éducation, un comportement à ajuster ou une simple question ? N'hésitez pas à nous écrire ou à nous appeler.
+                        Vous souhaitez être accompagné dans l’éducation de votre chien, améliorer un comportement ou simplement obtenir un renseignement ? Contactez-moi par téléphone (de préférence) ou par écrit.
                     </p>
 
                     <div className="contact-hero-banner-stats">

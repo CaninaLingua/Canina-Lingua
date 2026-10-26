@@ -1,3 +1,3 @@
 ## Canina Lingua
 
-This project is the official website for the Canina Lingua company.
+This project is the official deposit for the Canina Lingua's website.

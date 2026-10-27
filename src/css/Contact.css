@@ -32,7 +32,9 @@
     transition: opacity 1.2s ease-out, transform 1.2s ease-out;
 }
 
-.fade-in-up.visible, .fade-in-side-left.visible, .fade-in-side-right.visible {
+.fade-in-up.visible,
+.fade-in-side-left.visible,
+.fade-in-side-right.visible {
     opacity: 1;
     transform: translateX(0) translateY(0);
 }
@@ -40,6 +42,7 @@
 /*********************************
 ********* CONTACT CONTAINER ******
 *********************************/
+
 .contact-container {
     width: 100%;
     font-family: var(--font-main);
@@ -55,6 +58,7 @@
 /*********************************
 ********** HERO BANNER ***********
 *********************************/
+
 .contact-hero-banner {
     position: relative;
     width: 100%;
@@ -64,7 +68,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     background: url('../assets/img/img_background/Canina_Lingua_dog_background_contact_banner.webp') no-repeat left 50%;
     background-size: cover;
 
@@ -161,6 +165,7 @@
 }
 
 /* Banner key statistics & badges layout */
+
 .contact-hero-banner-stats {
     display: flex;
     flex-direction: row;
@@ -211,6 +216,7 @@
 /*********************************
 ******* CONTACT WRAPPER **********
 *********************************/
+
 .contact-wrap {
     position: relative;
     z-index: 50;
@@ -227,11 +233,12 @@
 /*********************************
 **********CONTACT INFOS SIDE******
 *********************************/
+
 .contact-infos-side {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     background: var(--color-dark-gray);
     border: 1px solid rgba(217, 135, 28, 0.25);
     padding: 40px;
@@ -271,6 +278,7 @@
 }
 
 /* Intervention Area Section */
+
 .contact-zone-section {
     width: 100%;
     max-width: 320px;
@@ -316,6 +324,7 @@
 }
 
 /* Direct action buttons layout (Phone & Email) */
+
 .contact-direct-actions {
     display: flex;
     flex-direction: column;
@@ -357,6 +366,7 @@
 }
 
 /***** Schedules Component Styles ******/
+
 .contact-infos-schedules {
     position: relative;
     z-index: 1;
@@ -367,7 +377,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 15px 0;
+    margin: 20px 0;
     background-color: #bfd7b02f;
 
     clip-path: polygon(
@@ -426,20 +436,21 @@
     color: var(--color-gold);
     -webkit-text-stroke: 1px var(--color-dark-gray);
     letter-spacing: 2px;
-    font-weight: 800; 
+    font-weight: 800;
 }
 
 .contact-infos-schedules-h3 {
     font-size: 1.1rem;
     color: var(--color-white);
-    font-weight: 800; 
+    font-weight: 800;
     -webkit-text-stroke: 0.6px var(--color-dark-gray);
     letter-spacing: 1px;
 }
 
 /***** Social Media Section ******/
+
 .contact-socials-section {
-    margin-top: 25px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -475,16 +486,17 @@
 /*********************************
 ******* CONTACT FORM SIDE ********
 *********************************/
+
 .contact-form-section {
     background: var(--color-dark-gray);
     border: 1px solid rgba(217, 135, 28, 0.25);
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    flex: 1; /* Equal width distribution with left side */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertical centering solution to avoid large gaps */
+    justify-content: center;
 }
 
 .contact-form-title {
@@ -547,9 +559,22 @@
 
 .contact-form-group textarea {
     resize: none;
-    min-height: 260px;
+    min-height: 200px;
     max-height: 300px;
     font-family: inherit;
+}
+
+/* Invalid phone number field */
+.contact-form-group input[aria-invalid="true"] {
+    border-color: #d63820;
+    box-shadow: 0 0 8px rgba(200, 108, 90, 0.15);
+}
+
+.contact-field-error {
+    color: #d63820;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin: 3px 0 0;
 }
 
 .contact-privacy-text {
@@ -573,6 +598,7 @@
 /*********************************
 ********* BUTTON & ALERTS ********
 *********************************/
+
 .contact-form-actions {
     display: flex;
     flex-direction: column;
@@ -591,7 +617,7 @@
     font-size: 0.95rem;
     border: 2px solid var(--color-gold);
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(24, 26, 27, 0.2); 
+    box-shadow: 0 4px 12px rgba(24, 26, 27, 0.2);
     transition: color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
     cursor: pointer;
     width: 50%;
@@ -606,33 +632,96 @@
 }
 
 .contact-submit-btn:disabled {
-    background: #cbd5e1;
-    border-color: #cbd5e1;
-    color: #94a3b8;
+    background: #343735;
+    border-color: #66635c;
+    color: #aaa69e;
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
 }
 
+/* Shared alert styling */
+
 .contact-alert {
-    font-size: 0.95rem;
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-main);
+    font-size: 0.92rem;
+    line-height: 1.6;
     margin: 0;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 14px 18px 14px 22px;
+    border-radius: 10px;
     font-weight: 500;
     text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        rgba(35, 38, 36, 0.98),
+        rgba(24, 26, 27, 0.98)
+    );
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    animation: contact-alert-appear 0.3s ease-out;
 }
+
+/* Colored accent along the left edge */
+
+.contact-alert::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 7px;
+    width: 3px;
+    border-radius: 4px;
+}
+
+/* Success message */
 
 .contact-alert.success {
-    background-color: rgba(46, 204, 113, 0.1);
-    color: #2ecc71;
-    border: 1px solid rgba(46, 204, 113, 0.2);
+    color: var(--color-white);
+    border: 1px solid rgba(91, 145, 78, 0.55);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.2),
+        0 0 12px rgba(91, 145, 78, 0.08);
 }
 
+.contact-alert.success::before {
+    background: var(--color-green);
+    box-shadow: 0 0 8px rgba(91, 145, 78, 0.4);
+}
+
+/* Error message */
+
 .contact-alert.error {
-    background-color: rgba(231, 76, 60, 0.1);
-    color: #e74c3c;
-    border: 1px solid rgba(231, 76, 60, 0.2);
+    color: #e9aaa0;
+    border: 1px solid rgba(190, 82, 65, 0.5);
+
+    background: linear-gradient(
+        135deg,
+        rgba(48, 34, 32, 0.98),
+        rgba(24, 26, 27, 0.98)
+    );
+}
+
+.contact-alert.error::before {
+    background: #c86c5a;
+    box-shadow: 0 0 8px rgba(200, 108, 90, 0.35);
+}
+
+/* Alert entrance animation */
+
+@keyframes contact-alert-appear {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /*********************************
@@ -640,6 +729,7 @@
 *********************************/
 
 /* Tablet Portrait */
+
 @media (max-width: 1024px) {
     .contact-hero-banner {
         height: 500px;
@@ -662,7 +752,7 @@
         max-width: none;
     }
 
-    .contact-infos-side, 
+    .contact-infos-side,
     .contact-form-section {
         width: 100%;
         padding: 30px 20px;
@@ -675,6 +765,7 @@
 }
 
 /* Tablet Landscape */
+
 @media (max-width: 1500px) and (orientation: landscape) {
     .contact-wrap {
         width: 90vw;
@@ -692,6 +783,7 @@
 }
 
 /* Mobile Portrait */
+
 @media (max-width: 599px) {
     .contact-hero-banner {
         height: auto;
@@ -748,7 +840,7 @@
         gap: 20px;
     }
 
-    .contact-infos-side, 
+    .contact-infos-side,
     .contact-form-section {
         padding: 25px 15px;
         box-sizing: border-box;
@@ -770,9 +862,15 @@
     .contact-form-group textarea {
         min-height: 140px;
     }
+
+    .contact-alert {
+        padding: 12px 14px 12px 20px;
+        font-size: 0.85rem;
+    }
 }
 
 /* Mobile Landscape */
+
 @media (max-width: 899px) and (orientation: landscape) {
     .contact-hero-banner {
         height: 380px;
@@ -783,7 +881,6 @@
         flex-direction: column;
         width: 95vw;
         gap: 20px;
-
     }
 
     .contact-infos-side,

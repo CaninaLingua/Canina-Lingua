@@ -9,9 +9,7 @@ import "../css/Services.css";
 import baladePlageImage from "../assets/img/img_prestations/Canina_Lingua_prestation_balade_plage.webp";
 
 function Services() {
-    useRevealOnScroll(
-        ".fade-in-up, .fade-in-side-left, .fade-in-side-right", servicesGroups
-    );
+    useRevealOnScroll( ".fade-in-up, .fade-in-side-left, .fade-in-side-right");
 
 
 

@@ -21,7 +21,7 @@ const servicesGroups = [
                 duration: "2 h 30",
                 price: "70 €",
                 image: bilanChiotImage,
-                imageHint: "Canina Lingua - Un chiot qui découvre son environnement",
+                imageHint: "Canina Lingua - Chien prestation bilan chiot",
                 tag: "Pour bien démarrer",
                 description:
                     "Un premier rendez-vous pour découvrir les besoins fondamentaux de votre chiot, comprendre les principes d’apprentissage et aborder les premières problématiques. Ce bilan permet également de débuter un cursus « Chien première langue » afin d'apprendre à comprendre les signaux de communication du chien et de construire une relation sereine au quotidien.",
@@ -39,7 +39,7 @@ const servicesGroups = [
                 duration: "2 h 30",
                 price: "80 €",
                 image: bilanComportementalImage,
-                imageHint: "Canina Lingua - Un chien accompagné par son humain",
+                imageHint: "Canina Lingua - Chien prestation bilan comportemental",
                 tag: "Comprendre les difficultés",
                 description:
                     "Un temps d’échange et d’observation pour cerner vos attentes, faire le point sur votre quotidien et définir les problématiques rencontrées avec votre chien. Ce bilan permet également de commencer à comprendre son comportement et de vous apporter les premiers conseils adaptés à votre situation.",
@@ -67,7 +67,7 @@ const servicesGroups = [
                 duration: "1 h 30",
                 price: "50 €",
                 image: seanceIndividuelleImage,
-                imageHint: "Canina Lingua - Un exercice d’éducation dans un environnement quotidien",
+                imageHint: "Canina Lingua - Chien prestation bilan éducation et rééducation",
                 tag: "Séance individuelle",
                 description:
                     "Une séance individuelle à domicile ou dans un lieu défini à l'avance pour travailler les apprentissages de base, améliorer le quotidien ou accompagner une difficulté comportementale. Les exercices sont adaptés à votre chien, à son environnement et aux besoins de votre binôme.",
@@ -85,7 +85,7 @@ const servicesGroups = [
                 duration: "5 séances",
                 price: "220 €",
                 image: forfaitImage,
-                imageHint: "Canina Lingua - Un chien et son humain qui progressent ensemble",
+                imageHint: "Canina Lingua - Chien prestation forfait 5 séances éducation",
                 tag: "Un suivi dans la durée",
                 description:
                     "Un forfait de cinq séances d'éducation ou de rééducation pour poursuivre le travail engagé avec votre chien. Ce suivi permet de progresser étape par étape, de consolider les apprentissages et d'adapter les objectifs aux évolutions de votre binôme.",
@@ -113,7 +113,7 @@ const servicesGroups = [
                 duration: "1 Balade en extérieur",
                 price: "20 €",
                 image: baladeGroupeImage,
-                imageHint: "Canina Lingua - Plusieurs chiens en balade dans la nature",
+                imageHint: "Canina Lingua - Chien prestation balade sociale",
                 tag: "Sociabilité canine",
                 description:
                     "Une balade pendant laquelle votre compagnon peut travailler sa sociabilité au contact de ses congénères. C'est également l'occasion pour vous d'apprendre à mieux comprendre la communication canine et à observer les interactions entre chiens, dans un cadre adapté.",
@@ -131,7 +131,7 @@ const servicesGroups = [
                 duration: "1 Balade en extérieur",
                 price: "20 €",
                 image: baladePedagogiqueImage,
-                imageHint: "Canina Lingua - Un chien qui explore un sentier avec son humain",
+                imageHint: "Canina Lingua - Chien prestation balade pédagogique",
                 tag: "Apprendre autrement",
                 description:
                     "Une balade sur un site naturel de la Côte d'Opale pour travailler l'éducation de base avec votre compagnon en situation réelle. Cette sortie associe découverte de l'environnement, observation du chien et mise en pratique des apprentissages du quotidien.",
@@ -149,7 +149,7 @@ const servicesGroups = [
                 duration: "1 Stage d’initiation",
                 price: "30 €",
                 image: initiationMantrailingImage,
-                imageHint: "Canina Lingua - Séance de ManTrailing",
+                imageHint: "Canina Lingua - Chien prestation découverte du ManTrailing",
                 tag: "Découverte olfactive",
                 description:
                     "Une découverte du mantrailing, une discipline de pistage dans laquelle le chien apprend à suivre une piste olfactive pour retrouver une personne. Cette activité peut être utile dans certains parcours de rééducation, mais elle permet aussi de découvrir une nouvelle discipline simplement pour le plaisir.",

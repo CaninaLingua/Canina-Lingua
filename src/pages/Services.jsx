@@ -145,7 +145,7 @@ function Services() {
                         <img
                             className="services-area-photo"
                             src={baladePlageImage}
-                            alt="Un chien en balade dans un espace naturel de la Côte d'Opale"
+                            alt="Canina Lingua - Chien balade plage"
                             loading="lazy"
                         />
                     </div>

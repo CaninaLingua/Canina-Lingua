@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap');
+
+/* Global variables */
 :root {
     --color-green: #5b914e;
     --color-gold: #d9871c;
     --color-white: #d3cfc9;
     --color-dark-gray: #181a1b;
-    --font-main: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;;
+    --font-main: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+    --dog-paw-svg: url("/img_Canina_Lingua/dog-paw.svg");
 }
 
 /*********************************

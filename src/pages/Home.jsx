@@ -251,7 +251,7 @@ function Home() {
                         <p>
                             Bilan chiot, bilan comportemental, séances
                             d’éducation ou de rééducation, balades et activités :
-                            découvrez les prestations proposées par Canina Lingua.
+                            découvrez les prestations que je propose avec Canina Lingua.
                         </p>
                     </div>
 
@@ -280,7 +280,7 @@ function Home() {
                                 <p>
                                     Découvrez les besoins fondamentaux de votre chiot,
                                     les principes d’apprentissage et les premiers
-                                    points à travailler. Le bilan vous aide aussi
+                                    points à travailler. Je vous aide également
                                     à débuter le « chien première langue » en
                                     apprenant à repérer ses signaux de communication.
                                 </p>
@@ -315,9 +315,9 @@ function Home() {
                                 </div>
 
                                 <p>
-                                    Ce bilan permet de cerner vos attentes,
-                                    d’identifier les problématiques rencontrées
-                                    et de vous apporter de premiers conseils
+                                    Pendant ce bilan, nous faisons le point sur
+                                    vos attentes et les difficultés rencontrées.
+                                    Je vous apporte ensuite de premiers conseils
                                     adaptés à votre situation.
                                 </p>
 
@@ -351,10 +351,10 @@ function Home() {
                                 </div>
 
                                 <p>
-                                    Des séances réalisées à domicile ou dans un lieu
+                                    Je réalise ces séances à domicile ou dans un lieu
                                     défini à l’avance, pour travailler les apprentissages
-                                    ou accompagner les difficultés comportementales
-                                    rencontrées avec votre chien.
+                                    ou vous accompagner face aux difficultés
+                                    comportementales rencontrées avec votre chien.
                                 </p>
 
                                 <div className="home-service-card-footer">
@@ -387,9 +387,9 @@ function Home() {
                                 </div>
 
                                 <p>
-                                    Un forfait de cinq séances d’éducation ou
-                                    de rééducation pour poursuivre le travail
-                                    engagé et accompagner votre progression.
+                                    Je propose un forfait de cinq séances d’éducation
+                                    ou de rééducation pour poursuivre le travail
+                                    engagé et vous accompagner dans votre progression.
                                 </p>
 
                                 <div className="home-service-card-footer">
@@ -422,10 +422,11 @@ function Home() {
                                 </div>
 
                                 <p>
-                                    En balade sociale, votre chien travaille sa
-                                    sociabilité et vous apprenez à mieux comprendre
-                                    la communication canine. En balade pédagogique,
-                                    vous travaillez l’éducation de base dans un site
+                                    Lors des balades sociales, j’accompagne votre chien
+                                    dans le développement de sa sociabilité et je vous
+                                    aide à mieux comprendre la communication canine.
+                                    En balade pédagogique, je vous accompagne dans
+                                    le travail de l’éducation de base au sein d’un site
                                     naturel de la Côte d’Opale.
                                 </p>
 
@@ -459,9 +460,10 @@ function Home() {
                                 </div>
 
                                 <p>
-                                    Découvrez cette activité de recherche de personne
-                                    grâce au flair du chien. Le mantrailing peut être
-                                    utile dans certains accompagnements comportementaux,
+                                    Je vous propose de découvrir le mantrailing,
+                                    une activité de recherche de personne grâce au
+                                    flair du chien. Cette discipline peut être utile
+                                    dans certains accompagnements comportementaux,
                                     mais aussi être simplement une activité ludique
                                     à partager avec votre compagnon.
                                 </p>
@@ -480,11 +482,14 @@ function Home() {
 
                     {/* Link to the full list of services and prices. */}
                     <div className="home-services-cta fade-in-up">
-                        <p>
+                        <div>
+                            <p>
                             Besoin de choisir une prestation ou de mieux comprendre
-                            son déroulement ? Retrouvez toutes les informations
-                            et les tarifs sur la page dédiée.
-                        </p>
+                            son déroulement ?
+                            </p>
+                            <p>Retrouvez toutes les informations et les tarifs sur la page dédiée.</p>
+                        </div>
+                        
 
                         <Link
                             to="/prestations-tarifs"
@@ -512,15 +517,15 @@ function Home() {
                         </h2>
 
                         <p>
-                            Canina Lingua intervient à domicile dans un rayon
-                            habituel de 40 km autour de Boulogne-sur-Mer,
-                            dans le Pas-de-Calais et les environs.
+                            J’interviens à domicile dans un rayon habituel de
+                            40 km autour de Boulogne-sur-Mer, dans le Pas-de-Calais
+                            et les environs.
                         </p>
 
                         <p>
-                            Des déplacements jusqu’à 60 km sont possibles
-                            avec des frais supplémentaires. La carte vous
-                            permet de visualiser le secteur d’intervention.
+                            Je peux également me déplacer jusqu’à 60 km,
+                            avec des frais supplémentaires. Consultez la carte
+                            pour visualiser mon secteur d’intervention.
                         </p>
 
                         <div className="home-area-info">
@@ -540,7 +545,7 @@ function Home() {
                             to="/contact"
                             className="home-button"
                         >
-                            Vérifier mon secteur
+                            Me contacter pour en discuter
                             <FontAwesomeIcon icon={faArrowRight} />
                         </Link>
                     </div>
@@ -616,10 +621,11 @@ function Home() {
                         </h2>
 
                         <p>
-                            Les méthodes employées doivent respecter son
-                            intégrité physique et mentale. Pour David, comprendre
-                            le chien, ses émotions et ses signaux de communication
-                            fait partie intégrante de l’accompagnement.
+                            Les méthodes que j’emploie doivent respecter
+                            l’intégrité physique et mentale du chien.
+                            Pour moi, comprendre ses émotions et ses signaux
+                            de communication fait partie intégrante de
+                            l’accompagnement que je propose.
                         </p>
                     </div>
 
@@ -651,8 +657,8 @@ function Home() {
 
                                     <p>
                                         Caresse, félicitation, friandise ou attention :
-                                        la motivation à recevoir permet d’associer
-                                        une émotion positive à l’apprentissage
+                                        je privilégie la motivation à recevoir pour
+                                        associer une émotion positive à l’apprentissage
                                         ou à la rééducation, plutôt que de travailler
                                         sur la motivation à éviter une sanction.
                                     </p>
@@ -689,8 +695,10 @@ function Home() {
                                     </h3>
 
                                     <p>
-                                        Les émotions et les signaux de communication,
-                                        comme les signaux d’apaisement, aident à mieux
+                                        Je ne me limite pas aux apprentissages :
+                                        je prends également en compte les émotions
+                                        et les signaux de communication, comme les
+                                        signaux d’apaisement. Ils m’aident à mieux
                                         comprendre le chien et à repérer les situations
                                         susceptibles de générer du mal-être.
                                     </p>
@@ -700,7 +708,7 @@ function Home() {
 
                     </div>
 
-                    {/* Quote highlighting David's approach. */}
+                    {/* Quote highlighting the educational approach. */}
                     <div className="home-ethics-quote fade-in-up">
                         <FontAwesomeIcon
                             icon={faPaw}
@@ -712,7 +720,7 @@ function Home() {
                             mais également sur les émotions. »
                         </p>
 
-                        <span>David Level — Canina Lingua</span>
+                        <span>David Level - Canina Lingua</span>
                     </div>
                 </div>
 
@@ -755,11 +763,11 @@ function Home() {
                         </p>
 
                         <p>
-                            Les séances se déroulent toujours à domicile ou
-                            sur les lieux de vos balades quotidiennes. David
-                            travaille dans votre environnement réel, en tenant
-                            compte des émotions et des besoins de votre compagnon,
-                            jamais sur un terrain d’entraînement clos.
+                            Je réalise les séances à domicile ou sur les lieux
+                            de vos balades quotidiennes. J’interviens dans votre
+                            environnement réel, en tenant compte des émotions
+                            et des besoins de votre compagnon, jamais sur un
+                            terrain d’entraînement clos.
                         </p>
 
                         {/* Summary of the practical principles used during sessions. */}
@@ -824,8 +832,8 @@ function Home() {
                     <p>
                         Éducation de base, rééducation comportementale,
                         stress, peurs, frustration ou réactivité :
-                        prenez contact avec David pour échanger sur
-                        les besoins de votre compagnon et envisager
+                        contactez-moi pour que nous puissions échanger
+                        sur les besoins de votre compagnon et envisager
                         un accompagnement adapté.
                     </p>
 
@@ -833,7 +841,7 @@ function Home() {
                         to="/contact"
                         className="home-button"
                     >
-                        Contacter Canina Lingua
+                        Contactez-moi
                         <FontAwesomeIcon icon={faArrowRight} />
                     </Link>
                 </div>

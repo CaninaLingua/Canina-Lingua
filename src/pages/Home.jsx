@@ -39,8 +39,7 @@ import "../css/Home.css";
 function Home() {
     // Initialize scroll-reveal animations for the page elements.
     useRevealOnScroll(
-        ".fade-in-up, .fade-in-side-left, .fade-in-side-right, .zoom-animation"
-    );
+        ".fade-in-up, .fade-in-side-left, .fade-in-side-right");
 
     // Set the browser tab title when the home page is mounted.
     useEffect(() => {

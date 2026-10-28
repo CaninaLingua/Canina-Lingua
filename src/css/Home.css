@@ -1,97 +1,2385 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&display=swap');
 
-/* Global variables */
+/********************************
+******** VARIABLES **************
+********************************/
+
+/* Main color palette, typography and decorative assets. */
 :root {
     --color-green: #5b914e;
     --color-gold: #d9871c;
     --color-white: #d3cfc9;
     --color-dark-gray: #181a1b;
-    --font-main: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+    --font-main: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --dog-paw-svg: url("/img_Canina_Lingua/dog-paw.svg");
 }
 
-/*********************************
-************ ANIMATIONS **********
-/*********************************/
+/********************************
+******** BASE *******************
+********************************/
 
-
-.fade-in-up {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+/* Apply consistent box sizing to the entire home page. */
+.home-container,
+.home-container * {
+    box-sizing: border-box;
 }
 
-.fade-in-side-left {
-    opacity: 0;
-    transform: translateX(-100px);
-    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
-}
-
-.fade-in-side-right {
-    opacity: 0;
-    transform: translateX(100px);
-    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
-}
-
-.fade-in-up.visible, .fade-in-side-left.visible, .fade-in-side-right.visible {
-    opacity: 1;
-    transform: translateX(0) translateY(0);
-}
-
-.zoom-animation{
-    opacity: 0;
-    transform:scale(0.1);
-    filter: blur(4px);
-    transition: opacity 1.5s ease-out, transform 1.2s ease-out, filter 1.2s ease-out;
-    
-}
-
-.zoom-animation.visible{
-    opacity: 1;
-    transform: scale(1);
-    filter:blur(0);
-}
-
-/*********************************
-**********HOME CONTAINER**********
-/*********************************/
+/* Main page layout and default typography. */
 .home-container {
-    overflow:hidden;
-    min-height: 150vh;
     display: flex;
     flex-direction: column;
-    align-items: center;  
+    align-items: center;
+    width: 100%;
     margin: 0 auto;
-    padding-bottom:100px;
-    line-height: 1.6;
-    color: var(--color-dark-gray);
+    padding-bottom: 45px;
+    overflow: hidden;
+
     font-family: var(--font-main);
-    overflow-x: hidden;    
+    line-height: 1.7;
 }
 
-
-/*********************************
-****** RESPONSIVE RULES *********
-/*********************************/
-
-/*tablets*/
-@media (max-width: 1024px) {
-
+/* Ensure images scale within their containers. */
+.home-container img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
 }
 
-/*tablets landscape*/
-@media (max-width: 1500px) and (orientation: landscape) {
-
+/* Normalize the top margin of the main text elements. */
+.home-container h1,
+.home-container h2,
+.home-container h3,
+.home-container p {
+    margin-top: 0;
 }
 
-/*mobile*/
-@media (max-width: 599px) {
- 
+/* Keep headings consistent with the page typography. */
+.home-container h1,
+.home-container h2,
+.home-container h3 {
+    font-family: var(--font-main);
 }
 
+/* Remove the default tap highlight from links on touch devices. */
+.home-container a {
+    -webkit-tap-highlight-color: transparent;
+}
 
-/*mobile landscape*/
+/* Make keyboard focus visible when navigating links. */
+.home-container a:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 4px;
+}
+
+/* Shared spacing and anchor offset for content sections. */
+.home-section {
+    min-width: 0;
+    margin: 0 0 100px;
+    scroll-margin-top: 30px;
+}
+
+/* Small uppercase labels used above section headings. */
+.home-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 13px;
+
+    color: var(--color-green);
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.home-eyebrow > svg {
+    color: var(--color-gold);
+}
+
+/* Shared styling for section headings and their colored second lines. */
+.home-section-title {
+    position: relative;
+    margin: 0 0 22px;
+
+    color: var(--color-gold);
+    font-size: clamp(1.8rem, 3vw, 2.65rem);
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+
+    text-shadow: 0 3px 12px rgba(217, 135, 28, 0.09);
+}
+
+.home-section-title > span {
+    display: block;
+    color: var(--color-green);
+}
+
+/* Justify long informational paragraphs for a more even text block. */
+.home-intro-copy > p,
+.home-area-copy > p,
+.home-homevisit-copy > p,
+.home-section-heading > p {
+    color: var(--color-white);
+    font-size: 0.96rem;
+    line-height: 1.9;
+    opacity: 0.9;
+
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Hint to the browser that these elements will be animated. */
+.home-container .fade-in-up,
+.home-container .fade-in-side-left,
+.home-container .fade-in-side-right {
+    will-change: opacity, transform;
+}
+
+/********************************
+******** BUTTONS ****************
+********************************/
+
+/* Shared button appearance and alignment. */
+.home-container .home-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    max-width: 100%;
+    padding: 14px 32px;
+
+    color: var(--color-white);
+    background-color: var(--color-dark-gray);
+
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+
+    border: 1px solid rgba(217, 135, 28, 0.45);
+    border-radius: 8px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+
+    cursor: pointer;
+}
+
+/* Hover feedback for buttons. */
+.home-container .home-button:hover {
+    color: var(--color-gold);
+    background-color: var(--color-dark-gray);
+    border-color: var(--color-green);
+
+    box-shadow:
+        0 0 15px rgba(91, 145, 78, 0.4),
+        0 6px 16px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(-2px);
+}
+
+/* Animate the arrow or icon inside a hovered button. */
+.home-container .home-button > svg {
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.home-container .home-button:hover > svg {
+    transform: translateX(3px);
+}
+
+/* Keep paw icons in the brand's green color. */
+.home-container .home-paw-icon {
+    color: var(--color-green) !important;
+}
+
+/********************************
+******** MAIN HERO BANNER ******
+********************************/
+
+/* Full-width banner containing the background image and hero card. */
+.home-hero {
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 690px;
+    min-height: min(760px, 88svh);
+    padding: 65px 5%;
+
+    overflow: hidden;
+    background: #111312;
+}
+
+/* Stretch the background image and overlay across the entire hero. */
+.home-hero-image,
+.home-hero-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Crop and position the hero background image. */
+.home-hero-image {
+    z-index: -2;
+    object-fit: cover;
+    object-position: 65% center;
+}
+
+/* Layer gradients over the image to improve text contrast. */
+.home-hero-overlay {
+    z-index: -1;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(12, 14, 13, 0.7) 0%,
+            rgba(12, 14, 13, 0.45) 42%,
+            rgba(12, 14, 13, 0.22) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(12, 14, 13, 0.45),
+            rgba(12, 14, 13, 0.12)
+        );
+}
+
+/* Constrain the animated wrapper around the hero card. */
+.home-hero-card-reveal {
+    position: relative;
+    z-index: 1;
+    width: min(920px, 94%);
+    min-width: 0;
+}
+
+/* Main hero card, including its translucent background and border. */
+.home-hero-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 370px;
+    padding: 45px clamp(25px, 5vw, 65px);
+    overflow: hidden;
+
+    text-align: center;
+
+    background: rgba(24, 26, 27, 0.55);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+
+    border: 1px solid rgba(217, 135, 28, 0.38);
+    border-radius: 20px;
+
+    box-shadow:
+        0 18px 42px rgba(0, 0, 0, 0.48),
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* Subtle lift and stronger border when hovering over the hero card. */
+.home-hero-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(217, 135, 28, 0.8);
+
+    box-shadow:
+        0 22px 48px rgba(0, 0, 0, 0.55),
+        0 0 22px rgba(217, 135, 28, 0.1);
+}
+
+/* Large, low-opacity paw print used as a decorative background element. */
+.home-hero-paw-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 300px;
+    height: 300px;
+
+    color: var(--color-green);
+    opacity: 0.075;
+    font-size: 17rem;
+
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
+.home-hero-paw-bg .home-paw-icon {
+    color: var(--color-green);
+}
+
+/* Brand label displayed above the main title. */
+.home-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    margin-bottom: 20px;
+
+    color: var(--color-gold);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+}
+
+.home-hero-eyebrow > svg {
+    color: var(--color-green);
+    font-size: 1.1rem;
+}
+
+/* Main headline and its contrasting second line. */
+.home-hero-title {
+    max-width: 820px;
+    margin: 0 0 19px;
+
+    color: var(--color-gold);
+    font-size: clamp(2.35rem, 4.8vw, 4.1rem);
+    font-weight: 800;
+    line-height: 1.17;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    -webkit-text-stroke: 0.4px var(--color-dark-gray);
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.home-hero-title > span {
+    display: block;
+    color: var(--color-green);
+}
+
+/* Keep the hero subtitle centered beneath the headline. */
+.home-hero-subtitle {
+    max-width: 680px;
+    margin: 0 auto 28px;
+
+    color: var(--color-white);
+    font-size: 1rem;
+    line-height: 1.85;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.65);
+}
+
+.home-hero-subtitle strong {
+    color: var(--color-gold);
+    font-weight: 700;
+}
+
+/* Primary hero buttons, displayed side by side when space permits. */
+.home-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+/* Credentials displayed beneath the hero buttons. */
+.home-hero-credentials {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    width: 100%;
+    margin-top: 29px;
+    padding-top: 19px;
+
+    border-top: 1px solid rgba(211, 207, 201, 0.16);
+}
+
+.home-hero-credential {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    color: var(--color-gold);
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.home-hero-credential > svg {
+    color: var(--color-green);
+    font-size: 1rem;
+}
+
+/* Vertical divider between the two credentials. */
+.home-hero-credential-divider {
+    width: 1px;
+    height: 26px;
+    background: rgba(217, 135, 28, 0.45);
+}
+
+/* Circular link leading to the next section of the page. */
+.home-hero-scroll {
+    position: absolute;
+    bottom: 19px;
+    left: 50%;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 39px;
+    height: 39px;
+
+    color: var(--color-gold);
+    background: rgba(24, 26, 27, 0.7);
+
+    border: 1px solid rgba(217, 135, 28, 0.4);
+    border-radius: 50%;
+
+    text-decoration: none;
+    transform: translateX(-50%);
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.home-hero-scroll:hover {
+    color: var(--color-dark-gray);
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+/********************************
+******** MAIN CONTENT PANEL *****
+********************************/
+
+/* Main panel containing the page's information sections. */
+.home-content-panel {
+    position: relative;
+    z-index: 1;
+
+    width: min(1400px, 88%);
+    margin: 40px auto 0;
+    padding: clamp(30px, 4.8vw, 75px);
+
+    color: var(--color-white);
+    background: var(--color-dark-gray);
+
+    border: 1px solid rgba(217, 135, 28, 0.2);
+    border-radius: 18px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+/* Remove bottom spacing from the final section in the panel. */
+.home-section:last-child {
+    margin-bottom: 0;
+}
+
+/********************************
+******** DAVID'S INTRODUCTION ***
+********************************/
+
+/* Two-column layout for the profile image and introduction text. */
+.home-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: center;
+    gap: clamp(35px, 5vw, 75px);
+}
+
+/* Reserve space around the profile image for the corner decorations. */
+.home-intro-visual {
+    position: relative;
+    min-width: 0;
+    padding: 0 22px 24px 0;
+}
+
+/* Frame and crop the profile image. */
+.home-intro-photo-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    max-height: 570px;
+    overflow: hidden;
+
+    background: #262927;
+    border: 1px solid rgba(217, 135, 28, 0.27);
+    border-radius: 12px;
+}
+
+/* Add a subtle gradient at the bottom of the photo. */
+.home-intro-photo-frame::after {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background: linear-gradient(
+        0deg,
+        rgba(24, 26, 27, 0.35),
+        transparent 40%
+    );
+
+    content: "";
+}
+
+/* Set the image crop and the hover zoom effect. */
+.home-intro-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 90%;
+    transition: transform 0.65s ease;
+}
+
+.home-intro-visual:hover .home-intro-photo-frame img {
+    transform: scale(1.035);
+}
+
+/* Decorative corners around the profile photo. */
+.home-photo-corner {
+    position: absolute;
+    z-index: 2;
+    width: 46px;
+    height: 46px;
+    pointer-events: none;
+}
+
+.home-photo-corner-top {
+    top: 12px;
+    left: 12px;
+    border-top: 2px solid var(--color-gold);
+    border-left: 2px solid var(--color-gold);
+}
+
+.home-photo-corner-bottom {
+    right: 12px;
+    bottom: 12px;
+    border-right: 2px solid var(--color-green);
+    border-bottom: 2px solid var(--color-green);
+}
+
+/* Name and job-title label positioned over the lower edge of the image. */
+.home-intro-photo-label {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    width: min(94%, 365px);
+    padding: 15px 18px;
+
+    background: rgba(24, 26, 27, 0.94);
+    border: 1px solid rgba(217, 135, 28, 0.35);
+    border-radius: 10px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Circular icon background used beside the name label. */
+.home-icon-disc {
+    display: inline-flex;
+    flex: 0 0 43px;
+    align-items: center;
+    justify-content: center;
+
+    width: 43px;
+    height: 43px;
+
+    color: var(--color-green);
+    background: rgba(91, 145, 78, 0.12);
+    border: 1px solid rgba(91, 145, 78, 0.4);
+    border-radius: 50%;
+
+    font-size: 1rem;
+}
+
+/* Let the text in the name label shrink without overflowing. */
+.home-intro-photo-label > span:last-child {
+    min-width: 0;
+}
+
+.home-intro-photo-label strong {
+    display: block;
+    margin-bottom: 3px;
+
+    color: var(--color-gold);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.home-intro-photo-label small {
+    display: block;
+    color: var(--color-white);
+    font-size: 0.71rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+/* Introduction text column. */
+.home-intro-copy {
+    min-width: 0;
+}
+
+/* Separate the introductory paragraphs vertically. */
+.home-intro-copy > p {
+    margin: 0 0 17px;
+}
+
+/* Signature line placed between the introduction and its button. */
+.home-intro-signature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 27px 0;
+
+    color: var(--color-gold);
+    font-size: 0.86rem;
+    font-weight: 800;
+    line-height: 1.7;
+    letter-spacing: 0.4px;
+}
+
+.home-intro-signature > svg {
+    color: var(--color-green);
+    font-size: 1.05rem;
+}
+
+/********************************
+******** SECTION HEADINGS *******
+********************************/
+
+/* Constrain the width of section introductions. */
+.home-section-heading {
+    max-width: 870px;
+    margin: 0 auto 38px;
+    text-align: left;
+}
+
+/* Center headings for sections designed around a central title. */
+.home-section-heading-centered {
+    text-align: center;
+}
+
+.home-section-heading-centered .home-eyebrow {
+    justify-content: center;
+}
+
+/* Avoid extra space below the section introduction paragraph. */
+.home-section-heading > p {
+    margin: 0;
+}
+
+/********************************
+******** SERVICES ****************
+********************************/
+
+/* Add a small offset above the services section. */
+.home-services {
+    padding-top: 5px;
+}
+
+/* Responsive grid containing all service cards. */
+.home-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 22px;
+}
+
+/* The wrapper handles the scroll-reveal animation. */
+.home-service-card-reveal {
+    display: flex;
+    min-width: 0;
+}
+
+/* Let the inner card fill the available wrapper height. */
+.home-service-card-reveal > .home-service-card {
+    width: 100%;
+    flex: 1;
+}
+
+/* Base layout and appearance for a service card. */
+.home-service-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    padding: 27px 24px 23px;
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        rgba(53, 53, 52, 0.72),
+        rgba(24, 26, 27, 0.98)
+    );
+
+    border: 1px solid rgba(217, 135, 28, 0.24);
+    border-radius: 17px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Soft decorative circle in the upper-right corner of each card. */
+.home-service-card::after {
+    position: absolute;
+    top: -38px;
+    right: -38px;
+
+    width: 110px;
+    height: 110px;
+
+    background: var(--color-green);
+    opacity: 0.07;
+
+    border-radius: 50%;
+    pointer-events: none;
+
+    content: "";
+    transition: opacity 0.3s ease;
+}
+
+/* Raise the service card slightly when hovered. */
+.home-service-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(217, 135, 28, 0.65);
+
+    box-shadow:
+        0 16px 35px rgba(0, 0, 0, 0.28),
+        0 0 18px rgba(217, 135, 28, 0.05);
+}
+
+.home-service-card:hover::after {
+    opacity: 0.15;
+}
+
+/* Header row containing the service icon. */
+.home-service-card-header {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+/* Icon container for each service category. */
+.home-service-icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    color: var(--color-dark-gray);
+    background: var(--color-green);
+    border-radius: 12px;
+
+    font-size: 1.2rem;
+}
+
+/* Service title. */
+.home-service-card h3 {
+    margin: 0 0 13px;
+
+    color: var(--color-gold);
+    font-size: 1.12rem;
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+/* Price and duration row. */
+.home-service-price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin: 0 0 17px;
+    padding: 13px 0;
+
+    border-top: 1px solid rgba(217, 135, 28, 0.2);
+    border-bottom: 1px solid rgba(217, 135, 28, 0.2);
+}
+
+/* Main price displayed on the card. */
+.home-service-price > strong {
+    color: var(--color-gold);
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+/* Duration or service-format information. */
+.home-service-price > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    color: var(--color-white);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.home-service-price > span > svg {
+    color: var(--color-green);
+}
+
+/* Justify service descriptions to create a more uniform text block. */
+.home-service-card > p {
+    margin: 0 0 23px;
+
+    color: var(--color-white);
+    font-size: 0.87rem;
+    line-height: 1.85;
+    opacity: 0.88;
+
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Footer stays at the bottom of each service card. */
+.home-service-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: auto;
+    padding-top: 17px;
+
+    color: var(--color-gold);
+    border-top: 1px solid rgba(211, 207, 201, 0.13);
+
+    font-size: 0.76rem;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.home-service-card-footer > svg {
+    flex-shrink: 0;
+    color: var(--color-green);
+}
+
+/* Supporting call to action below the service-card grid. */
+.home-services-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    margin-top: 32px;
+    padding: 23px 25px;
+
+    background: rgba(91, 145, 78, 0.075);
+    border: 1px solid rgba(91, 145, 78, 0.27);
+    border-radius: 13px;
+}
+
+/* Justify the supporting text while keeping the button separate. */
+.home-services-cta > p {
+    margin: 0;
+
+    color: var(--color-white);
+    font-size: 0.87rem;
+    line-height: 1.8;
+    opacity: 0.9;
+
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/********************************
+******** SERVICE AREA ***********
+********************************/
+
+/* Two-column layout for the service area text and map. */
+.home-area {
+    display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    align-items: center;
+    gap: clamp(35px, 5vw, 75px);
+}
+
+.home-area-copy {
+    min-width: 0;
+}
+
+/* Spacing between paragraphs in the service area introduction. */
+.home-area-copy > p {
+    margin: 0 0 17px;
+}
+
+/* Highlight the standard and extended travel distances. */
+.home-area-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin: 27px 0;
+    padding: 17px;
+
+    background: rgba(91, 145, 78, 0.08);
+    border: 1px solid rgba(91, 145, 78, 0.3);
+    border-radius: 13px;
+}
+
+/* Allow the travel-distance text to fit inside the information box. */
+.home-area-info > div {
+    min-width: 0;
+}
+
+.home-area-info strong {
+    display: block;
+    margin-bottom: 4px;
+
+    color: var(--color-gold);
+    font-size: 0.87rem;
+    line-height: 1.5;
+}
+
+.home-area-info > div > span {
+    display: block;
+
+    color: var(--color-white);
+    font-size: 0.77rem;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* Ensure that the map column can shrink within the grid. */
+.home-area-visual {
+    min-width: 0;
+}
+
+/* Shared panel styling for the map and its supporting information. */
+.home-image-panel {
+    padding: 18px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(53, 53, 52, 0.72),
+        rgba(24, 26, 27, 0.98)
+    );
+
+    border: 1px solid rgba(217, 135, 28, 0.3);
+    border-radius: 16px;
+
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Label at the top of the map panel. */
+.home-image-panel-heading {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    margin-bottom: 15px;
+    padding-bottom: 13px;
+
+    color: var(--color-gold);
+    border-bottom: 1px solid rgba(217, 135, 28, 0.24);
+
+    font-size: 0.81rem;
+    font-weight: 800;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+}
+
+.home-image-panel-heading > svg {
+    color: var(--color-green);
+    font-size: 1.05rem;
+}
+
+/* Fixed clipping container that prevents the map from overflowing during zoom. */
+.home-map-image-wrap {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 7px;
+}
+
+/* Keep the map at its normal size until the panel is hovered. */
+.home-map-image-wrap > img {
+    display: block;
+    width: 100%;
+    max-height: 460px;
+    object-fit: contain;
+    border-radius: 7px;
+
+    transform: scale(1);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+}
+
+/* Enlarge only the map image, leaving the panel and legend in place. */
+.home-map-panel:hover .home-map-image-wrap > img {
+    transform: scale(1.06);
+}
+
+/* Legend describing the two travel zones. */
+.home-map-legend {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+
+    margin-top: 15px;
+    padding: 14px 0;
+
+    border-top: 1px solid rgba(211, 207, 201, 0.13);
+    border-bottom: 1px solid rgba(211, 207, 201, 0.13);
+}
+
+/* Individual legend item with a color swatch and explanatory text. */
+.home-map-legend-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    min-width: 0;
+    padding: 11px 12px;
+
+    background: rgba(211, 207, 201, 0.035);
+    border: 1px solid rgba(211, 207, 201, 0.12);
+    border-radius: 9px;
+}
+
+/* Small colored square identifying each travel zone. */
+.home-map-legend-swatch {
+    display: block;
+    flex: 0 0 13px;
+
+    width: 13px;
+    height: 13px;
+    margin-top: 4px;
+
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.18);
+}
+
+.home-map-legend-swatch-orange {
+    background: var(--color-gold);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.home-map-legend-swatch-green {
+    background: var(--color-green);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Stack the title and explanatory text in each legend item. */
+.home-map-legend-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    min-width: 0;
+}
+
+.home-map-legend-text strong {
+    color: var(--color-gold);
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.home-map-legend-text small {
+    color: var(--color-white);
+    font-size: 0.7rem;
+    line-height: 1.55;
+    opacity: 0.8;
+}
+
+/* Caption displayed beneath the map legend. */
+.home-map-caption {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 15px;
+    padding-top: 14px;
+
+    color: var(--color-white);
+    border-top: 1px solid rgba(211, 207, 201, 0.13);
+
+    font-size: 0.76rem;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+.home-map-caption > svg {
+    flex-shrink: 0;
+    color: var(--color-gold);
+}
+
+/********************************
+******** ETHICS AND VALUES ******
+********************************/
+
+/* Add a small offset above the ethics section. */
+.home-ethics {
+    padding-top: 5px;
+}
+
+/* Adjust the spacing beneath the ethics introduction. */
+.home-ethics .home-section-heading {
+    margin-bottom: 38px;
+}
+
+/* Two-column grid for the ethics cards. */
+.home-ethics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px;
+}
+
+/* Dedicated wrappers for the scroll-reveal animations. */
+.home-ethics-card-reveal {
+    display: flex;
+    min-width: 0;
+}
+
+/* Allow each ethics card to fill the available wrapper height. */
+.home-ethics-card-reveal > .home-ethics-card {
+    width: 100%;
+    flex: 1;
+}
+
+/* Base appearance of an ethics card. */
+.home-ethics-card {
+    min-width: 0;
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        rgba(53, 53, 52, 0.72),
+        rgba(24, 26, 27, 0.98)
+    );
+
+    border: 1px solid rgba(217, 135, 28, 0.24);
+    border-radius: 17px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Hover effect for ethics cards. */
+.home-ethics-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(217, 135, 28, 0.6);
+
+    box-shadow:
+        0 16px 35px rgba(0, 0, 0, 0.28),
+        0 0 18px rgba(217, 135, 28, 0.05);
+}
+
+/* Fixed-ratio image area at the top of each ethics card. */
+.home-ethics-image {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+
+    background: #252826;
+    border-bottom: 1px solid rgba(217, 135, 28, 0.24);
+}
+
+/* Darken the bottom of the image to complement the icon overlay. */
+.home-ethics-image::after {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background: linear-gradient(
+        0deg,
+        rgba(24, 26, 27, 0.5),
+        transparent 45%
+    );
+
+    content: "";
+}
+
+/* Fill the image area and add a subtle hover zoom. */
+.home-ethics-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.home-ethics-card:hover .home-ethics-image > img {
+    transform: scale(1.035);
+}
+
+/* Icon badge overlapping the bottom edge of the card image. */
+.home-ethics-image-icon {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    color: var(--color-dark-gray);
+    background: var(--color-gold);
+
+    border: 1px solid rgba(24, 26, 27, 0.5);
+    border-radius: 12px 12px 0 0;
+
+    font-size: 1.1rem;
+}
+
+/* Inner content area of each ethics card. */
+.home-ethics-content {
+    padding: 25px 26px 28px;
+}
+
+/* Small uppercase label introducing the card's theme. */
+.home-card-kicker {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 13px;
+
+    color: var(--color-gold);
+    font-size: 0.72rem;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+.home-card-kicker > svg {
+    color: var(--color-green);
+    font-size: 0.9rem;
+}
+
+/* Ethics card heading. */
+.home-ethics-content h3 {
+    margin: 0 0 12px;
+
+    color: var(--color-gold);
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+/* Justify the explanatory text inside ethics cards. */
+.home-ethics-content > p {
+    margin: 0;
+
+    color: var(--color-white);
+    font-size: 0.88rem;
+    line-height: 1.85;
+    opacity: 0.88;
+
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Centered quotation highlighting the educational approach. */
+.home-ethics-quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+
+    margin-top: 30px;
+    padding: 28px clamp(18px, 4vw, 40px);
+
+    text-align: center;
+
+    background: rgba(91, 145, 78, 0.07);
+    border: 1px solid rgba(217, 135, 28, 0.3);
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+.home-ethics-quote > svg {
+    color: var(--color-green);
+    font-size: 1.6rem;
+}
+
+.home-ethics-quote > p {
+    max-width: 780px;
+    margin: 0;
+
+    color: var(--color-gold);
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    font-weight: 700;
+    line-height: 1.75;
+}
+
+.home-ethics-quote > span {
+    color: var(--color-green);
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+/********************************
+******** HOME VISITS ************
+********************************/
+
+/* Two-column layout for the image and home-visit explanation. */
+.home-homevisit {
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+    align-items: center;
+    gap: clamp(35px, 5vw, 75px);
+}
+
+/* Position the decorative corner and image together. */
+.home-homevisit-visual {
+    position: relative;
+    min-width: 0;
+    padding: 17px 0 24px 17px;
+}
+
+/* Decorative corner placed behind the home-visit image. */
+.home-homevisit-visual::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 46%;
+    height: 48%;
+
+    pointer-events: none;
+
+    border-top: 2px solid var(--color-gold);
+    border-left: 2px solid var(--color-gold);
+
+    content: "";
+}
+
+/* Image container with a fixed aspect ratio. */
+.home-homevisit-photo {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    max-height: 520px;
+
+    overflow: hidden;
+
+    background: #252826;
+    border: 1px solid rgba(217, 135, 28, 0.25);
+    border-radius: 12px;
+}
+
+/* Image crop and hover zoom for the home-visit photo. */
+.home-homevisit-photo > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.6s ease;
+}
+
+.home-homevisit-visual:hover .home-homevisit-photo > img {
+    transform: scale(1.03);
+}
+
+/* Gradient overlay behind the badge at the bottom of the photo. */
+.home-homevisit-photo::after {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background: linear-gradient(
+        0deg,
+        rgba(24, 26, 27, 0.6),
+        transparent 45%
+    );
+
+    content: "";
+}
+
+/* Label displayed over the bottom of the home-visit photo. */
+.home-homevisit-photo-badge {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    z-index: 1;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+
+    max-width: calc(100% - 32px);
+    padding: 12px 15px;
+
+    color: var(--color-white);
+    background: rgba(24, 26, 27, 0.9);
+
+    border: 1px solid rgba(217, 135, 28, 0.35);
+    border-radius: 9px;
+
+    font-size: 0.77rem;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.home-homevisit-photo-badge > svg {
+    flex-shrink: 0;
+    color: var(--color-green);
+    font-size: 1rem;
+}
+
+/* Text column describing the home-visit approach. */
+.home-homevisit-copy {
+    min-width: 0;
+}
+
+/* Space the home-visit paragraphs consistently. */
+.home-homevisit-copy > p {
+    margin-bottom: 16px;
+}
+
+/* List of principles applied during sessions. */
+.home-homevisit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    margin: 25px 0 29px;
+    padding: 0;
+
+    list-style: none;
+}
+
+/* Align each list icon with its descriptive text. */
+.home-homevisit-list > li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    color: var(--color-white);
+    font-size: 0.86rem;
+    line-height: 1.75;
+}
+
+.home-homevisit-list > li > svg {
+    flex-shrink: 0;
+    margin-top: 5px;
+
+    color: var(--color-green);
+    font-size: 0.9rem;
+}
+
+/* Use red for the item describing what is not done. */
+.home-homevisit-list > li.home-homevisit-not > svg {
+    color: #e05252;
+}
+
+/********************************
+******** CONTACT CALL TO ACTION *
+********************************/
+
+/* Highlighted contact section at the bottom of the page. */
+.home-contact-cta {
+    position: relative;
+    margin: 0 auto;
+    padding: 55px 40px;
+    overflow: hidden;
+    text-align: center;
+
+    background: rgba(91, 145, 78, 0.08);
+    border: 1px solid rgba(91, 145, 78, 0.35);
+    border-radius: 20px;
+}
+
+/* Keep the CTA content above the decorative paw print. */
+.home-contact-cta > *:not(.home-cta-paw) {
+    position: relative;
+    z-index: 1;
+}
+
+/* Center the label above the contact heading. */
+.home-contact-cta > .home-eyebrow {
+    display: flex;
+    justify-content: center;
+    color: var(--color-green);
+}
+
+/* Main contact heading. */
+.home-contact-cta h2 {
+    max-width: 850px;
+    margin: 0 auto 18px;
+
+    color: var(--color-gold);
+    font-size: clamp(1.8rem, 3vw, 2.65rem);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+/* Keep the CTA text centered for a compact, promotional layout. */
+.home-contact-cta > p {
+    max-width: 750px;
+    margin: 0 auto 28px;
+
+    color: var(--color-white);
+    font-size: 0.98rem;
+    line-height: 1.85;
+}
+
+/* Large decorative paw print behind the contact CTA content. */
+.home-cta-paw {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+
+    width: 300px;
+    height: 300px;
+
+    transform: translate(-50%, -50%);
+
+    background: var(--color-green);
+    opacity: 0.12;
+    pointer-events: none;
+
+    -webkit-mask-image: var(--dog-paw-svg);
+    mask-image: var(--dog-paw-svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+/********************************
+******** TABLETS ****************
+********************************/
+
+/* General tablet layouts, including landscape orientation. */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .home-hero {
+        min-height: 650px;
+        padding: 50px 4%;
+    }
+
+    .home-hero-image {
+        object-position: 63% center;
+    }
+
+    .home-hero-card-reveal {
+        width: min(850px, 95%);
+    }
+
+    .home-hero-card {
+        padding: 38px 35px;
+    }
+
+    .home-hero-title {
+        font-size: clamp(2.3rem, 5.2vw, 3.4rem);
+    }
+
+    .home-content-panel {
+        width: 92%;
+        margin-top: 28px;
+        padding: 38px 30px;
+    }
+
+    .home-section {
+        margin-bottom: 80px;
+    }
+
+    .home-intro,
+    .home-area,
+    .home-homevisit {
+        gap: 30px;
+    }
+
+    .home-section-title {
+        font-size: clamp(1.65rem, 3.3vw, 2.15rem);
+    }
+
+    .home-intro-photo-label {
+        width: 95%;
+        padding: 13px;
+    }
+
+    .home-intro-photo-label small {
+        font-size: 0.67rem;
+    }
+
+    .home-services-grid {
+        gap: 15px;
+    }
+
+    .home-service-card {
+        padding: 23px 18px;
+    }
+
+    .home-service-card h3 {
+        font-size: 1rem;
+    }
+
+    .home-service-card > p {
+        font-size: 0.82rem;
+    }
+
+    .home-service-price {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .home-service-price > strong {
+        font-size: 1.55rem;
+    }
+
+    .home-services-cta {
+        align-items: flex-start;
+        gap: 18px;
+        padding: 20px;
+    }
+
+    .home-ethics-grid {
+        gap: 17px;
+    }
+
+    .home-ethics-content {
+        padding: 22px 20px;
+    }
+
+    .home-ethics-content h3 {
+        font-size: 1.08rem;
+    }
+
+    .home-ethics-content > p {
+        font-size: 0.83rem;
+    }
+}
+
+/********************************
+****** PORTRAIT TABLETS *********
+********************************/
+
+/* Adjust the layout for tablets in portrait orientation. */
+@media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
+    .home-hero {
+        min-height: 670px;
+        padding: 45px 4%;
+    }
+
+    .home-hero-image {
+        object-position: 65% center;
+    }
+
+    .home-hero-card-reveal {
+        width: 94%;
+    }
+
+    .home-hero-card {
+        padding: 38px 30px;
+    }
+
+    .home-hero-title {
+        font-size: clamp(2.2rem, 5.5vw, 3.2rem);
+    }
+
+    .home-hero-credentials {
+        gap: 15px;
+    }
+
+    .home-hero-credential {
+        font-size: 0.74rem;
+    }
+
+    .home-content-panel {
+        width: 92%;
+        padding: 35px 28px;
+    }
+
+    /* Stack the main editorial sections vertically. */
+    .home-intro,
+    .home-area,
+    .home-homevisit {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+    }
+
+    .home-intro-visual,
+    .home-homevisit-visual {
+        width: min(100%, 580px);
+        margin: 0 auto;
+    }
+
+    .home-intro-photo-frame {
+        aspect-ratio: 5 / 4;
+        max-height: 490px;
+    }
+
+    .home-intro-copy,
+    .home-area-copy,
+    .home-homevisit-copy {
+        max-width: 760px;
+    }
+
+    /* Display one service card per row on portrait tablets. */
+    .home-services-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .home-service-card {
+        padding: 24px;
+    }
+
+    .home-service-card-header {
+        margin-bottom: 17px;
+    }
+
+    .home-service-price {
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .home-services-cta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    /* Stack the ethics cards vertically. */
+    .home-ethics-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .home-ethics-image {
+        aspect-ratio: 16 / 8;
+    }
+
+    .home-homevisit-photo {
+        aspect-ratio: 16 / 9;
+    }
+
+    .home-contact-cta {
+        min-height: 300px;
+    }
+}
+
+/********************************
+******** PORTRAIT PHONES ********
+********************************/
+
+/* Compact layout for phones held in portrait orientation. */
+@media (max-width: 599px) and (orientation: portrait) {
+    .home-container {
+        padding-bottom: 25px;
+    }
+
+    .home-hero {
+        min-height: 700px;
+        min-height: min(770px, 92svh);
+        padding: 30px 0 65px;
+    }
+
+    .home-hero-image {
+        object-position: 40% center;
+    }
+
+    /* Use a stronger gradient to maintain contrast on narrow screens. */
+    .home-hero-overlay {
+        background: linear-gradient(
+            0deg,
+            rgba(12, 14, 13, 0.96) 0%,
+            rgba(12, 14, 13, 0.84) 44%,
+            rgba(12, 14, 13, 0.35) 100%
+        );
+    }
+
+    .home-hero-card-reveal {
+        width: 92%;
+    }
+
+    .home-hero-card {
+        min-height: 0;
+        padding: 30px 19px;
+        border-radius: 16px;
+    }
+
+    .home-hero-paw-bg {
+        width: 210px;
+        height: 210px;
+        font-size: 12rem;
+    }
+
+    .home-hero-eyebrow {
+        margin-bottom: 17px;
+        font-size: 0.73rem;
+        letter-spacing: 2.3px;
+    }
+
+    .home-hero-title {
+        margin-bottom: 17px;
+        font-size: clamp(1.85rem, 8.1vw, 2.7rem);
+        line-height: 1.22;
+        letter-spacing: 0.4px;
+    }
+
+    .home-hero-subtitle {
+        margin-bottom: 22px;
+        font-size: 0.88rem;
+        line-height: 1.8;
+    }
+
+    /* Stack hero buttons and make them fill the available width. */
+    .home-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .home-container .home-button {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Stack the hero credentials and replace the vertical divider. */
+    .home-hero-credentials {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 22px;
+        padding-top: 17px;
+    }
+
+    .home-hero-credential {
+        justify-content: flex-start;
+        font-size: 0.73rem;
+        text-align: left;
+    }
+
+    .home-hero-credential-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .home-hero-scroll {
+        bottom: 14px;
+        width: 34px;
+        height: 34px;
+        font-size: 0.8rem;
+    }
+
+    /* Reduce the main panel's width and padding on small screens. */
+    .home-content-panel {
+        width: 94%;
+        margin-top: 20px;
+        padding: 28px 18px;
+        border-radius: 14px;
+    }
+
+    .home-section {
+        margin-bottom: 65px;
+    }
+
+    .home-eyebrow {
+        gap: 8px;
+        margin-bottom: 10px;
+        font-size: 0.69rem;
+        letter-spacing: 1.4px;
+    }
+
+    .home-section-title {
+        margin-bottom: 17px;
+        font-size: clamp(1.5rem, 6.4vw, 2rem);
+        line-height: 1.35;
+        letter-spacing: 0.1px;
+    }
+
+    /* Slightly reduce paragraph sizes while preserving justification. */
+    .home-intro-copy > p,
+    .home-area-copy > p,
+    .home-homevisit-copy > p,
+    .home-section-heading > p {
+        font-size: 0.9rem;
+        line-height: 1.8;
+    }
+
+    /* Stack the introduction image above the text. */
+    .home-intro {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    .home-intro-visual {
+        width: 100%;
+        padding: 0 14px 23px 0;
+    }
+
+    .home-intro-photo-frame {
+        aspect-ratio: 4 / 4.1;
+        max-height: 450px;
+    }
+
+    .home-intro-photo-label {
+        width: min(95%, 320px);
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .home-intro-photo-label .home-icon-disc {
+        flex-basis: 37px;
+        width: 37px;
+        height: 37px;
+        font-size: 0.9rem;
+    }
+
+    .home-intro-photo-label strong {
+        font-size: 0.83rem;
+    }
+
+    .home-intro-photo-label small {
+        font-size: 0.65rem;
+    }
+
+    .home-intro-signature {
+        gap: 10px;
+        margin: 22px 0;
+        font-size: 0.79rem;
+    }
+
+    .home-section-heading {
+        margin-bottom: 27px;
+    }
+
+    .home-section-heading-centered .home-eyebrow {
+        justify-content: center;
+    }
+
+    /* Use one column for service cards on phones. */
+    .home-services-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+    }
+
+    .home-service-card {
+        padding: 22px 19px;
+        border-radius: 14px;
+    }
+
+    .home-service-card-header {
+        margin-bottom: 17px;
+    }
+
+    .home-service-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 10px;
+        font-size: 1.05rem;
+    }
+
+    .home-service-card h3 {
+        margin-bottom: 10px;
+        font-size: 1.04rem;
+    }
+
+    .home-service-price {
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 15px;
+        padding: 11px 0;
+    }
+
+    .home-service-price > strong {
+        font-size: 1.55rem;
+    }
+
+    .home-service-price > span {
+        font-size: 0.72rem;
+    }
+
+    .home-service-card > p {
+        margin-bottom: 18px;
+        font-size: 0.84rem;
+        line-height: 1.8;
+    }
+
+    .home-service-card-footer {
+        padding-top: 14px;
+        font-size: 0.73rem;
+    }
+
+    /* Stack the supporting service text above its button. */
+    .home-services-cta {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 23px;
+        padding: 18px;
+    }
+
+    .home-services-cta > p {
+        font-size: 0.83rem;
+        line-height: 1.8;
+    }
+
+    /* Stack service area content and map vertically. */
+    .home-area {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .home-area-info {
+        gap: 11px;
+        margin: 22px 0;
+        padding: 14px;
+    }
+
+    .home-area-info .home-icon-disc {
+        flex-basis: 38px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .home-area-info strong {
+        font-size: 0.81rem;
+    }
+
+    .home-area-info > div > span {
+        font-size: 0.72rem;
+    }
+
+    .home-image-panel {
+        padding: 12px;
+        border-radius: 13px;
+    }
+
+    .home-image-panel-heading {
+        gap: 9px;
+        margin-bottom: 12px;
+        font-size: 0.72rem;
+        letter-spacing: 0.8px;
+    }
+
+    /* Let the map use the full available width on phones. */
+    .home-map-image-wrap > img {
+        max-height: none;
+    }
+
+    /* Stack the travel-zone legend items on narrow screens. */
+    .home-map-legend {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 8px;
+        margin-top: 12px;
+        padding: 11px 0;
+    }
+
+    .home-map-legend-item {
+        padding: 10px 11px;
+    }
+
+    .home-map-legend-text strong {
+        font-size: 0.76rem;
+    }
+
+    .home-map-legend-text small {
+        font-size: 0.69rem;
+    }
+
+    .home-map-caption {
+        align-items: flex-start;
+        font-size: 0.71rem;
+    }
+
+    /* Stack the ethics cards vertically on phones. */
+    .home-ethics-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 17px;
+    }
+
+    .home-ethics-image {
+        aspect-ratio: 16 / 9;
+    }
+
+    .home-ethics-image-icon {
+        right: 14px;
+        width: 42px;
+        height: 42px;
+        border-radius: 10px 10px 0 0;
+        font-size: 1rem;
+    }
+
+    .home-ethics-content {
+        padding: 20px 19px 22px;
+    }
+
+    .home-card-kicker {
+        gap: 8px;
+        font-size: 0.66rem;
+        letter-spacing: 0.9px;
+    }
+
+    .home-ethics-content h3 {
+        font-size: 1.08rem;
+    }
+
+    .home-ethics-content > p {
+        font-size: 0.84rem;
+        line-height: 1.8;
+    }
+
+    .home-ethics-quote {
+        gap: 10px;
+        margin-top: 22px;
+        padding: 22px 17px;
+        border-radius: 13px;
+    }
+
+    .home-ethics-quote > p {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    /* Stack the home-visit image and explanatory text. */
+    .home-homevisit {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 31px;
+    }
+
+    .home-homevisit-visual {
+        padding: 12px 0 17px 12px;
+    }
+
+    .home-homevisit-photo {
+        aspect-ratio: 4 / 3;
+    }
+
+    .home-homevisit-photo-badge {
+        bottom: 10px;
+        left: 10px;
+        gap: 8px;
+        max-width: calc(100% - 20px);
+        padding: 9px 11px;
+        font-size: 0.69rem;
+    }
+
+    .home-homevisit-list {
+        gap: 11px;
+        margin: 21px 0 25px;
+    }
+
+    .home-homevisit-list > li {
+        gap: 10px;
+        font-size: 0.81rem;
+        line-height: 1.7;
+    }
+
+    /* Reduce the contact section's padding and heading size. */
+    .home-contact-cta {
+        padding: 35px 20px;
+        border-radius: 16px;
+    }
+
+    .home-contact-cta > .home-eyebrow {
+        justify-content: center;
+    }
+
+    .home-contact-cta h2 {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+        line-height: 1.3;
+    }
+
+    .home-contact-cta > p {
+        font-size: 0.93rem;
+        line-height: 1.8;
+    }
+
+    .home-cta-paw {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/********************************
+****** LANDSCAPE PHONES *********
+********************************/
+
+/* Adapt the layout for phones held in landscape orientation. */
 @media (max-width: 899px) and (orientation: landscape) {
- 
-}
+    .home-hero {
+        min-height: 570px;
+        padding: 35px 4%;
+    }
 
+    .home-hero-card-reveal {
+        width: min(780px, 94%);
+    }
+
+    .home-hero-card {
+        padding: 25px 30px;
+    }
+
+    .home-hero-title {
+        font-size: clamp(2rem, 4.8vw, 3rem);
+    }
+
+    .home-hero-subtitle {
+        margin-bottom: 19px;
+        font-size: 0.88rem;
+    }
+
+    .home-hero-credentials {
+        gap: 13px;
+        margin-top: 20px;
+        padding-top: 15px;
+    }
+
+    .home-hero-credential {
+        font-size: 0.7rem;
+    }
+
+    .home-content-panel {
+        width: 94%;
+        margin-top: 20px;
+        padding: 28px 23px;
+    }
+
+    .home-section {
+        margin-bottom: 58px;
+    }
+
+    /* Stack the main content sections vertically on narrow landscape screens. */
+    .home-intro,
+    .home-area,
+    .home-homevisit {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .home-intro-visual,
+    .home-homevisit-visual {
+        width: min(100%, 560px);
+        margin: 0 auto;
+    }
+
+    .home-intro-photo-frame {
+        aspect-ratio: 16 / 10;
+        max-height: 370px;
+    }
+
+    /* Use one service card per row on landscape phones. */
+    .home-services-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 13px;
+    }
+
+    .home-service-card {
+        padding: 20px;
+    }
+
+    .home-service-card-header {
+        margin-bottom: 14px;
+    }
+
+    .home-service-price {
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .home-service-card > p {
+        margin-bottom: 17px;
+    }
+
+    .home-services-cta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    /* Stack ethics cards in the available vertical layout. */
+    .home-ethics-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 17px;
+    }
+
+    .home-ethics-image {
+        aspect-ratio: 16 / 8;
+    }
+
+    .home-homevisit-photo {
+        aspect-ratio: 16 / 9;
+        max-height: 380px;
+    }
+
+    .home-contact-cta {
+        padding: 35px 22px;
+    }
+
+    .home-cta-paw {
+        width: 200px;
+        height: 200px;
+    }
+}

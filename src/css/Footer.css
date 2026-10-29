@@ -521,8 +521,26 @@
 /* Mobile - Portrait */
 @media (max-width: 767px) and (orientation: portrait) {
     .footer-top {
-        gap: 40px;
+        max-width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        padding-bottom: 40px;
     }
+
+    .footer-brand {
+        order: 1;
+    }
+
+    .footer-reviews {
+        order: 2;
+    }
+
+    .footer-schedules {
+        order: 3;
+    }
+
 
     .footer-reviews,
     .footer-schedules {
@@ -530,9 +548,34 @@
     }
 
     .footer-bottom {
-        max-width: 90vw;
-        gap: 12px;
-        padding-top: 20px;
+        display:flex;
+        max-width: 85vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        width: 100%;
+        order: 1;
+    }
+
+    #footer-gtcLink,
+    #footer-legalLink {
+        text-align: center;
+        width: fit-content;
+        max-width: 100%;
+    }
+
+    #footer-gtcLink {
+        order: 2;
+    }
+
+    #footer-legalLink {
+        order: 3;
     }
 }
 
@@ -551,7 +594,34 @@
     }
 
     .footer-bottom {
+        display:flex;
         max-width: 85vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        width: 100%;
+        order: 1;
+    }
+
+    #footer-gtcLink,
+    #footer-legalLink {
+        text-align: center;
+        width: fit-content;
+        max-width: 100%;
+    }
+
+    #footer-gtcLink {
+        order: 2;
+    }
+
+    #footer-legalLink {
+        order: 3;
     }
 }
 
@@ -614,10 +684,33 @@
     }
 
     .footer-bottom {
-        max-width: 95vw;
+        display:flex;
+        max-width: 85vw;
         flex-direction: column;
-        padding-top: 10px;
-        font-size: 0.75rem;
-        gap: 8px;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        width: 100%;
+        order: 1;
+    }
+
+    #footer-gtcLink,
+    #footer-legalLink {
+        text-align: center;
+        width: fit-content;
+        max-width: 100%;
+    }
+
+    #footer-gtcLink {
+        order: 2;
+    }
+
+    #footer-legalLink {
+        order: 3;
     }
 }

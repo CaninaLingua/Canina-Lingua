@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap');
+
 :root {
     --color-green: #5b914e;
     --color-gold: #d9871c;
     --color-white: #d3cfc9;
     --color-dark-gray: #181a1b;
-    --font-main: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;;
+    --font-main: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /*********************************
-**********Legal container*********
+********** Legal container ********
 *********************************/
+
 .legal-container {
     display: flex;
     flex-direction: column;
@@ -22,16 +24,13 @@
     color: var(--color-white);
     font-family: var(--font-main);
     background: var(--color-dark-gray);
-
     border: 1px solid rgba(217, 135, 28, 0.2);
     border-radius: 18px;
-
     box-shadow:
         0 18px 45px rgba(0, 0, 0, 0.2),
         0 4px 12px rgba(0, 0, 0, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.035);
 }
-
 
 .legal-container,
 .legal-container * {
@@ -39,89 +38,70 @@
 }
 
 /*********************************
-******Legal page main title*******
+******** Main page title *********
 *********************************/
 
 .legal-container h1 {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 2rem;
-    color:var(--color-gold);
+    color: var(--color-gold);
     -webkit-text-stroke: 0.5px var(--color-dark-gray);
     letter-spacing: 2px;
-    font-weight: 800; 
+    font-weight: 800;
     text-transform: uppercase;
+    overflow-wrap: anywhere;
 }
 
 /*********************************
-*******Legal section title********
+********* Section styles *********
 *********************************/
 
-/* Legal section */
-.legal-section{
-    min-width: 50vw;
+.legal-section,
+.privacy-section,
+.hosting-section {
     width: 100%;
+    min-width: 50vw;
     background: rgba(75, 76, 77, 0.3);
     border-radius: 1rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     padding: 2rem;
     margin-bottom: 2rem;
-    
 }
 
-/* Legal section Secondary titles */
-.legal-section h2{
+/* Section titles */
+
+.legal-section h2,
+.privacy-section h2,
+.hosting-section h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     border-left: 4px solid var(--color-green);
     padding-left: 0.6rem;
     color: var(--color-green);
+    overflow-wrap: anywhere;
 }
 
+/* Text containers */
 
-/* Legal section full text*/
-.legal-section-text{
-    margin-left:1rem;
+.legal-section-text,
+.privacy-section-text,
+.hosting-section-text {
+    margin-left: 1rem;
 }
 
-/* Legal section texts */
-.legal-section-text p{
+/* Legal section paragraphs */
+
+.legal-section-text p {
     margin: 0.5rem 0;
     font-size: 0.95rem;
+    overflow-wrap: anywhere;
 }
-
 
 /*********************************
-*******Privacy section title******
+******* Privacy section **********
 *********************************/
 
-/* Privacy section */
-.privacy-section{
-    min-width: 50vw;
-    width: 100%;
-    background: rgba(75, 76, 77, 0.3);
-    border-radius: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
-
-/* Privacy section full text*/
-.privacy-section-text{
-    margin-left:1rem;
-}
-
-/* Privacy section Secondary titles*/
-.privacy-section h2{
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    border-left: 4px solid var(--color-green);
-    padding-left: 0.6rem;
-    color: var(--color-green);
-}
-
-
-/* Privacy List */
 .privacy-section-text ul {
     list-style: disc inside;
     margin: 0.5rem 0 1rem 0.5rem;
@@ -130,21 +110,24 @@
 
 .privacy-section-text li {
     margin-bottom: 0.4rem;
+    overflow-wrap: anywhere;
 }
 
-/* Privacy section texts */
 .privacy-section-text p {
     margin: 0.5rem 0;
     font-size: 0.95rem;
     text-align: justify;
+    overflow-wrap: anywhere;
 }
 
-/* Privacy section links */
+/* Privacy links */
+
 .privacy-section-text a {
     color: #2d87ee;
     text-decoration: none;
     border-bottom: 1px dashed transparent;
     transition: color 0.2s ease, border-bottom 0.2s ease;
+    overflow-wrap: anywhere;
 }
 
 .privacy-section-text a:hover {
@@ -152,37 +135,12 @@
     border-bottom: 1px dashed #85b1ee;
 }
 
-
-
 /*********************************
-***Hosting and credits section****
+******** Hosting & credits ********
 *********************************/
-/* Hosting section */
-.hosting-section {
-    min-width: 50vw;
-    width: 100%;
-    background: rgba(75, 76, 77, 0.3);
-    border-radius: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
 
-/* Hosting section full text */
-.hosting-section-text{
-    margin-left: 1rem;
-}
+/* Hosting subtitles */
 
-/* Hosting section Secondary titles */
-.hosting-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    border-left: 4px solid var(--color-green);
-    padding-left: 0.6rem;
-    color: var(--color-green);
-}
-
-/* Hosting Subtitles */
 .hosting-section-text h3 {
     margin-top: 1.5rem;
     font-size: 1.2rem;
@@ -190,24 +148,285 @@
     border-bottom: 1px solid rgba(160, 160, 160, 0.75);
     padding-bottom: 0.3rem;
     margin-bottom: 0.5rem;
+    overflow-wrap: anywhere;
 }
 
-/* Hosting section texts */
+/* Hosting paragraphs */
+
 .hosting-section-text p {
     margin: 0.5rem 0;
     font-size: 0.95rem;
     text-align: justify;
+    overflow-wrap: anywhere;
 }
 
-/* Hosting section links */
+/* Hosting links */
+
 .hosting-section-text a {
     color: #2d87ee;
     text-decoration: none;
     border-bottom: 1px dashed transparent;
     transition: color 0.2s ease, border-bottom 0.2s ease;
+    overflow-wrap: anywhere;
 }
 
 .hosting-section-text a:hover {
     color: #85b1ee;
     border-bottom: 1px dashed #85b1ee;
+}
+
+/*********************************
+******** Tablet portrait **********
+*********************************/
+
+@media screen and (min-width: 768px) and (max-width: 1100px) and (orientation: portrait) {
+
+    .legal-container {
+        width: 92%;
+        margin: 30px auto;
+        padding: 1.75rem 1.25rem;
+    }
+
+    .legal-container h1 {
+        font-size: 1.8rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 1.75rem;
+    }
+
+    .legal-section,
+    .privacy-section,
+    .hosting-section {
+        min-width: 100%;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .legal-section h2,
+    .privacy-section h2,
+    .hosting-section h2 {
+        font-size: 1.35rem;
+    }
+
+    .legal-section-text,
+    .privacy-section-text,
+    .hosting-section-text {
+        margin-left: 0.5rem;
+    }
+
+    .legal-section-text p,
+    .privacy-section-text p,
+    .hosting-section-text p {
+        font-size: 0.92rem;
+    }
+
+    .hosting-section-text h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/*********************************
+******** Tablet landscape *********
+*********************************/
+
+@media screen and (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
+
+    .legal-container {
+        width: 94%;
+        margin: 25px auto;
+        padding: 1.5rem 1.25rem;
+    }
+
+    .legal-container h1 {
+        font-size: 1.7rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 1.5rem;
+    }
+
+    .legal-section,
+    .privacy-section,
+    .hosting-section {
+        min-width: 100%;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .legal-section h2,
+    .privacy-section h2,
+    .hosting-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .legal-section-text,
+    .privacy-section-text,
+    .hosting-section-text {
+        margin-left: 0.5rem;
+    }
+
+    .legal-section-text p,
+    .privacy-section-text p,
+    .hosting-section-text p {
+        font-size: 0.9rem;
+    }
+
+    .hosting-section-text h3 {
+        font-size: 1.05rem;
+    }
+}
+
+/*********************************
+******** Mobile portrait **********
+*********************************/
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+
+    .legal-container {
+        width: 94%;
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 1.25rem 0.75rem;
+        border-radius: 14px;
+    }
+
+    .legal-container h1 {
+        font-size: 1.35rem;
+        letter-spacing: 1px;
+        line-height: 1.4;
+        margin-bottom: 1.25rem;
+        -webkit-text-stroke: 0;
+    }
+
+    .legal-section,
+    .privacy-section,
+    .hosting-section {
+        width: 100%;
+        min-width: 0;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 0.75rem;
+    }
+
+    .legal-section h2,
+    .privacy-section h2,
+    .hosting-section h2 {
+        font-size: 1.15rem;
+        line-height: 1.4;
+        padding-left: 0.5rem;
+        border-left-width: 3px;
+        margin-bottom: 0.85rem;
+    }
+
+    .legal-section-text,
+    .privacy-section-text,
+    .hosting-section-text {
+        margin-left: 0;
+    }
+
+    .legal-section-text p,
+    .privacy-section-text p,
+    .hosting-section-text p {
+        font-size: 0.85rem;
+        line-height: 1.65;
+        text-align: left;
+        overflow-wrap: anywhere;
+    }
+
+    .privacy-section-text ul {
+        margin: 0.5rem 0 1rem 0;
+        padding-left: 0.25rem;
+        list-style-position: outside;
+    }
+
+    .privacy-section-text li {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        margin-left: 1rem;
+        margin-bottom: 0.65rem;
+    }
+
+    .hosting-section-text h3 {
+        font-size: 1rem;
+        line-height: 1.45;
+        margin-top: 1.25rem;
+    }
+
+    .legal-container a {
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+}
+
+/*********************************
+******** Mobile landscape *********
+*********************************/
+
+@media screen and (max-width: 950px) and (max-height: 600px) and (orientation: landscape) {
+
+    .legal-container {
+        width: 96%;
+        max-width: 100%;
+        margin: 15px auto;
+        padding: 1rem 0.75rem;
+        border-radius: 12px;
+    }
+
+    .legal-container h1 {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        line-height: 1.35;
+        margin-bottom: 1rem;
+        -webkit-text-stroke: 0;
+    }
+
+    .legal-section,
+    .privacy-section,
+    .hosting-section {
+        width: 100%;
+        min-width: 0;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 0.75rem;
+    }
+
+    .legal-section h2,
+    .privacy-section h2,
+    .hosting-section h2 {
+        font-size: 1.1rem;
+        line-height: 1.35;
+        padding-left: 0.5rem;
+        border-left-width: 3px;
+        margin-bottom: 0.75rem;
+    }
+
+    .legal-section-text,
+    .privacy-section-text,
+    .hosting-section-text {
+        margin-left: 0;
+    }
+
+    .legal-section-text p,
+    .privacy-section-text p,
+    .hosting-section-text p {
+        font-size: 0.82rem;
+        line-height: 1.55;
+        text-align: left;
+    }
+
+    .privacy-section-text ul {
+        margin: 0.5rem 0 0.75rem 0;
+        padding-left: 0.25rem;
+        list-style-position: outside;
+    }
+
+    .privacy-section-text li {
+        font-size: 0.82rem;
+        line-height: 1.5;
+        margin-left: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hosting-section-text h3 {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin-top: 1rem;
+    }
 }

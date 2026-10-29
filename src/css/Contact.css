@@ -502,7 +502,9 @@
     color: var(--color-gold);
     font-weight: 700;
     margin: 0;
+    text-align:center;
 }
+
 
 .contact-socials-links {
     display: flex;
@@ -858,6 +860,7 @@
     }
 
     .contact-wrap {
+        flex-direction: column;
         width: 95%;
         gap: 20px;
     }
@@ -880,6 +883,7 @@
     .contact-submit-btn {
         width: 100%;
     }
+
 
     .contact-form-group textarea {
         min-height: 140px;

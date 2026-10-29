@@ -14,12 +14,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;  
-    max-width: 1100px;
-    margin: 0 auto;
+    width: min(1400px, 88%);
+    max-width: 1400px;
+    margin: 40px auto;
     padding: 2rem 1rem;
     line-height: 1.6;
-    color: var(--color-dark-gray);
+    color: var(--color-white);
     font-family: var(--font-main);
+    background: var(--color-dark-gray);
+
+    border: 1px solid rgba(217, 135, 28, 0.2);
+    border-radius: 18px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
 }
 
 .GTC-container, 
@@ -48,7 +58,7 @@
 .gtc-section {
     min-width: 50vw;
     width: 100%;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(75, 76, 77, 0.3);
     border-radius: 1rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     padding: 2rem;
@@ -68,8 +78,8 @@
 .gtc-section h3 {
     margin-top: 1.5rem;
     font-size: 1.2rem;
-    color: var(--color-dark-gray);
-    border-bottom: 1px solid #a0a0a044;
+    color: var(--color-white);
+    border-bottom: 1px solid rgba(160, 160, 160, 0.75);
     padding-bottom: 0.3rem;
     margin-bottom: 0.5rem;
 }
@@ -97,13 +107,16 @@
     font-size: 0.95rem;
 }
 
-.gtc-consumer-note {
-    font-weight: normal;
-    font-style: normal;
+.gtc-section-text a{
+    color: #2d87ee;
     text-decoration: none;
-    margin: 20px 0;
-    padding: 10px;
-    border-left: 3px solid var(--color-green);
+    border-bottom: 1px dashed transparent;
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+.gtc-section-text a:hover {
+    color: #85b1ee;
+    border-bottom: 1px dashed #85b1ee;
 }
 
 /*********************************
@@ -113,7 +126,7 @@
     margin-top: 1rem;
     text-align: center;
     font-size: 0.95rem;
-    color:var(--color-dark-gray);
+    color:var(--color-white);
 }
 
 .gtc-link a {

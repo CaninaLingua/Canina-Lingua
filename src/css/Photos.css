@@ -8,20 +8,39 @@
     --dog-paw-svg: url("/img_Canina_Lingua/dog-paw.svg");
 }
 
-/*********************************
-************ ANIMATIONS **********
-*********************************/
+/********************************
+******** ANIMATIONS **************
+********************************/
 
 .fade-in-up {
     opacity: 0;
-    transform: translateY(100px);
-    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+    transform: translateY(60px);
+    transition:
+        opacity 0.8s ease-out,
+        transform 0.8s ease-out;
 }
 
+.fade-in-side-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition:
+        opacity 0.8s ease-out,
+        transform 0.8s ease-out;
+}
 
-.fade-in-up.visible{
+.fade-in-side-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition:
+        opacity 0.8s ease-out,
+        transform 0.8s ease-out;
+}
+
+.fade-in-up.visible,
+.fade-in-side-left.visible,
+.fade-in-side-right.visible {
     opacity: 1;
-    transform: translateX(0) translateY(0);
+    transform: translate(0, 0);
 }
 
 .zoom-animation {
@@ -31,9 +50,9 @@
     filter: blur(4px);
 
     transition:
-        opacity 1.5s ease-out,
-        transform 1.2s ease-out,
-        filter 1.2s ease-out;
+        opacity 1s ease-out,
+        transform 0.8s ease-out,
+        filter 0.8s ease-out;
 }
 
 .zoom-animation.visible {

@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import NavLink from "../components/NavLink.jsx";
 import '../css/GTC.css';
@@ -57,12 +56,12 @@ function GTC() {
                         par l’entreprise.
                     </p>
                     <p>
-                        Sauf conditions particulières conclues, les présentes Conditions
-                        Générales de Vente s’appliquent de plein droit à toutes les
+                        Sauf conditions particulières conclues, les présentes conditions
+                        générales de vente s’appliquent de plein droit à toutes les
                         prestations de services.
                     </p>
                     <p>
-                        Conformément au Code de la Consommation, les présentes conditions
+                        Conformément au Code de la consommation, les présentes conditions
                         sont mises à la disposition de tout demandeur.
                     </p>
                     <p>
@@ -110,7 +109,7 @@ function GTC() {
 
                     <h3>2. Modalités</h3>
                     <p>
-                        Les règlements seront effectués par chèque bancaire ou postal à l’ordre de <strong>"David Level - Canina Lingua"</strong>, par espèces ou par virement.
+                        Les règlements seront effectués par chèque bancaire ou postal à l’ordre de <strong>« David Level - Canina Lingua »</strong>, par espèces ou par virement.
                     </p>
 
                     <h3>3. Retard de paiement</h3>
@@ -500,22 +499,22 @@ function GTC() {
                 <h2>Article 18 – Contestation et compétence de juridiction</h2>
                 <div className="gtc-section-text">
                     <p>
-                        EN CAS DE DIFFEREND RELATIF A L’INTERPRETATION OU A
-                        L’EXCUTION DE LA PRESTATION/DE LA COMMANDE, L’ENTREPRISE
-                        ET LE CLIENT RECHERCHERONT, AVANT TOUTE ACTION CONTENTIEUSE,
-                        UN ACCORD AMIABLE ET SE COMMUNIQUERONT A CET EFFET TOUS LES
-                        ELEMENTS D’INFORMATION NECESSAIRES. A DEFAUT D’UN REGLEMENT
-                        AMIABLE DU LITIGE DANS UN DELAI MAXIMUM DE 3 MOIS, SERONT
-                        SEULS COMPETENTS EN CAS DE LITIGE DE TOUTE NATURE, LES
-                        TRIBUNAUX DE BOULOGNE-SUR-MER.
+                        En cas de différend relatif à l’interprétation ou à
+                        l’exécution de la prestation/de la commande, l’entreprise
+                        et le client rechercheront, avant toute action contentieuse,
+                        un accord amiable et se communiqueront à cet effet tous les
+                        éléments d’information nécessaires. À défaut d’un règlement
+                        amiable du litige dans un délai maximum de 3 mois, seront
+                        seuls compétents en cas de litige de toute nature, les
+                        tribunaux de Boulogne-sur-Mer.
                     </p>
                     <p>
-                        CETTE CLAUSE S’APPLIQUE MEME EN CAS DE REFERE, DE DEMANDE
-                        INCIDENTE OU DE PLURALITE DE DEFENDEURS OU D’APPEL EN
-                        GARANTIE, ET QUELQUES SOIENT LE MODE ET LES MODALITES DE
-                        PAIEMENT, SANS QUE LES CLAUSES ATTRIBUTIVES DE JURIDICTION
-                        POUVANT EXISTER SUR LES DOCUMENTS DES CLIENTS PUISSENT
-                        METTRE OBSTACLE A L’APPLICATION DE LA PRESENTE CLAUSE.
+                        Cette clause s’applique même en cas de référé, de demande
+                        incidente ou de pluralité de défendeurs ou d’appel en
+                        garantie, et quelles que soient les modalités de paiement,
+                        sans que les clauses attributives de juridiction pouvant
+                        exister sur les documents des clients puissent faire
+                        obstacle à l’application de la présente clause.
                     </p>
                 </div>
             </div>

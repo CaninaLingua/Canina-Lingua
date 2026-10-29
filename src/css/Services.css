@@ -12,7 +12,6 @@
     --font-main: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --dog-paw-svg: url("/img_Canina_Lingua/dog-paw.svg");
 }
-
 /********************************
 ******** ANIMATIONS **************
 ********************************/
@@ -21,24 +20,24 @@
     opacity: 0;
     transform: translateY(60px);
     transition:
-        opacity 1.2s ease-out,
-        transform 1.2s ease-out;
+        opacity 0.8s ease-out,
+        transform 0.8s ease-out;
 }
 
 .fade-in-side-left {
     opacity: 0;
     transform: translateX(-60px);
     transition:
-        opacity 1.2s ease-out,
-        transform 1.2s ease-out;
+        opacity 0.8s ease-out,
+        transform 0.8s ease-out;
 }
 
 .fade-in-side-right {
     opacity: 0;
     transform: translateX(60px);
     transition:
-        opacity 1.2s ease-out,
-        transform 1.2s ease-out;
+        opacity 0.8s ease-out,
+        transform 0.8s ease-out;
 }
 
 .fade-in-up.visible,
@@ -46,6 +45,24 @@
 .fade-in-side-right.visible {
     opacity: 1;
     transform: translate(0, 0);
+}
+
+.zoom-animation {
+    width: 100%;
+    opacity: 0;
+    transform: scale(0.1);
+    filter: blur(4px);
+
+    transition:
+        opacity 1s ease-out,
+        transform 0.8s ease-out,
+        filter 0.8s ease-out;
+}
+
+.zoom-animation.visible {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
 }
 
 /********************************

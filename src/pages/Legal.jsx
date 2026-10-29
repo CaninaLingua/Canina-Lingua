@@ -89,10 +89,10 @@ function Legal() {
                     </p>
 
                     <h3>Conception et développement du site :</h3>
-                    <p><strong>WebUniv</strong> - Jovany Hochart</p>
+                    <p><strong><a href="https://www.webuniv.fr/">WebUniv</a></strong> - Jovany Hochart</p>
                     <p><strong>Liens de contact :</strong></p>
                     <p>
-                        <a href="mailto:webuniv.pro@gmail.com">Envoyer un mail</a> | <a href="https://www.webuniv.fr/contact">Autre contact</a>
+                        <a href="mailto:webuniv.pro@gmail.com">Envoyer un mail à WebUniv</a> | <a href="https://www.webuniv.fr/contact">Contacter via le site de WebUniv</a>
                     </p>
                 </div>
             </div>

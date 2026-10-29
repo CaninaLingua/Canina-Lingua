@@ -1,4 +1,15 @@
+
 import React, { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faGraduationCap,
+    faAward,
+    faBookOpen,
+    faHeart,
+    faBone,
+    faComments
+} from "@fortawesome/free-solid-svg-icons";
+
 import useRevealOnScroll from "../hooks/useRevealOnScroll";
 import NavLink from "../components/NavLink.jsx";
 
@@ -159,7 +170,10 @@ function About() {
                     <div className="about-journey-content">
                         <div className="about-journey-item fade-in-side-left">
                             <div className="about-journey-marker">
-                                <span>01</span>
+                                <FontAwesomeIcon
+                                    icon={faGraduationCap}
+                                    aria-hidden="true"
+                                />
                             </div>
 
                             <div className="about-journey-text">
@@ -196,7 +210,10 @@ function About() {
 
                         <div className="about-journey-item fade-in-side-right">
                             <div className="about-journey-marker">
-                                <span>02</span>
+                                <FontAwesomeIcon
+                                    icon={faAward}
+                                    aria-hidden="true"
+                                />
                             </div>
 
                             <div className="about-journey-text">
@@ -216,7 +233,10 @@ function About() {
 
                         <div className="about-journey-item fade-in-side-left">
                             <div className="about-journey-marker">
-                                <span>03</span>
+                                <FontAwesomeIcon
+                                    icon={faBookOpen}
+                                    aria-hidden="true"
+                                />
                             </div>
 
                             <div className="about-journey-text">
@@ -337,8 +357,11 @@ function About() {
                     <div className="about-values-content">
                         <div className="about-values-grid">
                             <div className="about-value-card fade-in-up">
-                                <div className="about-value-number">
-                                    01
+                                <div className="about-value-icon">
+                                    <FontAwesomeIcon
+                                        icon={faHeart}
+                                        aria-hidden="true"
+                                    />
                                 </div>
 
                                 <h3>
@@ -356,8 +379,11 @@ function About() {
                             </div>
 
                             <div className="about-value-card fade-in-up">
-                                <div className="about-value-number">
-                                    02
+                                <div className="about-value-icon">
+                                    <FontAwesomeIcon
+                                        icon={faBone}
+                                        aria-hidden="true"
+                                    />
                                 </div>
 
                                 <h3>
@@ -376,8 +402,11 @@ function About() {
                             </div>
 
                             <div className="about-value-card fade-in-up">
-                                <div className="about-value-number">
-                                    03
+                                <div className="about-value-icon">
+                                    <FontAwesomeIcon
+                                        icon={faComments}
+                                        aria-hidden="true"
+                                    />
                                 </div>
 
                                 <h3>

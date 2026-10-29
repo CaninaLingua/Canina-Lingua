@@ -497,40 +497,7 @@
     background: rgba(217, 135, 28, 0.45);
 }
 
-/* Circular link leading to the next section of the page. */
-.home-hero-scroll {
-    position: absolute;
-    bottom: 19px;
-    left: 50%;
-    z-index: 2;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 39px;
-    height: 39px;
-
-    color: var(--color-gold);
-    background: rgba(24, 26, 27, 0.7);
-
-    border: 1px solid rgba(217, 135, 28, 0.4);
-    border-radius: 50%;
-
-    text-decoration: none;
-    transform: translateX(-50%);
-
-    transition:
-        color 0.3s ease,
-        background-color 0.3s ease,
-        border-color 0.3s ease;
-}
-
-.home-hero-scroll:hover {
-    color: var(--color-dark-gray);
-    background: var(--color-gold);
-    border-color: var(--color-gold);
-}
 
 /********************************
 ******** MAIN CONTENT PANEL *****
@@ -1773,13 +1740,6 @@
         height: 1px;
     }
 
-    .home-hero-scroll {
-        bottom: 14px;
-        width: 34px;
-        height: 34px;
-        font-size: 0.8rem;
-    }
-
     /* Main content panel */
     .home-content-panel {
         width: 94%;
@@ -2480,6 +2440,10 @@
     .home-section-title {
         font-size: clamp(1.65rem, 3.3vw, 2.15rem);
         text-align:center;
+    }
+
+    .home-intro-photo-frame img{
+        object-position: 80%;
     }
 
     .home-intro-photo-label {

@@ -467,15 +467,20 @@
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    width: 39px;
-    height: 39px;
+    width: 42px;
+    height: 42px;
 
     color: var(--color-dark-gray);
     background: var(--color-green);
+    border: 1px solid rgba(217, 135, 28, 0.25);
     border-radius: 50%;
 
-    font-size: 0.8rem;
-    font-weight: 800;
+    font-size: 1.15rem;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 .about-journey-text {
@@ -688,29 +693,32 @@
     border-radius: 17px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 
-    transition:
-        translate 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
 }
 
-.about-value-card:hover {
-    translate: 0 -5px;
-    border-color: var(--color-gold);
-    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
-}
+
 
 .about-value-card:last-child:nth-child(odd) {
     grid-column: 1 / -1;
 }
 
-.about-value-number {
+.about-value-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
     margin-bottom: 22px;
+
     color: var(--color-green);
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1;
+    background: rgba(91, 145, 78, 0.12);
+    border: 1px solid rgba(91, 145, 78, 0.4);
+    border-radius: 14px;
+
+    font-size: 1.45rem;
+
 }
+
+
 
 .about-value-card h3 {
     margin: 0 0 15px;
@@ -730,7 +738,7 @@
     min-width: 0;
     min-height: 0;
     aspect-ratio: 3 / 4;
-    max-height: 550px;
+    max-height: 100%;
 
     margin: 0;
     overflow: hidden;
@@ -1534,6 +1542,375 @@
 }
 
 /********************************
+******** TABLET LANDSCAPE ********
+********************************/
+
+@media screen and (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
+
+    /******** HERO ********/
+
+    .about-hero-banner {
+        min-height: 470px;
+        padding: 30px 20px;
+    }
+
+    .about-hero-banner-card {
+        width: min(850px, 92%);
+        min-height: auto;
+        padding: 30px 35px;
+    }
+
+    .about-hero-banner-title {
+        font-size: clamp(2rem, 3.5vw, 2.7rem);
+        line-height: 1.25;
+        letter-spacing: 1.5px;
+    }
+
+    .about-hero-banner-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    .about-hero-banner-stats {
+        gap: 20px;
+        padding-top: 15px;
+    }
+
+    .about-stat-value {
+        font-size: 1.15rem;
+    }
+
+    .about-stat-label {
+        font-size: 0.7rem;
+    }
+
+    .about-hero-paw-bg {
+        width: 210px;
+        height: 210px;
+    }
+
+    /******** MAIN CONTENT ********/
+
+    .about-section {
+        width: 94%;
+        padding: clamp(28px, 3.5vw, 45px);
+        margin-top: 25px;
+    }
+
+    .about-eyebrow {
+        font-size: 0.75rem;
+        letter-spacing: 1.8px;
+    }
+
+    .about-main-title,
+    .about-story-copy h2,
+    .about-journey-heading h2,
+    .about-philosophy-feature-copy h2,
+    .about-group-heading h2,
+    .about-field-copy h2,
+    .about-support-content h2,
+    .about-area-content h2,
+    .about-contact-cta h2 {
+        font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+        line-height: 1.3;
+    }
+
+    /******** STORY ********/
+
+    .about-story-intro {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 80px;
+    }
+
+    .about-story-copy,
+    .about-story-photo-wrap {
+        min-width: 0;
+        grid-row: auto;
+    }
+
+    .about-story-copy > p {
+        font-size: 0.9rem;
+        line-height: 1.8;
+    }
+
+    .about-story-photo-frame {
+        aspect-ratio: 4 / 3;
+    }
+
+    .about-photo-caption {
+        margin-left: 0;
+        font-size: 0.75rem;
+    }
+
+    /******** SECTION SPACING ********/
+
+    .about-journey,
+    .about-values,
+    .about-philosophy-feature,
+    .about-field,
+    .about-support {
+        margin-bottom: 80px;
+    }
+
+    .about-journey-heading {
+        margin-bottom: 30px;
+    }
+
+    .about-journey-heading > p,
+    .about-group-heading > p {
+        font-size: 0.93rem;
+        line-height: 1.75;
+    }
+
+    /******** JOURNEY ********/
+
+    .about-journey-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .about-journey-item {
+        gap: 12px;
+        padding: 22px 18px;
+    }
+
+    .about-journey-marker {
+        width: 34px;
+        height: 34px;
+    }
+
+    .about-journey-text h3 {
+        font-size: 1rem;
+    }
+
+    .about-journey-text p {
+        font-size: 0.85rem;
+        line-height: 1.75;
+    }
+
+    .about-journey-item:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+
+    .about-diploma {
+        gap: 15px;
+        padding: 20px;
+    }
+
+    /******** PHILOSOPHY ********/
+
+    .about-philosophy-feature {
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    }
+
+    .about-philosophy-feature-photo {
+        min-height: 0;
+        height: 100%;
+    }
+
+    .about-philosophy-feature-photo img {
+        min-height: 0;
+        height: 100%;
+        object-position: center;
+    }
+
+    .about-philosophy-feature-copy {
+        padding: clamp(24px, 3vw, 35px);
+    }
+
+    .about-philosophy-feature-copy h2 {
+        font-size: clamp(1.4rem, 2vw, 1.8rem);
+    }
+
+    .about-philosophy-feature-copy > p {
+        font-size: 0.88rem;
+        line-height: 1.75;
+    }
+
+    .about-philosophy-feature-quote {
+        font-size: 4rem;
+    }
+
+    /******** VALUES ********/
+
+    .about-values-content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .about-values-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .about-value-card {
+        padding: 24px 20px;
+    }
+
+    .about-value-card h3 {
+        font-size: 1.08rem;
+    }
+
+    .about-value-card p {
+        font-size: 0.87rem;
+        line-height: 1.75;
+    }
+
+    .about-value-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+
+    .about-values-photo {
+        order: -1;
+        width: min(100%, 280px);
+        justify-self: center;
+        aspect-ratio: 3 / 4;
+        max-height: 380px;
+    }
+
+    /******** FIELD ********/
+
+    .about-field {
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        align-items: center;
+        gap: 30px;
+    }
+
+    .about-field-photo {
+        width: min(100%, 300px);
+        aspect-ratio: 3 / 4;
+    }
+
+    .about-field-copy > p {
+        font-size: 0.9rem;
+        line-height: 1.8;
+    }
+
+    .about-field-note {
+        padding: 15px;
+    }
+
+    /******** SUPPORT ********/
+
+    .about-support {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        align-items: center;
+        gap: 30px;
+    }
+
+    .about-support-content > p {
+        font-size: 0.9rem;
+        line-height: 1.8;
+    }
+
+    .about-support-list {
+        gap: 16px;
+        margin: 22px 0;
+    }
+
+    .about-support-item {
+        gap: 11px;
+    }
+
+    .about-support-item strong {
+        font-size: 0.9rem;
+    }
+
+    .about-support-item p {
+        font-size: 0.83rem;
+        line-height: 1.7;
+    }
+
+    .about-support-photo {
+        aspect-ratio: 4 / 3;
+    }
+
+    /******** INTERVENTION AREA ********/
+
+    .about-area {
+        grid-template-columns: minmax(0, 1fr) minmax(220px, 0.8fr);
+        gap: 22px;
+        padding: 25px;
+        margin-bottom: 70px;
+    }
+
+    .about-area-distance {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        padding: 18px 22px;
+    }
+
+    .about-area-distance-number {
+        flex-shrink: 0;
+        font-size: 2.8rem;
+    }
+
+    .about-area-distance-info {
+        min-width: 0;
+        padding: 0 0 0 20px;
+        border-top: none;
+        border-left: 1px solid rgba(217, 135, 28, 0.3);
+    }
+
+    .about-area-content h2 {
+        font-size: clamp(1.5rem, 2.3vw, 2rem);
+    }
+
+    .about-area-content > p {
+        font-size: 0.9rem;
+        line-height: 1.8;
+    }
+
+    .about-area-places {
+        gap: 7px;
+    }
+
+    .about-area-places span {
+        padding: 6px 9px;
+        font-size: 0.72rem;
+    }
+
+    .about-area-photo {
+        grid-column: auto;
+        width: 100%;
+        max-height: 260px;
+        aspect-ratio: 4 / 3;
+        align-self: center;
+    }
+
+    /******** FINAL CTA ********/
+
+    .about-contact-cta {
+        padding: 40px 30px;
+    }
+
+    .about-contact-cta > p {
+        font-size: 0.93rem;
+        line-height: 1.8;
+    }
+
+    #about-services-contact,
+    #about-main-contact {
+        max-width: 100%;
+    }
+}
+
+/********************************
+*** TABLET LANDSCAPE ******
+********************************/
+
+@media (min-width: 768px) and (max-width: 1500px) and (min-height: 600px) and (orientation: landscape) {
+    .about-philosophy-feature-photo img{
+        object-position: 80%;
+    }
+}
+
+/********************************
 ******** MOBILE PORTRAIT *********
 ********************************/
 
@@ -1734,9 +2111,11 @@
         grid-column: auto;
     }
 
-    .about-value-number {
+    .about-value-icon {
+        width: 46px;
+        height: 46px;
         margin-bottom: 15px;
-        font-size: 2rem;
+        font-size: 1.2rem;
     }
 
     .about-value-card h3 {
@@ -2141,7 +2520,7 @@
         width: 100%;
         aspect-ratio: 16 / 9;
         min-height: 0;
-        max-height: 240px;
+        max-height: 100%;
     }
 
     /******** CONTACT ********/

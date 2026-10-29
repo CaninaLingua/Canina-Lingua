@@ -133,15 +133,6 @@ function Home() {
                         </div>
                     </div>
                 </div>
-
-                {/* Anchor link to the presentation section below the hero. */}
-                <a
-                    href="#home-presentation"
-                    className="home-hero-scroll"
-                    aria-label="Découvrir la suite de la page"
-                >
-                    <FontAwesomeIcon icon={faArrowDown} />
-                </a>
             </div>
 
             {/* =========================

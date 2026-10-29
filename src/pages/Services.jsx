@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import useRevealOnScroll from "../hooks/useRevealOnScroll";
 import NavLink from "../components/NavLink.jsx";

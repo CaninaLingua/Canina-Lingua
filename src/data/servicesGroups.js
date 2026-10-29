@@ -31,7 +31,7 @@ const servicesGroups = [
                     "Aborder les premières difficultés et prévenir certaines problématiques.",
                     "Commencer à apprendre le langage du chien dans le cadre du cursus « Chien première langue »."
                 ],
-                cta: "Réserver mon bilan chiot"
+                cta: "Parler du bilan de mon chiot"
             },
             {
                 id: "bilan-comportemental",
@@ -49,7 +49,7 @@ const servicesGroups = [
                     "Découvrir les premiers conseils pour mieux accompagner votre chien.",
                     "Mieux comprendre ses signaux de communication et les difficultés rencontrées au quotidien."
                 ],
-                cta: "Réserver mon bilan comportemental"
+                cta: "Échanger sur le bilan comportemental"
             }
         ]
     },
@@ -77,7 +77,7 @@ const servicesGroups = [
                     "Accompagner certaines difficultés comportementales dans une démarche de rééducation.",
                     "Prendre en compte les émotions de votre chien et ses signaux de communication."
                 ],
-                cta: "Réserver une séance d'éducation"
+                cta: "Parler de mes objectifs éducatifs"
             },
             {
                 id: "forfait-5-seances",
@@ -95,7 +95,7 @@ const servicesGroups = [
                     "Faire évoluer les objectifs au fil des séances et des progrès observés.",
                     "Construire une relation plus harmonieuse en tenant compte des besoins et des émotions de votre chien."
                 ],
-                cta: "Choisir le forfait 5 séances"
+                cta: "Discuter du forfait 5 séances"
             }
         ]
     },
@@ -123,7 +123,7 @@ const servicesGroups = [
                     "Mieux comprendre les comportements canins et les réactions de votre compagnon.",
                     "Partager un moment de balade dans un environnement naturel."
                 ],
-                cta: "Participer à une balade sociale"
+                cta: "Me renseigner sur la balade sociale"
             },
             {
                 id: "balade-pedagogique",
@@ -141,7 +141,7 @@ const servicesGroups = [
                     "Mieux comprendre les réactions, les besoins et les signaux de communication de votre chien.",
                     "Progresser ensemble sur les apprentissages utiles au quotidien."
                 ],
-                cta: "Réserver une balade pédagogique"
+                cta: "Découvrir la balade pédagogique"
             },
             {
                 id: "mantrailing",

@@ -556,7 +556,7 @@ function About() {
                         </div>
 
                         <NavLink
-                            to="/services"
+                            to="/prestations-tarifs"
                             content="Découvrir mes prestations"
                             id="about-services-contact"
                         />

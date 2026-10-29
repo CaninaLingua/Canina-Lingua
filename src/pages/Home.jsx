@@ -36,12 +36,13 @@ import dogsWalking from "../assets/img/img_chiens_accueil/Canina_Lingua_chien_ac
 
 import "../css/Home.css";
 
+// home page
 function Home() {
     // Initialize scroll-reveal animations for the page elements.
     useRevealOnScroll(
         ".fade-in-up, .fade-in-side-left, .fade-in-side-right");
 
-    // Set the browser tab title when the home page is mounted.
+    // change title
     useEffect(() => {
         document.title =
             "Canina Lingua - Éducateur comportementaliste canin";
@@ -57,7 +58,7 @@ function Home() {
                 <img
                     className="home-hero-image"
                     src={davidWithDogPhoto1}
-                    alt=""
+                    alt="Canina Lingua - David Level avec un chien"
                     aria-hidden="true"
                     fetchPriority="high"
                 />
@@ -160,7 +161,7 @@ function Home() {
                         <div className="home-intro-photo-frame">
                             <img
                                 src={davidWithDogPhoto2}
-                                alt="David Level avec un chien"
+                                alt="Canina Lingua - David Level avec un chien sur la plage"
                                 loading="lazy"
                             />
 
@@ -561,7 +562,7 @@ function Home() {
                             <div className="home-map-image-wrap">
                                 <img
                                     src={zoneChalandise}
-                                    alt="Carte de la zone d’intervention de Canina Lingua autour de Boulogne-sur-Mer. La zone orange représente un rayon de 40 km et la zone verte un rayon allant jusqu’à 60 km avec frais supplémentaires."
+                                    alt="Canina Lingua - Zone de chalandise Boulogne-sur-Mer"
                                     loading="lazy"
                                 />
                             </div>
@@ -732,7 +733,7 @@ function Home() {
                         <div className="home-homevisit-photo">
                             <img
                                 src={dogsWalking}
-                                alt="David Level en situation de travail avec un chien"
+                                alt="Canina Lingua - Chiens balade environnement réel"
                                 loading="lazy"
                             />
 

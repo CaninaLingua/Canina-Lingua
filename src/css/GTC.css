@@ -132,8 +132,8 @@
 *********RESPONSIVE*********
 ***************************/
 
-/* --- Tablettes  --- */
-@media screen and (max-width: 768px) {
+/* Tablette - Portrait */
+@media (min-width: 768px) and (max-width: 1100px) and (orientation: portrait) {
     .GTC-container {
         padding: 1.5rem 1rem;
     }
@@ -162,8 +162,8 @@
     }
 }
 
-/* --- Mobiles --- */
-@media screen and (max-width: 480px) {
+/* Mobile - Portrait */
+@media (max-width: 767px) and (orientation: portrait) {
     .GTC-container {
         padding: 1.5rem; 
     }

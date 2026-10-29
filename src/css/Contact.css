@@ -39,6 +39,19 @@
     transform: translateX(0) translateY(0);
 }
 
+/* Alert entrance animation */
+@keyframes contact-alert-appear {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /*********************************
 ********* CONTACT CONTAINER ******
 *********************************/
@@ -710,27 +723,13 @@
     box-shadow: 0 0 8px rgba(200, 108, 90, 0.35);
 }
 
-/* Alert entrance animation */
-
-@keyframes contact-alert-appear {
-    from {
-        opacity: 0;
-        transform: translateY(5px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 /*********************************
 ****** RESPONSIVE RULES **********
 *********************************/
 
 /* Tablet Portrait */
-
-@media (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1100px) and (orientation: portrait) {
     .contact-hero-banner {
         height: 500px;
     }
@@ -765,8 +764,7 @@
 }
 
 /* Tablet Landscape */
-
-@media (max-width: 1500px) and (orientation: landscape) {
+@media (min-width: 768px) and (max-width: 1500px) and (min-height: 600px) and (orientation: landscape) {
     .contact-wrap {
         width: 90vw;
         gap: 25px;
@@ -783,8 +781,7 @@
 }
 
 /* Mobile Portrait */
-
-@media (max-width: 599px) {
+@media (max-width: 767px) and (orientation: portrait) {
     .contact-hero-banner {
         height: auto;
         min-height: 420px;
@@ -870,8 +867,7 @@
 }
 
 /* Mobile Landscape */
-
-@media (max-width: 899px) and (orientation: landscape) {
+@media (max-width: 950px) and (max-height: 599px) and (orientation: landscape) {
     .contact-hero-banner {
         height: 380px;
         margin-bottom: 25px;

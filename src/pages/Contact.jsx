@@ -337,7 +337,7 @@ function Contact() {
                         <p className="contact-privacy-text">
                             En soumettant ce formulaire, vous acceptez que les informations saisies soient exploitées dans le cadre de la demande de contact et de la relation professionnelle qui peut en découler. Pour en savoir plus, consultez notre{' '}
                             <NavLink
-                                to="/legal"
+                                to="/mentions-legales"
                                 content="Politique de confidentialité"
                             />.
                         </p>

@@ -1646,228 +1646,22 @@
     mask-size: contain;
 }
 
-/********************************
-******** TABLETS ****************
-********************************/
-
-/* General tablet layouts, including landscape orientation. */
-@media (min-width: 600px) and (max-width: 1024px) {
-    .home-hero {
-        min-height: 650px;
-        padding: 50px 4%;
-    }
-
-    .home-hero-image {
-        object-position: 63% center;
-    }
-
-    .home-hero-card-reveal {
-        width: min(850px, 95%);
-    }
-
-    .home-hero-card {
-        padding: 38px 35px;
-    }
-
-    .home-hero-title {
-        font-size: clamp(2.3rem, 5.2vw, 3.4rem);
-    }
-
-    .home-content-panel {
-        width: 92%;
-        margin-top: 28px;
-        padding: 38px 30px;
-    }
-
-    .home-section {
-        margin-bottom: 80px;
-    }
-
-    .home-intro,
-    .home-area,
-    .home-homevisit {
-        gap: 30px;
-    }
-
-    .home-section-title {
-        font-size: clamp(1.65rem, 3.3vw, 2.15rem);
-    }
-
-    .home-intro-photo-label {
-        width: 95%;
-        padding: 13px;
-    }
-
-    .home-intro-photo-label small {
-        font-size: 0.67rem;
-    }
-
-    .home-services-grid {
-        gap: 15px;
-    }
-
-    .home-service-card {
-        padding: 23px 18px;
-    }
-
-    .home-service-card h3 {
-        font-size: 1rem;
-    }
-
-    .home-service-card > p {
-        font-size: 0.82rem;
-    }
-
-    .home-service-price {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .home-service-price > strong {
-        font-size: 1.55rem;
-    }
-
-    .home-services-cta {
-        align-items: flex-start;
-        gap: 18px;
-        padding: 20px;
-    }
-
-    .home-ethics-grid {
-        gap: 17px;
-    }
-
-    .home-ethics-content {
-        padding: 22px 20px;
-    }
-
-    .home-ethics-content h3 {
-        font-size: 1.08rem;
-    }
-
-    .home-ethics-content > p {
-        font-size: 0.83rem;
-    }
-}
 
 /********************************
-****** PORTRAIT TABLETS *********
+******** RESPONSIVE *************
 ********************************/
-
-/* Adjust the layout for tablets in portrait orientation. */
-@media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
-    .home-hero {
-        min-height: 670px;
-        padding: 45px 4%;
-    }
-
-    .home-hero-image {
-        object-position: 65% center;
-    }
-
-    .home-hero-card-reveal {
-        width: 94%;
-    }
-
-    .home-hero-card {
-        padding: 38px 30px;
-    }
-
-    .home-hero-title {
-        font-size: clamp(2.2rem, 5.5vw, 3.2rem);
-    }
-
-    .home-hero-credentials {
-        gap: 15px;
-    }
-
-    .home-hero-credential {
-        font-size: 0.74rem;
-    }
-
-    .home-content-panel {
-        width: 92%;
-        padding: 35px 28px;
-    }
-
-    /* Stack the main editorial sections vertically. */
-    .home-intro,
-    .home-area,
-    .home-homevisit {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 35px;
-    }
-
-    .home-intro-visual,
-    .home-homevisit-visual {
-        width: min(100%, 580px);
-        margin: 0 auto;
-    }
-
-    .home-intro-photo-frame {
-        aspect-ratio: 5 / 4;
-        max-height: 490px;
-    }
-
-    .home-intro-copy,
-    .home-area-copy,
-    .home-homevisit-copy {
-        max-width: 760px;
-    }
-
-    /* Display one service card per row on portrait tablets. */
-    .home-services-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 16px;
-    }
-
-    .home-service-card {
-        padding: 24px;
-    }
-
-    .home-service-card-header {
-        margin-bottom: 17px;
-    }
-
-    .home-service-price {
-        align-items: center;
-        flex-direction: row;
-    }
-
-    .home-services-cta {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    /* Stack the ethics cards vertically. */
-    .home-ethics-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 22px;
-    }
-
-    .home-ethics-image {
-        aspect-ratio: 16 / 8;
-    }
-
-    .home-homevisit-photo {
-        aspect-ratio: 16 / 9;
-    }
-
-    .home-contact-cta {
-        min-height: 300px;
-    }
-}
 
 /********************************
-******** PORTRAIT PHONES ********
+******** MOBILE PORTRAIT ********
 ********************************/
 
-/* Compact layout for phones held in portrait orientation. */
-@media (max-width: 599px) and (orientation: portrait) {
+@media (max-width: 767px) and (orientation: portrait) {
+
     .home-container {
         padding-bottom: 25px;
     }
 
+    /* Hero */
     .home-hero {
         min-height: 700px;
         min-height: min(770px, 92svh);
@@ -1878,7 +1672,6 @@
         object-position: 40% center;
     }
 
-    /* Use a stronger gradient to maintain contrast on narrow screens. */
     .home-hero-overlay {
         background: linear-gradient(
             0deg,
@@ -1923,7 +1716,6 @@
         line-height: 1.8;
     }
 
-    /* Stack hero buttons and make them fill the available width. */
     .home-hero-actions {
         flex-direction: column;
         align-items: stretch;
@@ -1937,7 +1729,6 @@
         font-size: 0.9rem;
     }
 
-    /* Stack the hero credentials and replace the vertical divider. */
     .home-hero-credentials {
         flex-direction: column;
         align-items: flex-start;
@@ -1964,7 +1755,7 @@
         font-size: 0.8rem;
     }
 
-    /* Reduce the main panel's width and padding on small screens. */
+    /* Main content panel */
     .home-content-panel {
         width: 94%;
         margin-top: 20px;
@@ -1977,20 +1768,26 @@
     }
 
     .home-eyebrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
         gap: 8px;
         margin-bottom: 10px;
         font-size: 0.69rem;
         letter-spacing: 1.4px;
+        text-align: center;
     }
 
     .home-section-title {
+        width: 100%;
         margin-bottom: 17px;
         font-size: clamp(1.5rem, 6.4vw, 2rem);
         line-height: 1.35;
         letter-spacing: 0.1px;
+        text-align: center;
     }
 
-    /* Slightly reduce paragraph sizes while preserving justification. */
     .home-intro-copy > p,
     .home-area-copy > p,
     .home-homevisit-copy > p,
@@ -1999,7 +1796,7 @@
         line-height: 1.8;
     }
 
-    /* Stack the introduction image above the text. */
+    /* Introduction */
     .home-intro {
         grid-template-columns: minmax(0, 1fr);
         gap: 32px;
@@ -2042,15 +1839,12 @@
         font-size: 0.79rem;
     }
 
+    /* Section headings */
     .home-section-heading {
         margin-bottom: 27px;
     }
 
-    .home-section-heading-centered .home-eyebrow {
-        justify-content: center;
-    }
-
-    /* Use one column for service cards on phones. */
+    /* Services */
     .home-services-grid {
         grid-template-columns: minmax(0, 1fr);
         gap: 15px;
@@ -2103,7 +1897,6 @@
         font-size: 0.73rem;
     }
 
-    /* Stack the supporting service text above its button. */
     .home-services-cta {
         align-items: stretch;
         flex-direction: column;
@@ -2117,7 +1910,7 @@
         line-height: 1.8;
     }
 
-    /* Stack service area content and map vertically. */
+    /* Service area */
     .home-area {
         grid-template-columns: minmax(0, 1fr);
         gap: 28px;
@@ -2155,12 +1948,10 @@
         letter-spacing: 0.8px;
     }
 
-    /* Let the map use the full available width on phones. */
     .home-map-image-wrap > img {
         max-height: none;
     }
 
-    /* Stack the travel-zone legend items on narrow screens. */
     .home-map-legend {
         grid-template-columns: minmax(0, 1fr);
         gap: 8px;
@@ -2185,7 +1976,7 @@
         font-size: 0.71rem;
     }
 
-    /* Stack the ethics cards vertically on phones. */
+    /* Ethics */
     .home-ethics-grid {
         grid-template-columns: minmax(0, 1fr);
         gap: 17px;
@@ -2234,7 +2025,7 @@
         line-height: 1.75;
     }
 
-    /* Stack the home-visit image and explanatory text. */
+    /* Home visits */
     .home-homevisit {
         grid-template-columns: minmax(0, 1fr);
         gap: 31px;
@@ -2268,7 +2059,7 @@
         line-height: 1.7;
     }
 
-    /* Reduce the contact section's padding and heading size. */
+    /* Contact CTA */
     .home-contact-cta {
         padding: 35px 20px;
         border-radius: 16px;
@@ -2295,11 +2086,13 @@
 }
 
 /********************************
-****** LANDSCAPE PHONES *********
+******** MOBILE LANDSCAPE *******
 ********************************/
 
-/* Adapt the layout for phones held in landscape orientation. */
-@media (max-width: 899px) and (orientation: landscape) {
+@media (max-width: 950px)
+    and (max-height: 599px)
+    and (orientation: landscape) {
+
     .home-hero {
         min-height: 570px;
         padding: 35px 4%;
@@ -2342,7 +2135,6 @@
         margin-bottom: 58px;
     }
 
-    /* Stack the main content sections vertically on narrow landscape screens. */
     .home-intro,
     .home-area,
     .home-homevisit {
@@ -2361,7 +2153,6 @@
         max-height: 370px;
     }
 
-    /* Use one service card per row on landscape phones. */
     .home-services-grid {
         grid-template-columns: minmax(0, 1fr);
         gap: 13px;
@@ -2389,7 +2180,6 @@
         flex-direction: column;
     }
 
-    /* Stack ethics cards in the available vertical layout. */
     .home-ethics-grid {
         grid-template-columns: minmax(0, 1fr);
         gap: 17px;
@@ -2411,5 +2201,317 @@
     .home-cta-paw {
         width: 200px;
         height: 200px;
+    }
+
+    .home-eyebrow {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .home-section-title {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Center home buttons horizontally in mobile landscape. */
+    .home-container .home-button {
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/********************************
+******** TABLET PORTRAIT ********
+********************************/
+
+@media (min-width: 768px)
+    and (max-width: 1100px)
+    and (orientation: portrait) {
+
+    /* General tablet adjustments */
+    .home-hero {
+        min-height: 670px;
+        padding: 45px 4%;
+    }
+
+    .home-hero-image {
+        object-position: 65% center;
+    }
+
+    .home-hero-card-reveal {
+        width: 94%;
+    }
+
+    .home-hero-card {
+        padding: 38px 30px;
+    }
+
+    .home-hero-title {
+        font-size: clamp(2.2rem, 5.5vw, 3.2rem);
+    }
+
+    .home-hero-credentials {
+        gap: 15px;
+    }
+
+    .home-hero-credential {
+        font-size: 0.74rem;
+    }
+
+    .home-content-panel {
+        width: 92%;
+        margin-top: 28px;
+        padding: 35px 28px;
+    }
+
+    .home-section {
+        margin-bottom: 80px;
+    }
+
+    .home-eyebrow {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .home-section-title {
+        font-size: clamp(1.65rem, 3.3vw, 2.15rem);
+        text-align:center;
+    }
+
+    .home-intro-photo-label {
+        width: 95%;
+        padding: 13px;
+    }
+
+    .home-intro-photo-label small {
+        font-size: 0.67rem;
+    }
+
+    /* Stack main editorial sections */
+    .home-intro,
+    .home-area,
+    .home-homevisit {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+    }
+
+    .home-intro-visual,
+    .home-homevisit-visual {
+        width: min(100%, 580px);
+        margin: 0 auto;
+    }
+
+    .home-intro-photo-frame {
+        aspect-ratio: 5 / 4;
+        max-height: 490px;
+    }
+
+    .home-intro-copy,
+    .home-area-copy,
+    .home-homevisit-copy {
+        max-width: 760px;
+    }
+
+    /* Services */
+    .home-services-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .home-service-card {
+        padding: 24px;
+    }
+
+    .home-service-card-header {
+        margin-bottom: 17px;
+    }
+
+    .home-service-card h3 {
+        font-size: 1rem;
+    }
+
+    .home-service-card > p {
+        font-size: 0.82rem;
+    }
+
+    .home-service-price {
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .home-service-price > strong {
+        font-size: 1.55rem;
+    }
+
+    .home-services-cta {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px;
+    }
+
+    /* Ethics */
+    .home-ethics-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .home-ethics-image {
+        aspect-ratio: 16 / 8;
+    }
+
+    .home-ethics-content {
+        padding: 22px 20px;
+    }
+
+    .home-ethics-content h3 {
+        font-size: 1.08rem;
+    }
+
+    .home-ethics-content > p {
+        font-size: 0.83rem;
+    }
+
+    /* Home visits and contact */
+    .home-homevisit-photo {
+        aspect-ratio: 16 / 9;
+    }
+
+    .home-contact-cta {
+        min-height: 300px;
+    }
+
+    /* Center home buttons horizontally in tablet portrait. */
+    .home-container .home-button {
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/********************************
+******** TABLET LANDSCAPE *******
+********************************/
+
+@media (min-width: 768px)
+    and (max-width: 1500px)
+    and (min-height: 600px)
+    and (orientation: landscape) {
+
+    /* Hero */
+    .home-hero {
+        min-height: 650px;
+        padding: 50px 4%;
+    }
+
+    .home-hero-image {
+        object-position: 63% center;
+    }
+
+    .home-hero-card-reveal {
+        width: min(850px, 95%);
+    }
+
+    .home-hero-card {
+        padding: 38px 35px;
+    }
+
+    .home-hero-title {
+        font-size: clamp(2.3rem, 5.2vw, 3.4rem);
+    }
+
+    .home-content-panel {
+        width: 92%;
+        margin-top: 28px;
+        padding: 38px 30px;
+    }
+
+    .home-section {
+        margin-bottom: 80px;
+    }
+
+    .home-intro,
+    .home-area,
+    .home-homevisit {
+        gap: 30px;
+    }
+
+    .home-eyebrow {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .home-section-title {
+        font-size: clamp(1.65rem, 3.3vw, 2.15rem);
+        text-align:center;
+    }
+
+    .home-intro-photo-label {
+        width: 95%;
+        padding: 13px;
+    }
+
+    .home-intro-photo-label small {
+        font-size: 0.67rem;
+    }
+
+    /* Services */
+    .home-services-grid {
+        gap: 15px;
+    }
+
+    .home-service-card {
+        padding: 23px 18px;
+    }
+
+    .home-service-card h3 {
+        font-size: 1rem;
+    }
+
+    .home-service-card > p {
+        font-size: 0.82rem;
+    }
+
+    .home-service-price {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .home-service-price > strong {
+        font-size: 1.55rem;
+    }
+
+    .home-services-cta {
+        align-items: flex-start;
+        gap: 18px;
+        padding: 20px;
+    }
+
+    /* Ethics */
+    .home-ethics-grid {
+        gap: 17px;
+    }
+
+    .home-ethics-content {
+        padding: 22px 20px;
+    }
+
+    .home-ethics-content h3 {
+        font-size: 1.08rem;
+    }
+
+    .home-ethics-content > p {
+        font-size: 0.83rem;
     }
 }

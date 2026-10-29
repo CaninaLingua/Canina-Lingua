@@ -1,3 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap');
+
+/* Global variables */
+:root {
+    --color-green: #5b914e;
+    --color-gold: #d9871c;
+    --color-white: #d3cfc9;
+    --color-dark-gray: #181a1b;
+    --font-main: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+    --dog-paw-svg: url("/img_Canina_Lingua/dog-paw.svg");
+}
+
+/***************************
+*********ANIMATIONS*********
+***************************/
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.fade-in-side-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.fade-in-side-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.fade-in-up.visible,
+.fade-in-side-left.visible,
+.fade-in-side-right.visible {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+
 /********************************
 ******** ABOUT CONTAINER *********
 ********************************/
@@ -1252,7 +1294,8 @@
 ******** TABLET ******************
 ********************************/
 
-@media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
+/* Tablette - Portrait */
+@media (min-width: 768px) and (max-width: 1100px) and (orientation: portrait) {
 
     .about-hero-banner {
         min-height: auto;
@@ -1470,7 +1513,8 @@
 ******** MOBILE PORTRAIT *********
 ********************************/
 
-@media (max-width: 599px) and (orientation: portrait) {
+@media (max-width: 767px) and (orientation: portrait) {
+
     .about-container {
         padding-bottom: 25px;
     }
@@ -1833,7 +1877,8 @@
 ******** LANDSCAPE MOBILE ********
 ********************************/
 
-@media (max-width: 899px) and (orientation: landscape) {
+@media (max-width: 950px) and (max-height: 599px) and (orientation: landscape) {
+
 
     .about-container {
         padding-bottom: 25px;
@@ -2093,7 +2138,7 @@
 }
 
 /********************************
-****** JUSTIFICATION TEXTES ******
+****** JUSTIFICATION TEXTS ******
 ********************************/
 
 @media (min-width: 900px) {

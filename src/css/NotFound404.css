@@ -168,9 +168,8 @@
 /*********************************
 ********* RESPONSIVE *************
 *********************************/
-/* Tablets */
-
-@media (max-width: 1024px) {
+/* Tablet Portrait */
+@media (min-width: 768px) and (max-width: 1100px) and (orientation: portrait) {
     .notfound-content {
         max-width: 550px;
         padding: 45px 35px;
@@ -185,9 +184,8 @@
     }
 }
 
-/* Mobiles */
-
-@media (max-width: 599px) {
+/* Mobile Portrait */
+@media (max-width: 767px) and (orientation: portrait) {
     .notfound-container {
         padding: 20px 12px;
     }
@@ -226,9 +224,8 @@
     }
 }
 
-/* Tablets Landscape */
-
-@media (max-width: 1500px) and (orientation: landscape) {
+/* Tablet Landscape */
+@media (min-width: 768px) and (max-width: 1500px) and (min-height: 600px) and (orientation: landscape) {
     .notfound-container {
         min-height: 100vh;
     }
@@ -253,9 +250,8 @@
     }
 }
 
-/* Mobiles Landscape */
-
-@media (max-width: 899px) and (orientation: landscape) {
+/* Mobile Landscape */
+@media (max-width: 950px) and (max-height: 599px) and (orientation: landscape) {
     .notfound-container {
         padding: 20px 10px;
         min-height: 100vh;

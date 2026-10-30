@@ -1,5 +1,5 @@
-
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -18,6 +18,7 @@ import {
     faMagnifyingGlass,
     faPersonWalking,
     faBrain,
+    faExpand,
 } from "@fortawesome/free-solid-svg-icons";
 
 import useRevealOnScroll from "../hooks/useRevealOnScroll";
@@ -35,6 +36,11 @@ import "../css/Home.css";
 
 // Home page
 function Home() {
+    const [isMapOpen, setIsMapOpen] = useState(false);
+
+    const mapTriggerRef = useRef(null);
+    const mapCloseButtonRef = useRef(null);
+
     useRevealOnScroll(
         ".fade-in-up, .fade-in-side-left, .fade-in-side-right"
     );
@@ -43,6 +49,47 @@ function Home() {
         document.title =
             "Canina Lingua - Éducateur comportementaliste canin";
     }, []);
+
+    // Gestion de la carte agrandie
+    useEffect(() => {
+        if (!isMapOpen) return;
+
+        const previousBodyOverflow = document.body.style.overflow;
+        const previousHtmlOverflow = document.documentElement.style.overflow;
+
+        // Bloque le défilement de la page derrière la fenêtre
+        document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
+
+        // Place le focus sur le bouton de fermeture
+        mapCloseButtonRef.current?.focus();
+
+        // Gestion du clavier
+        const handleKeyDown = (event) => {
+            if (event.key === "Escape") {
+                setIsMapOpen(false);
+            }
+
+            // Maintient le focus dans la fenêtre modale
+            if (event.key === "Tab") {
+                event.preventDefault();
+                mapCloseButtonRef.current?.focus();
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+
+            // Restaure le défilement de la page
+            document.body.style.overflow = previousBodyOverflow;
+            document.documentElement.style.overflow = previousHtmlOverflow;
+
+            // Replace le focus sur le bouton ayant ouvert la carte
+            mapTriggerRef.current?.focus();
+        };
+    }, [isMapOpen]);
 
     return (
         <div className="home-container">
@@ -455,13 +502,29 @@ function Home() {
                                 <span>Zone de chalandise</span>
                             </div>
 
-                            <div className="home-map-image-wrap">
+                            {/* Carte cliquable pour l'agrandir */}
+                            <button
+                                ref={mapTriggerRef}
+                                type="button"
+                                className="home-map-image-wrap"
+                                onClick={() => setIsMapOpen(true)}
+                                aria-label="Agrandir la carte de la zone de chalandise"
+                                aria-haspopup="dialog"
+                            >
                                 <img
                                     src={zoneChalandise}
                                     alt="Canina Lingua - Zone de chalandise Boulogne-sur-Mer"
                                     loading="lazy"
                                 />
-                            </div>
+
+                                <span className="home-map-zoom-hint">
+                                    <FontAwesomeIcon
+                                        icon={faExpand}
+                                        aria-hidden="true"
+                                    />
+                                    <span>Agrandir la carte</span>
+                                </span>
+                            </button>
 
                             <div
                                 className="home-map-legend"
@@ -494,7 +557,7 @@ function Home() {
 
                             <div className="home-map-caption">
                                 <FontAwesomeIcon icon={faLocationDot} />
-                                <span>Nord et Pas-de-Calais</span>
+                                <span>Boulogne-sur-Mer et ses environs</span>
                             </div>
                         </div>
                     </div>
@@ -729,12 +792,67 @@ function Home() {
                         to="/contact"
                         className="home-button"
                     >
-                        Contactez-moi
+                        Contactez Canina Lingua
                         <FontAwesomeIcon icon={faArrowRight} />
                     </Link>
                 </div>
 
             </div>
+
+            {/* =========================
+                MAP LIGHTBOX
+            ========================= */}
+            {isMapOpen && createPortal(
+                <div className="home-map-lightbox">
+
+                    {/* Fond cliquable pour fermer */}
+                    <button
+                        type="button"
+                        className="home-map-lightbox-backdrop"
+                        onClick={() => setIsMapOpen(false)}
+                        aria-label="Fermer la carte agrandie"
+                        tabIndex={-1}
+                    />
+
+                    {/* Fenêtre contenant la carte */}
+                    <div
+                        className="home-map-lightbox-dialog"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="home-map-lightbox-title"
+                    >
+                        <div className="home-map-lightbox-header">
+                            <div>
+                                <span className="home-map-lightbox-eyebrow">
+                                    CANINA LINGUA
+                                </span>
+
+                                <h2 id="home-map-lightbox-title">
+                                    Zone de chalandise
+                                </h2>
+                            </div>
+
+                            <button
+                                ref={mapCloseButtonRef}
+                                type="button"
+                                className="home-map-lightbox-close"
+                                onClick={() => setIsMapOpen(false)}
+                                aria-label="Fermer la carte agrandie"
+                            >
+                                <FontAwesomeIcon icon={faXmark} />
+                            </button>
+                        </div>
+
+                        <div className="home-map-lightbox-image-wrap">
+                            <img
+                                src={zoneChalandise}
+                                alt="Carte agrandie de la zone d'intervention de Canina Lingua autour de Boulogne-sur-Mer"
+                            />
+                        </div>
+                    </div>
+                </div>,
+                document.body
+            )}
         </div>
     );
 }

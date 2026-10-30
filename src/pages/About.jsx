@@ -168,19 +168,24 @@ function About() {
                     </div>
 
                     <div className="about-journey-content">
-                        <div className="about-journey-item fade-in-side-left">
-                            <div className="about-journey-marker">
-                                <FontAwesomeIcon
-                                    icon={faGraduationCap}
-                                    aria-hidden="true"
-                                />
-                            </div>
 
-                            <div className="about-journey-text">
+                        {/* CARD 1: CHOICE OF TRAINING */}
+                        <div className="about-journey-item fade-in-side-left">
+
+                            <div className="about-journey-item-heading">
+                                <div className="about-journey-marker">
+                                    <FontAwesomeIcon
+                                        icon={faGraduationCap}
+                                        aria-hidden="true"
+                                    />
+                                </div>
+
                                 <h3>
                                     Le choix de la formation
                                 </h3>
+                            </div>
 
+                            <div className="about-journey-text">
                                 <p>
                                     Le C.F.P.P.A. de Cibeins, dans l'Ain,
                                     s'est imposé comme une évidence.
@@ -208,19 +213,23 @@ function About() {
                             </div>
                         </div>
 
+                        {/* CARD 2: DIPLOMA */}
                         <div className="about-journey-item fade-in-side-right">
-                            <div className="about-journey-marker">
-                                <FontAwesomeIcon
-                                    icon={faAward}
-                                    aria-hidden="true"
-                                />
-                            </div>
 
-                            <div className="about-journey-text">
+                            <div className="about-journey-item-heading">
+                                <div className="about-journey-marker">
+                                    <FontAwesomeIcon
+                                        icon={faAward}
+                                        aria-hidden="true"
+                                    />
+                                </div>
+
                                 <h3>
                                     L'obtention de mon diplôme
                                 </h3>
+                            </div>
 
+                            <div className="about-journey-text">
                                 <p>
                                     Cette formation m'a permis d'obtenir
                                     le Brevet Professionnel d'Éducateur
@@ -231,19 +240,23 @@ function About() {
                             </div>
                         </div>
 
+                        {/* CARD 3: CONTINUOUS LEARNING */}
                         <div className="about-journey-item fade-in-side-left">
-                            <div className="about-journey-marker">
-                                <FontAwesomeIcon
-                                    icon={faBookOpen}
-                                    aria-hidden="true"
-                                />
-                            </div>
 
-                            <div className="about-journey-text">
+                            <div className="about-journey-item-heading">
+                                <div className="about-journey-marker">
+                                    <FontAwesomeIcon
+                                        icon={faBookOpen}
+                                        aria-hidden="true"
+                                    />
+                                </div>
+
                                 <h3>
                                     Continuer à apprendre
                                 </h3>
+                            </div>
 
+                            <div className="about-journey-text">
                                 <p>
                                     J'ai également participé à des stages
                                     avec Jacinthe Bouchard, notamment
@@ -261,6 +274,7 @@ function About() {
                                 </p>
                             </div>
                         </div>
+
                     </div>
 
                     <div className="about-diploma">

@@ -8,7 +8,10 @@ function ServiceCard({ service, index }) {
             className="service-card-reveal fade-in-up"
             style={{ transitionDelay: `${(index % 3) * 100}ms` }}
         >
-            <article className={`service-card service-card--${service.id}`}>
+            <article
+                id={service.id}
+                className={`service-card service-card--${service.id}`}
+            >
                 <div
                     className={`service-card-image ${
                         service.image ? "service-card-image--photo" : ""

@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&display=swap');
 
 /********************************
@@ -12,6 +13,7 @@
     --font-main: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --dog-paw-svg: url("/img_Canina_Lingua/dog-paw.svg");
 }
+
 /********************************
 ******** ANIMATIONS **************
 ********************************/
@@ -78,7 +80,7 @@
     margin: 0 auto;
     padding-bottom: 50px;
     overflow: hidden;
-    
+
     color: var(--color-white);
     font-family: var(--font-main);
     box-sizing: border-box;
@@ -382,7 +384,7 @@
 }
 
 /********************************
-******** SERVICE CATALOG **********
+******** SERVICE CATALOG *********
 ********************************/
 
 .services-catalog {
@@ -437,6 +439,12 @@
 /********************************
 ******** SERVICE CARDS ***********
 ********************************/
+
+.services-group,
+.service-card {
+    scroll-margin-top: 100px;
+}
+
 .service-card-reveal {
     display: flex;
     min-width: 0;
@@ -468,16 +476,13 @@
         translate 0.3s ease,
         border-color 0.3s ease,
         box-shadow 0.3s ease;
-    
 }
-
 
 .service-card:hover {
     translate: 0 -5px;
     border-color: var(--color-gold);
     box-shadow: 0 16px 35px rgba(0, 0, 0, 0.4);
 }
-
 
 .service-card-image {
     position: relative;
@@ -563,7 +568,7 @@
     font-weight: 800;
     line-height: 1.2;
     white-space: nowrap;
-    margin-right:10px;
+    margin-right: 10px;
 }
 
 .service-card-description {
@@ -619,10 +624,8 @@
 
     border: 2px solid var(--color-gold);
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(24, 26, 27, 0.2); 
+    box-shadow: 0 4px 12px rgba(24, 26, 27, 0.2);
     background-color: var(--color-dark-gray);
-
-
 
     color: var(--color-white);
     font-family: var(--font-main);
@@ -630,18 +633,22 @@
     font-weight: 700;
     line-height: 1.5;
     text-align: center;
-    text-decoration: none;
     overflow-wrap: anywhere;
     cursor: pointer;
 
-    transition: color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
 }
 
 .service-card [id^="service-contact-"]:hover,
 #services-area-contact:hover,
 #services-main-contact:hover {
-    box-shadow: 0 0 15px rgba(91, 145, 78, 0.5),
-                0 6px 16px rgba(0, 0, 0, 0.3);
+    box-shadow:
+        0 0 15px rgba(91, 145, 78, 0.5),
+        0 6px 16px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
 
     color: var(--color-gold);
@@ -656,7 +663,7 @@
 }
 
 /********************************
-******** SERVICE AREA *************
+******** SERVICE AREA ************
 ********************************/
 
 .services-area {
@@ -804,12 +811,11 @@
 }
 
 #services-main-contact {
-    border-radius:8px;
+    border-radius: 8px;
 }
 
-
 /********************************
-******** RESPONSIVE *************
+******** RESPONSIVE **************
 ********************************/
 
 /* Tablet Portrait */
@@ -1345,3 +1351,4 @@
         padding: 30px 25px;
     }
 }
+

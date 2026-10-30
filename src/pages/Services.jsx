@@ -1,23 +1,49 @@
+
 import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import useRevealOnScroll from "../hooks/useRevealOnScroll";
 import NavLink from "../components/NavLink.jsx";
 import ServiceCard from "../components/ServiceCard.jsx";
 import servicesGroups from "../data/servicesGroups.js";
+
 import "../css/Services.css";
 
 import baladePlageImage from "../assets/img/img_prestations/Canina_Lingua_prestation_balade_plage.webp";
 
 function Services() {
-    useRevealOnScroll( ".fade-in-up, .fade-in-side-left, .fade-in-side-right");
+    const location = useLocation();
+
+    useRevealOnScroll(
+        ".fade-in-up, .fade-in-side-left, .fade-in-side-right"
+    );
 
     useEffect(() => {
         document.title = "Canina Lingua - Mes prestations & Tarifs";
     }, []);
 
+    // Scroll to the requested service section or card.
+    useEffect(() => {
+        if (!location.hash) return;
+
+        const targetId = decodeURIComponent(location.hash.slice(1));
+
+        const animationFrame = window.requestAnimationFrame(() => {
+            const target = document.getElementById(targetId);
+
+            target?.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+
+        return () => window.cancelAnimationFrame(animationFrame);
+    }, [location.pathname, location.hash]);
+
     return (
         <div className="services-container">
-            
-            {/*services hero banner*/}
+
+            {/* SERVICES HERO BANNER */}
             <div className="services-hero-banner fade-in-up">
                 <div className="services-hero-banner-overlay"></div>
 
@@ -62,9 +88,10 @@ function Services() {
                 </div>
             </div>
 
-            {/* Main services content */}
+            {/* MAIN SERVICES CONTENT */}
             <div className="services-content">
-                {/* Intro & philosophy */}
+
+                {/* INTRO AND PHILOSOPHY */}
                 <div className="services-intro fade-in-up">
                     <p className="services-eyebrow">
                         L'approche Canina Lingua
@@ -104,12 +131,13 @@ function Services() {
                     </div>
                 </div>
 
-                {/* services catalog */}
+                {/* SERVICES CATALOG */}
                 <div className="services-catalog">
                     {servicesGroups.map((group, groupIndex) => (
                         <div
                             className={`services-group services-group--${group.layout}`}
                             key={group.id}
+                            id={group.id}
                         >
                             <div className="services-group-heading fade-in-up">
                                 <span className="services-eyebrow">
@@ -136,8 +164,8 @@ function Services() {
                     ))}
                 </div>
 
-                {/* services area */}
-                <div className="services-area ">
+                {/* SERVICES AREA */}
+                <div className="services-area">
                     <div className="services-area-image fade-in-side-left">
                         <img
                             className="services-area-photo"
@@ -186,7 +214,7 @@ function Services() {
                     </div>
                 </div>
 
-                {/* CTA */}
+                {/* FINAL CTA */}
                 <div className="services-contact-cta fade-in-up">
                     <div
                         className="services-cta-paw"

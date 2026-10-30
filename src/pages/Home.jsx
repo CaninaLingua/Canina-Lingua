@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,17 +10,13 @@ import {
     faGraduationCap,
     faComments,
     faArrowRight,
-    faArrowDown,
     faLocationDot,
     faCheck,
     faXmark,
     faCompass,
     faLeaf,
-    faAward,
     faMagnifyingGlass,
     faPersonWalking,
-    faClock,
-    faDog,
     faBrain,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -36,13 +33,12 @@ import dogsWalking from "../assets/img/img_chiens_accueil/Canina_Lingua_chien_ac
 
 import "../css/Home.css";
 
-// home page
+// Home page
 function Home() {
-    // Initialize scroll-reveal animations for the page elements.
     useRevealOnScroll(
-        ".fade-in-up, .fade-in-side-left, .fade-in-side-right");
+        ".fade-in-up, .fade-in-side-left, .fade-in-side-right"
+    );
 
-    // change title
     useEffect(() => {
         document.title =
             "Canina Lingua - Éducateur comportementaliste canin";
@@ -63,13 +59,10 @@ function Home() {
                     fetchPriority="high"
                 />
 
-                {/* Dark overlay to improve the readability of the hero content. */}
                 <div className="home-hero-overlay" />
 
-                {/* Animated wrapper for the main hero card. */}
                 <div className="home-hero-card-reveal fade-in-up">
                     <div className="home-hero-card">
-                        {/* Decorative paw print in the background. */}
                         <div className="home-hero-paw-bg" aria-hidden="true">
                             <FontAwesomeIcon
                                 icon={faPaw}
@@ -95,7 +88,6 @@ function Home() {
                             <strong> Comprendre pour entreprendre.</strong>
                         </p>
 
-                        {/* Primary navigation links for the hero section. */}
                         <div className="home-hero-actions">
                             <Link
                                 to="/prestations-tarifs"
@@ -114,7 +106,6 @@ function Home() {
                             </Link>
                         </div>
 
-                        {/* Key qualifications and service details. */}
                         <div className="home-hero-credentials">
                             <div className="home-hero-credential">
                                 <FontAwesomeIcon icon={faGraduationCap} />
@@ -147,7 +138,6 @@ function Home() {
                     className="home-section home-intro"
                     id="home-presentation"
                 >
-                    {/* Profile photo and name label. */}
                     <div className="home-intro-visual fade-in-side-left">
                         <div className="home-intro-photo-frame">
                             <img
@@ -156,7 +146,6 @@ function Home() {
                                 loading="lazy"
                             />
 
-                            {/* Decorative photo-frame corners. */}
                             <span className="home-photo-corner home-photo-corner-top" />
                             <span className="home-photo-corner home-photo-corner-bottom" />
                         </div>
@@ -176,7 +165,6 @@ function Home() {
                         </div>
                     </div>
 
-                    {/* Introduction text and link to the About page. */}
                     <div className="home-intro-copy fade-in-side-right">
                         <span className="home-eyebrow">
                             Faisons connaissance
@@ -228,267 +216,187 @@ function Home() {
                     SERVICES AND PRICING
                 ========================= */}
                 <div className="home-section home-services">
-                    {/* Heading and introduction to the available services. */}
-                    <div className="home-section-heading fade-in-up">
-                        <span className="home-eyebrow">
-                            Éducation et comportement canin
-                        </span>
 
-                        <h2 className="home-section-title">
-                            Quel accompagnement
-                            <span> pour votre compagnon ?</span>
-                        </h2>
+                    <div className="home-services-spotlight">
 
-                        <p>
-                            Bilan chiot, bilan comportemental, séances
-                            d’éducation ou de rééducation, balades et activités :
-                            découvrez les prestations que je propose avec Canina Lingua.
-                        </p>
-                    </div>
+                        {/* INTRODUCTION AND MAIN CTA */}
+                        <div className="home-services-copy fade-in-side-left">
 
-                    {/* Grid of service cards. */}
-                    <div className="home-services-grid">
+                            <span className="home-eyebrow">
+                                <FontAwesomeIcon icon={faPaw} />
+                                Les accompagnements Canina Lingua
+                            </span>
 
-                        {/* PUPPY ASSESSMENT */}
-                        <div className="home-service-card-reveal fade-in-up">
-                            <div className="home-service-card">
-                                <div className="home-service-card-header">
-                                    <span className="home-service-icon">
-                                        <FontAwesomeIcon icon={faDog} />
-                                    </span>
-                                </div>
+                            <h2 className="home-section-title">
+                                Un accompagnement adapté à
+                                <span> chaque duo</span>
+                            </h2>
 
-                                <h3>Bilan chiot</h3>
-
-                                <div className="home-service-price">
-                                    <strong>70 €</strong>
-                                    <span>
-                                        <FontAwesomeIcon icon={faClock} />
-                                        2 h 30
-                                    </span>
-                                </div>
-
-                                <p>
-                                    Découvrez les besoins fondamentaux de votre chiot,
-                                    les principes d’apprentissage et les premiers
-                                    points à travailler. Je vous aide également
-                                    à débuter le « chien première langue » en
-                                    apprenant à repérer ses signaux de communication.
-                                </p>
-
-                                <div className="home-service-card-footer">
-                                    <FontAwesomeIcon
-                                        icon={faPaw}
-                                        className="home-paw-icon"
-                                    />
-                                    <span>Bien démarrer ensemble</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* BEHAVIORAL ASSESSMENT */}
-                        <div className="home-service-card-reveal fade-in-up">
-                            <div className="home-service-card">
-                                <div className="home-service-card-header">
-                                    <span className="home-service-icon">
-                                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                                    </span>
-                                </div>
-
-                                <h3>Bilan comportemental</h3>
-
-                                <div className="home-service-price">
-                                    <strong>80 €</strong>
-                                    <span>
-                                        <FontAwesomeIcon icon={faClock} />
-                                        2 h 30
-                                    </span>
-                                </div>
-
-                                <p>
-                                    Pendant ce bilan, nous faisons le point sur
-                                    vos attentes et les difficultés rencontrées.
-                                    Je vous apporte ensuite de premiers conseils
-                                    adaptés à votre situation.
-                                </p>
-
-                                <div className="home-service-card-footer">
-                                    <FontAwesomeIcon
-                                        icon={faPaw}
-                                        className="home-paw-icon"
-                                    />
-                                    <span>Comprendre la situation</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* TRAINING OR BEHAVIORAL REHABILITATION SESSION */}
-                        <div className="home-service-card-reveal fade-in-up">
-                            <div className="home-service-card">
-                                <div className="home-service-card-header">
-                                    <span className="home-service-icon">
-                                        <FontAwesomeIcon icon={faGraduationCap} />
-                                    </span>
-                                </div>
-
-                                <h3>Séance d’éducation ou de rééducation</h3>
-
-                                <div className="home-service-price">
-                                    <strong>50 €</strong>
-                                    <span>
-                                        <FontAwesomeIcon icon={faClock} />
-                                        1 h 30
-                                    </span>
-                                </div>
-
-                                <p>
-                                    Je réalise ces séances à domicile ou dans un lieu
-                                    défini à l’avance, pour travailler les apprentissages
-                                    ou vous accompagner face aux difficultés
-                                    comportementales rencontrées avec votre chien.
-                                </p>
-
-                                <div className="home-service-card-footer">
-                                    <FontAwesomeIcon
-                                        icon={faPaw}
-                                        className="home-paw-icon"
-                                    />
-                                    <span>Un travail adapté à votre duo</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* FIVE-SESSION PACKAGE */}
-                        <div className="home-service-card-reveal fade-in-up">
-                            <div className="home-service-card">
-                                <div className="home-service-card-header">
-                                    <span className="home-service-icon">
-                                        <FontAwesomeIcon icon={faHeart} />
-                                    </span>
-                                </div>
-
-                                <h3>Forfait 5 séances</h3>
-
-                                <div className="home-service-price">
-                                    <strong>220 €</strong>
-                                    <span>
-                                        <FontAwesomeIcon icon={faGraduationCap} />
-                                        5 séances
-                                    </span>
-                                </div>
-
-                                <p>
-                                    Je propose un forfait de cinq séances d’éducation
-                                    ou de rééducation pour poursuivre le travail
-                                    engagé et vous accompagner dans votre progression.
-                                </p>
-
-                                <div className="home-service-card-footer">
-                                    <FontAwesomeIcon
-                                        icon={faPaw}
-                                        className="home-paw-icon"
-                                    />
-                                    <span>Continuer à progresser</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* SOCIAL AND EDUCATIONAL WALKS */}
-                        <div className="home-service-card-reveal fade-in-up">
-                            <div className="home-service-card">
-                                <div className="home-service-card-header">
-                                    <span className="home-service-icon">
-                                        <FontAwesomeIcon icon={faPersonWalking} />
-                                    </span>
-                                </div>
-
-                                <h3>Balades sociales et pédagogiques</h3>
-
-                                <div className="home-service-price">
-                                    <strong>20 €</strong>
-                                    <span>
-                                        <FontAwesomeIcon icon={faLocationDot} />
-                                        Par balade
-                                    </span>
-                                </div>
-
-                                <p>
-                                    Lors des balades sociales, j’accompagne votre chien
-                                    dans le développement de sa sociabilité et je vous
-                                    aide à mieux comprendre la communication canine.
-                                    En balade pédagogique, je vous accompagne dans
-                                    le travail de l’éducation de base au sein d’un site
-                                    naturel de la Côte d’Opale.
-                                </p>
-
-                                <div className="home-service-card-footer">
-                                    <FontAwesomeIcon
-                                        icon={faPaw}
-                                        className="home-paw-icon"
-                                    />
-                                    <span>Apprendre sur le terrain</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* INTRODUCTION TO MANTRAILING */}
-                        <div className="home-service-card-reveal fade-in-up">
-                            <div className="home-service-card">
-                                <div className="home-service-card-header">
-                                    <span className="home-service-icon">
-                                        <FontAwesomeIcon icon={faCompass} />
-                                    </span>
-                                </div>
-
-                                <h3>Initiation au mantrailing</h3>
-
-                                <div className="home-service-price">
-                                    <strong>30 €</strong>
-                                    <span>
-                                        <FontAwesomeIcon icon={faAward} />
-                                        Stage découverte
-                                    </span>
-                                </div>
-
-                                <p>
-                                    Je vous propose de découvrir le mantrailing,
-                                    une activité de recherche de personne grâce au
-                                    flair du chien. Cette discipline peut être utile
-                                    dans certains accompagnements comportementaux,
-                                    mais aussi être simplement une activité ludique
-                                    à partager avec votre compagnon.
-                                </p>
-
-                                <div className="home-service-card-footer">
-                                    <FontAwesomeIcon
-                                        icon={faPaw}
-                                        className="home-paw-icon"
-                                    />
-                                    <span>Découvrir une nouvelle activité</span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    {/* Link to the full list of services and prices. */}
-                    <div className="home-services-cta fade-in-up">
-                        <div>
                             <p>
-                            Besoin de choisir une prestation ou de mieux comprendre
-                            son déroulement ?
+                                Bilan, éducation, rééducation, balades ou découverte
+                                d'activités : plusieurs possibilités pour avancer
+                                avec votre chien, selon ses besoins et votre quotidien.
                             </p>
-                            <p>Retrouvez toutes les informations et les tarifs sur la page dédiée.</p>
-                        </div>
-                        
 
-                        <Link
-                            to="/prestations-tarifs"
-                            className="home-button"
-                        >
-                            Voir les prestations & tarifs
-                            <FontAwesomeIcon icon={faArrowRight} />
-                        </Link>
+                            <p>
+                                Chaque accompagnement s'inscrit dans une approche
+                                éthique et éthologique, attentive aux comportements,
+                                aux émotions et à la communication de votre compagnon.
+                            </p>
+
+                            <Link
+                                to="/prestations-tarifs"
+                                className="home-button home-services-button"
+                            >
+                                Découvrir les prestations & tarifs
+                                <FontAwesomeIcon icon={faArrowRight} />
+                            </Link>
+
+                            <span className="home-services-footnote">
+                                Retrouvez les descriptions, durées et tarifs sur la page dédiée.
+                            </span>
+                        </div>
+
+                        {/* OVERVIEW OF THE MAIN SERVICE CATEGORIES */}
+                        <div className="home-services-overview fade-in-side-right">
+
+                            <div className="home-services-overview-paw" aria-hidden="true">
+                                <FontAwesomeIcon icon={faPaw} />
+                            </div>
+
+                            <div className="home-services-overview-heading">
+                                <span>Les prestations</span>
+
+                                <h3>
+                                    Plusieurs façons d'avancer ensemble
+                                </h3>
+                            </div>
+
+                            <ul className="home-services-overview-list">
+
+                                {/* BILANS */}
+                                <li className="home-services-overview-item">
+                                    <Link
+                                        to="/prestations-tarifs#bilans"
+                                        className="home-services-overview-link"
+                                    >
+                                        <span className="home-services-overview-icon">
+                                            <FontAwesomeIcon
+                                                icon={faMagnifyingGlass}
+                                                aria-hidden="true"
+                                            />
+                                        </span>
+
+                                        <span className="home-services-overview-text">
+                                            <strong>Bilans et premiers repères</strong>
+                                            <small>
+                                                Comprendre la situation de votre chien
+                                            </small>
+                                        </span>
+
+                                        <FontAwesomeIcon
+                                            icon={faArrowRight}
+                                            className="home-services-overview-arrow"
+                                            aria-hidden="true"
+                                        />
+                                    </Link>
+                                </li>
+
+                                {/* EDUCATION AND REHABILITATION */}
+                                <li className="home-services-overview-item">
+                                    <Link
+                                        to="/prestations-tarifs#accompagnement"
+                                        className="home-services-overview-link"
+                                    >
+                                        <span className="home-services-overview-icon">
+                                            <FontAwesomeIcon
+                                                icon={faGraduationCap}
+                                                aria-hidden="true"
+                                            />
+                                        </span>
+
+                                        <span className="home-services-overview-text">
+                                            <strong>Éducation et rééducation</strong>
+                                            <small>
+                                                Des objectifs adaptés à votre duo
+                                            </small>
+                                        </span>
+
+                                        <FontAwesomeIcon
+                                            icon={faArrowRight}
+                                            className="home-services-overview-arrow"
+                                            aria-hidden="true"
+                                        />
+                                    </Link>
+                                </li>
+
+                                {/* WALKS AND ACTIVITIES */}
+                                <li className="home-services-overview-item">
+                                    <Link
+                                        to="/prestations-tarifs#activites"
+                                        className="home-services-overview-link"
+                                    >
+                                        <span className="home-services-overview-icon">
+                                            <FontAwesomeIcon
+                                                icon={faPersonWalking}
+                                                aria-hidden="true"
+                                            />
+                                        </span>
+
+                                        <span className="home-services-overview-text">
+                                            <strong>Balades et activités</strong>
+                                            <small>
+                                                Apprendre et découvrir en extérieur
+                                            </small>
+                                        </span>
+
+                                        <FontAwesomeIcon
+                                            icon={faArrowRight}
+                                            className="home-services-overview-arrow"
+                                            aria-hidden="true"
+                                        />
+                                    </Link>
+                                </li>
+
+                                {/* MANTRAILING */}
+                                <li className="home-services-overview-item">
+                                    <Link
+                                        to="/prestations-tarifs#mantrailing"
+                                        className="home-services-overview-link"
+                                    >
+                                        <span className="home-services-overview-icon">
+                                            <FontAwesomeIcon
+                                                icon={faCompass}
+                                                aria-hidden="true"
+                                            />
+                                        </span>
+
+                                        <span className="home-services-overview-text">
+                                            <strong>Découverte du mantrailing</strong>
+                                            <small>
+                                                Explorer les capacités olfactives du chien
+                                            </small>
+                                        </span>
+
+                                        <FontAwesomeIcon
+                                            icon={faArrowRight}
+                                            className="home-services-overview-arrow"
+                                            aria-hidden="true"
+                                        />
+                                    </Link>
+                                </li>
+
+                            </ul>
+
+                            <div className="home-services-overview-footer">
+                                <FontAwesomeIcon icon={faPaw} aria-hidden="true" />
+
+                                <span>
+                                    Des prestations pensées autour des besoins de votre chien.
+                                </span>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 
@@ -496,7 +404,6 @@ function Home() {
                     SERVICE AREA
                 ========================= */}
                 <div className="home-section home-area">
-                    {/* Service area details and contact link. */}
                     <div className="home-area-copy fade-in-side-left">
                         <span className="home-eyebrow">
                             À domicile, près de chez vous
@@ -541,7 +448,6 @@ function Home() {
                         </Link>
                     </div>
 
-                    {/* Map, travel-area legend and location caption. */}
                     <div className="home-area-visual fade-in-side-right">
                         <div className="home-image-panel home-map-panel">
                             <div className="home-image-panel-heading">
@@ -549,7 +455,6 @@ function Home() {
                                 <span>Zone de chalandise</span>
                             </div>
 
-                            {/* Only the map image is enlarged on hover. */}
                             <div className="home-map-image-wrap">
                                 <img
                                     src={zoneChalandise}
@@ -558,7 +463,6 @@ function Home() {
                                 />
                             </div>
 
-                            {/* Legend for the standard and extended service areas. */}
                             <div
                                 className="home-map-legend"
                                 aria-label="Légende de la zone d’intervention"
@@ -600,7 +504,6 @@ function Home() {
                     ETHICS AND VALUES
                 ========================= */}
                 <div className="home-section home-ethics">
-                    {/* Introduction to the ethical approach. */}
                     <div className="home-section-heading home-section-heading-centered fade-in-up">
                         <span className="home-eyebrow">
                             Une méthode éthique et éthologique
@@ -620,7 +523,6 @@ function Home() {
                         </p>
                     </div>
 
-                    {/* Cards describing the main principles of the approach. */}
                     <div className="home-ethics-grid">
 
                         {/* ETHICS CARD 1: POSITIVE MOTIVATION */}
@@ -699,7 +601,6 @@ function Home() {
 
                     </div>
 
-                    {/* Quote highlighting the educational approach. */}
                     <div className="home-ethics-quote fade-in-up">
                         <FontAwesomeIcon
                             icon={faPaw}
@@ -719,7 +620,6 @@ function Home() {
                     HOME VISITS AND DAILY WALKS
                 ========================= */}
                 <div className="home-section home-homevisit">
-                    {/* Image illustrating work in the dog's everyday environment. */}
                     <div className="home-homevisit-visual fade-in-side-left">
                         <div className="home-homevisit-photo">
                             <img
@@ -735,7 +635,6 @@ function Home() {
                         </div>
                     </div>
 
-                    {/* Details about how sessions take place. */}
                     <div className="home-homevisit-copy fade-in-side-right">
                         <span className="home-eyebrow">
                             Éducation canine à domicile
@@ -761,7 +660,6 @@ function Home() {
                             terrain d’entraînement clos.
                         </p>
 
-                        {/* Summary of the practical principles used during sessions. */}
                         <ul className="home-homevisit-list">
                             <li>
                                 <FontAwesomeIcon icon={faCheck} />
@@ -806,7 +704,6 @@ function Home() {
                     CONTACT CALL TO ACTION
                 ========================= */}
                 <div className="home-contact-cta fade-in-up">
-                    {/* Decorative paw-print background. */}
                     <div
                         className="home-cta-paw"
                         aria-hidden="true"

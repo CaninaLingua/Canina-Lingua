@@ -1,10 +1,10 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&display=swap');
 
 /********************************
 ******** VARIABLES **************
 ********************************/
 
-/* Main color palette, typography and decorative assets. */
 :root {
     --color-green: #5b914e;
     --color-gold: #d9871c;
@@ -67,19 +67,15 @@
     filter: blur(0);
 }
 
-
-
 /********************************
 ******** BASE *******************
 ********************************/
 
-/* Apply consistent box sizing to the entire home page. */
 .home-container,
 .home-container * {
     box-sizing: border-box;
 }
 
-/* Main page layout and default typography. */
 .home-container {
     display: flex;
     flex-direction: column;
@@ -93,14 +89,12 @@
     line-height: 1.7;
 }
 
-/* Ensure images scale within their containers. */
 .home-container img {
     display: block;
     width: 100%;
     max-width: 100%;
 }
 
-/* Normalize the top margin of the main text elements. */
 .home-container h1,
 .home-container h2,
 .home-container h3,
@@ -108,32 +102,27 @@
     margin-top: 0;
 }
 
-/* Keep headings consistent with the page typography. */
 .home-container h1,
 .home-container h2,
 .home-container h3 {
     font-family: var(--font-main);
 }
 
-/* Remove the default tap highlight from links on touch devices. */
 .home-container a {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Make keyboard focus visible when navigating links. */
 .home-container a:focus-visible {
     outline: 2px solid var(--color-gold);
     outline-offset: 4px;
 }
 
-/* Shared spacing and anchor offset for content sections. */
 .home-section {
     min-width: 0;
-    margin: 0 0 100px;
+    margin: 0 0 70px 0px;
     scroll-margin-top: 30px;
 }
 
-/* Small uppercase labels used above section headings. */
 .home-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -153,7 +142,6 @@
     color: var(--color-gold);
 }
 
-/* Shared styling for section headings and their colored second lines. */
 .home-section-title {
     position: relative;
     margin: 0 0 22px;
@@ -173,7 +161,6 @@
     color: var(--color-green);
 }
 
-/* Justify long informational paragraphs for a more even text block. */
 .home-intro-copy > p,
 .home-area-copy > p,
 .home-homevisit-copy > p,
@@ -187,7 +174,6 @@
     text-justify: inter-word;
 }
 
-/* Hint to the browser that these elements will be animated. */
 .home-container .fade-in-up,
 .home-container .fade-in-side-left,
 .home-container .fade-in-side-right {
@@ -198,7 +184,6 @@
 ******** BUTTONS ****************
 ********************************/
 
-/* Shared button appearance and alignment. */
 .home-container .home-button {
     display: inline-flex;
     align-items: center;
@@ -232,7 +217,6 @@
     cursor: pointer;
 }
 
-/* Hover feedback for buttons. */
 .home-container .home-button:hover {
     color: var(--color-gold);
     background-color: var(--color-dark-gray);
@@ -245,7 +229,6 @@
     transform: translateY(-2px);
 }
 
-/* Animate the arrow or icon inside a hovered button. */
 .home-container .home-button > svg {
     flex-shrink: 0;
     transition: transform 0.25s ease;
@@ -255,16 +238,14 @@
     transform: translateX(3px);
 }
 
-/* Keep paw icons in the brand's green color. */
 .home-container .home-paw-icon {
     color: var(--color-green) !important;
 }
 
 /********************************
-******** MAIN HERO BANNER ******
+******** MAIN HERO BANNER ********
 ********************************/
 
-/* Full-width banner containing the background image and hero card. */
 .home-hero {
     position: relative;
     isolation: isolate;
@@ -282,7 +263,6 @@
     background: #111312;
 }
 
-/* Stretch the background image and overlay across the entire hero. */
 .home-hero-image,
 .home-hero-overlay {
     position: absolute;
@@ -291,14 +271,12 @@
     height: 100%;
 }
 
-/* Crop and position the hero background image. */
 .home-hero-image {
     z-index: -2;
     object-fit: cover;
     object-position: 65% center;
 }
 
-/* Layer gradients over the image to improve text contrast. */
 .home-hero-overlay {
     z-index: -1;
     background:
@@ -315,7 +293,6 @@
         );
 }
 
-/* Constrain the animated wrapper around the hero card. */
 .home-hero-card-reveal {
     position: relative;
     z-index: 1;
@@ -323,7 +300,6 @@
     min-width: 0;
 }
 
-/* Main hero card, including its translucent background and border. */
 .home-hero-card {
     position: relative;
 
@@ -356,7 +332,6 @@
         border-color 0.4s ease;
 }
 
-/* Subtle lift and stronger border when hovering over the hero card. */
 .home-hero-card:hover {
     transform: translateY(-3px);
     border-color: rgba(217, 135, 28, 0.8);
@@ -366,7 +341,6 @@
         0 0 22px rgba(217, 135, 28, 0.1);
 }
 
-/* Large, low-opacity paw print used as a decorative background element. */
 .home-hero-paw-bg {
     position: absolute;
     top: 50%;
@@ -392,7 +366,6 @@
     color: var(--color-green);
 }
 
-/* Brand label displayed above the main title. */
 .home-hero-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -412,7 +385,6 @@
     font-size: 1.1rem;
 }
 
-/* Main headline and its contrasting second line. */
 .home-hero-title {
     max-width: 820px;
     margin: 0 0 19px;
@@ -433,7 +405,6 @@
     color: var(--color-green);
 }
 
-/* Keep the hero subtitle centered beneath the headline. */
 .home-hero-subtitle {
     max-width: 680px;
     margin: 0 auto 28px;
@@ -445,28 +416,31 @@
 }
 
 .home-hero-subtitle strong {
-    color: var(--color-gold);
+    color: var(--color-green);
     font-weight: 700;
 }
 
-/* Primary hero buttons, displayed side by side when space permits. */
 .home-hero-actions {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
-    justify-content: center;
-    gap: 14px;
-}
-
-/* Credentials displayed beneath the hero buttons. */
-.home-hero-credentials {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    padding: 0 40px;
     gap: 20px;
 
+    width: min(100%, 660px);
+}
+
+.home-hero-actions .home-button {
     width: 100%;
+}
+
+.home-hero-credentials {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+    align-items: center;
+    gap: 25px;
+
+    width: min(100%, 660px);
     margin-top: 29px;
     padding-top: 19px;
 
@@ -479,10 +453,20 @@
     justify-content: center;
     gap: 10px;
 
-    color: var(--color-gold);
+    color: var(--color-white);
     font-size: 0.78rem;
     font-weight: 600;
     line-height: 1.6;
+}
+
+.home-hero-credential:first-child {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.home-hero-credential:last-child {
+    justify-content: flex-start;
+    text-align: left;
 }
 
 .home-hero-credential > svg {
@@ -490,20 +474,16 @@
     font-size: 1rem;
 }
 
-/* Vertical divider between the two credentials. */
 .home-hero-credential-divider {
     width: 1px;
-    height: 26px;
+    height: 35px;
     background: rgba(217, 135, 28, 0.45);
 }
 
-
-
 /********************************
-******** MAIN CONTENT PANEL *****
+******** MAIN CONTENT PANEL ******
 ********************************/
 
-/* Main panel containing the page's information sections. */
 .home-content-panel {
     position: relative;
     z-index: 1;
@@ -524,16 +504,14 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.035);
 }
 
-/* Remove bottom spacing from the final section in the panel. */
 .home-section:last-child {
     margin-bottom: 0;
 }
 
 /********************************
-******** DAVID'S INTRODUCTION ***
+******** DAVID'S INTRODUCTION ****
 ********************************/
 
-/* Two-column layout for the profile image and introduction text. */
 .home-intro {
     display: grid;
     grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
@@ -541,14 +519,12 @@
     gap: clamp(35px, 5vw, 75px);
 }
 
-/* Reserve space around the profile image for the corner decorations. */
 .home-intro-visual {
     position: relative;
     min-width: 0;
     padding: 0 22px 24px 0;
 }
 
-/* Frame and crop the profile image. */
 .home-intro-photo-frame {
     position: relative;
     width: 100%;
@@ -561,7 +537,6 @@
     border-radius: 12px;
 }
 
-/* Add a subtle gradient at the bottom of the photo. */
 .home-intro-photo-frame::after {
     position: absolute;
     inset: 0;
@@ -576,7 +551,6 @@
     content: "";
 }
 
-/* Set the image crop and the hover zoom effect. */
 .home-intro-photo-frame img {
     width: 100%;
     height: 100%;
@@ -589,7 +563,6 @@
     transform: scale(1.035);
 }
 
-/* Decorative corners around the profile photo. */
 .home-photo-corner {
     position: absolute;
     z-index: 2;
@@ -612,7 +585,6 @@
     border-bottom: 2px solid var(--color-green);
 }
 
-/* Name and job-title label positioned over the lower edge of the image. */
 .home-intro-photo-label {
     position: absolute;
     right: 0;
@@ -633,7 +605,6 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Circular icon background used beside the name label. */
 .home-icon-disc {
     display: inline-flex;
     flex: 0 0 43px;
@@ -651,7 +622,6 @@
     font-size: 1rem;
 }
 
-/* Let the text in the name label shrink without overflowing. */
 .home-intro-photo-label > span:last-child {
     min-width: 0;
 }
@@ -673,17 +643,14 @@
     opacity: 0.8;
 }
 
-/* Introduction text column. */
 .home-intro-copy {
     min-width: 0;
 }
 
-/* Separate the introductory paragraphs vertically. */
 .home-intro-copy > p {
     margin: 0 0 17px;
 }
 
-/* Signature line placed between the introduction and its button. */
 .home-intro-signature {
     display: flex;
     align-items: center;
@@ -703,17 +670,15 @@
 }
 
 /********************************
-******** SECTION HEADINGS *******
+******** SECTION HEADINGS ********
 ********************************/
 
-/* Constrain the width of section introductions. */
 .home-section-heading {
     max-width: 870px;
     margin: 0 auto 38px;
     text-align: left;
 }
 
-/* Center headings for sections designed around a central title. */
 .home-section-heading-centered {
     text-align: center;
 }
@@ -722,7 +687,6 @@
     justify-content: center;
 }
 
-/* Avoid extra space below the section introduction paragraph. */
 .home-section-heading > p {
     margin: 0;
 }
@@ -731,240 +695,292 @@
 ******** SERVICES ****************
 ********************************/
 
-/* Add a small offset above the services section. */
 .home-services {
     padding-top: 5px;
 }
 
-/* Responsive grid containing all service cards. */
-.home-services-grid {
+.home-services-spotlight {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: stretch;
-    gap: 22px;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: clamp(30px, 4.5vw, 65px);
 }
 
-/* The wrapper handles the scroll-reveal animation. */
-.home-service-card-reveal {
-    display: flex;
+.home-services-copy {
     min-width: 0;
 }
 
-/* Let the inner card fill the available wrapper height. */
-.home-service-card-reveal > .home-service-card {
-    width: 100%;
-    flex: 1;
+.home-services-copy > p {
+    margin: 0 0 17px;
+
+    color: var(--color-white);
+    font-size: 0.96rem;
+    line-height: 1.9;
+    opacity: 0.9;
+
+    text-align: justify;
+    text-justify: inter-word;
 }
 
-/* Base layout and appearance for a service card. */
-.home-service-card {
+.home-container .home-services-button {
+    margin-top: 12px;
+}
+
+.home-services-footnote {
+    display: block;
+    margin-top: 15px;
+
+    color: rgba(211, 207, 201, 0.65);
+    font-size: 0.74rem;
+    line-height: 1.6;
+}
+
+/********************************
+******** SERVICES OVERVIEW *******
+********************************/
+
+.home-services-overview {
     position: relative;
-
-    display: flex;
-    flex-direction: column;
+    isolation: isolate;
 
     min-width: 0;
-    padding: 27px 24px 23px;
+    padding: 30px;
+
     overflow: hidden;
 
     background: linear-gradient(
         145deg,
-        rgba(53, 53, 52, 0.72),
+        rgba(53, 53, 52, 0.78),
         rgba(24, 26, 27, 0.98)
     );
 
-    border: 1px solid rgba(217, 135, 28, 0.24);
-    border-radius: 17px;
+    border: 1px solid rgba(217, 135, 28, 0.3);
+    border-radius: 18px;
 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow:
+        0 14px 32px rgba(0, 0, 0, 0.27),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
 
     transition:
-        transform 0.3s ease,
         border-color 0.3s ease,
         box-shadow 0.3s ease;
 }
 
-/* Soft decorative circle in the upper-right corner of each card. */
-.home-service-card::after {
-    position: absolute;
-    top: -38px;
-    right: -38px;
-
-    width: 110px;
-    height: 110px;
-
-    background: var(--color-green);
-    opacity: 0.07;
-
-    border-radius: 50%;
-    pointer-events: none;
-
-    content: "";
-    transition: opacity 0.3s ease;
-}
-
-/* Raise the service card slightly when hovered. */
-.home-service-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(217, 135, 28, 0.65);
+.home-services-overview:hover {
+    border-color: rgba(217, 135, 28, 0.6);
 
     box-shadow:
-        0 16px 35px rgba(0, 0, 0, 0.28),
-        0 0 18px rgba(217, 135, 28, 0.05);
+        0 18px 38px rgba(0, 0, 0, 0.32),
+        0 0 18px rgba(217, 135, 28, 0.06);
 }
 
-.home-service-card:hover::after {
-    opacity: 0.15;
+.home-services-overview-paw {
+    position: absolute;
+    right: -25px;
+    bottom: -35px;
+    z-index: -1;
+
+    color: var(--color-green);
+    font-size: 11rem;
+
+    opacity: 0.055;
+    pointer-events: none;
+
+    transform: rotate(-15deg);
 }
 
-/* Header row containing the service icon. */
-.home-service-card-header {
+.home-services-overview-heading {
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 22px;
+    padding-bottom: 17px;
+
+    border-bottom: 1px solid rgba(217, 135, 28, 0.25);
+}
+
+.home-services-overview-heading > span {
+    display: block;
+    margin-bottom: 8px;
+
+    color: var(--color-green);
+    font-size: 0.73rem;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.home-services-overview-heading h3 {
+    margin: 0;
+
+    color: var(--color-gold);
+    font-size: 1.3rem;
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+.home-services-overview-list {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+/* Each item contains a fully clickable link */
+.home-services-overview-item {
+    display: block;
+    min-width: 0;
+
+    border-bottom: 1px solid rgba(211, 207, 201, 0.12);
+
+    transition: border-color 0.3s ease;
+}
+
+.home-services-overview-item:last-child {
+    border-bottom: none;
+}
+
+/* Entire row is clickable */
+.home-services-overview-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    width: 100%;
+    min-width: 0;
+    padding: 17px 0;
+
+    color: inherit;
+    text-decoration: none;
+
+    transition: padding 0.3s ease;
+}
+
+/* Icon container */
+.home-services-overview-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    color: var(--color-dark-gray);
+    background: var(--color-green);
+
+    border: 1px solid rgba(217, 135, 28, 0.2);
+    border-radius: 11px;
+
+    font-size: 1.05rem;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Category text */
+.home-services-overview-text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 4px;
+
+    min-width: 0;
+}
+
+.home-services-overview-text strong {
+    color: var(--color-gold);
+    font-size: 0.87rem;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.home-services-overview-text small {
+    color: var(--color-white);
+    font-size: 0.74rem;
+    line-height: 1.6;
+    opacity: 0.75;
+}
+
+/* Arrow */
+.home-services-overview-arrow {
+    flex-shrink: 0;
+
+    color: var(--color-green);
+    font-size: 0.85rem;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Hover effect */
+.home-services-overview-item:hover {
+    border-bottom-color: rgba(217, 135, 28, 0.3);
+}
+
+.home-services-overview-item:hover .home-services-overview-link {
+    padding-left: 5px;
+}
+
+.home-services-overview-item:hover .home-services-overview-icon {
+    background: var(--color-gold);
+    transform: scale(1.05);
+}
+
+.home-services-overview-item:hover .home-services-overview-arrow {
+    color: var(--color-gold);
+    transform: translateX(4px);
+}
+
+/* Keyboard accessibility */
+.home-services-overview-link:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+/* Overview footer */
+.home-services-overview-footer {
     position: relative;
     z-index: 1;
 
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 12px;
+    gap: 10px;
 
-    margin-bottom: 20px;
+    margin-top: 15px;
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(217, 135, 28, 0.25);
 }
 
-/* Icon container for each service category. */
-.home-service-icon {
-    display: inline-flex;
+.home-services-overview-footer > svg {
     flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-
-    width: 52px;
-    height: 52px;
-
-    color: var(--color-dark-gray);
-    background: var(--color-green);
-    border-radius: 12px;
-
-    font-size: 1.2rem;
-}
-
-/* Service title. */
-.home-service-card h3 {
-    margin: 0 0 13px;
-
-    color: var(--color-gold);
-    font-size: 1.12rem;
-    font-weight: 800;
-    line-height: 1.45;
-}
-
-/* Price and duration row. */
-.home-service-price {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-
-    margin: 0 0 17px;
-    padding: 13px 0;
-
-    border-top: 1px solid rgba(217, 135, 28, 0.2);
-    border-bottom: 1px solid rgba(217, 135, 28, 0.2);
-}
-
-/* Main price displayed on the card. */
-.home-service-price > strong {
-    color: var(--color-gold);
-    font-size: 1.75rem;
-    font-weight: 800;
-    line-height: 1.25;
-}
-
-/* Duration or service-format information. */
-.home-service-price > span {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-
-    color: var(--color-white);
-    font-size: 0.75rem;
-    font-weight: 600;
-    line-height: 1.5;
-    opacity: 0.9;
-}
-
-.home-service-price > span > svg {
     color: var(--color-green);
+    font-size: 0.95rem;
 }
 
-/* Justify service descriptions to create a more uniform text block. */
-.home-service-card > p {
-    margin: 0 0 23px;
-
-    color: var(--color-white);
-    font-size: 0.87rem;
-    line-height: 1.85;
-    opacity: 0.88;
-
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-/* Footer stays at the bottom of each service card. */
-.home-service-card-footer {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    margin-top: auto;
-    padding-top: 17px;
-
-    color: var(--color-gold);
-    border-top: 1px solid rgba(211, 207, 201, 0.13);
-
-    font-size: 0.76rem;
-    font-weight: 700;
+.home-services-overview-footer > span {
+    color: rgba(211, 207, 201, 0.78);
+    font-size: 0.74rem;
+    font-weight: 600;
     line-height: 1.6;
 }
 
-.home-service-card-footer > svg {
-    flex-shrink: 0;
-    color: var(--color-green);
-}
-
-/* Supporting call to action below the service-card grid. */
-.home-services-cta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-
-    margin-top: 32px;
-    padding: 23px 25px;
-
-    background: rgba(91, 145, 78, 0.075);
-    border: 1px solid rgba(91, 145, 78, 0.27);
-    border-radius: 13px;
-}
-
-/* Justify the supporting text while keeping the button separate. */
-.home-services-cta > p {
-    margin: 0;
-
-    color: var(--color-white);
-    font-size: 0.87rem;
-    line-height: 1.8;
-    opacity: 0.9;
-
-    text-align: justify;
-    text-justify: inter-word;
-}
-
 /********************************
-******** SERVICE AREA ***********
+******** SERVICE AREA ************
 ********************************/
 
-/* Two-column layout for the service area text and map. */
 .home-area {
     display: grid;
     grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
@@ -976,12 +992,10 @@
     min-width: 0;
 }
 
-/* Spacing between paragraphs in the service area introduction. */
 .home-area-copy > p {
     margin: 0 0 17px;
 }
 
-/* Highlight the standard and extended travel distances. */
 .home-area-info {
     display: flex;
     align-items: center;
@@ -995,7 +1009,6 @@
     border-radius: 13px;
 }
 
-/* Allow the travel-distance text to fit inside the information box. */
 .home-area-info > div {
     min-width: 0;
 }
@@ -1018,12 +1031,10 @@
     opacity: 0.8;
 }
 
-/* Ensure that the map column can shrink within the grid. */
 .home-area-visual {
     min-width: 0;
 }
 
-/* Shared panel styling for the map and its supporting information. */
 .home-image-panel {
     padding: 18px;
 
@@ -1039,7 +1050,6 @@
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
 }
 
-/* Label at the top of the map panel. */
 .home-image-panel-heading {
     display: flex;
     align-items: center;
@@ -1062,14 +1072,12 @@
     font-size: 1.05rem;
 }
 
-/* Fixed clipping container that prevents the map from overflowing during zoom. */
 .home-map-image-wrap {
     width: 100%;
     overflow: hidden;
     border-radius: 7px;
 }
 
-/* Keep the map at its normal size until the panel is hovered. */
 .home-map-image-wrap > img {
     display: block;
     width: 100%;
@@ -1082,12 +1090,10 @@
     transition: transform 0.4s ease;
 }
 
-/* Enlarge only the map image, leaving the panel and legend in place. */
 .home-map-panel:hover .home-map-image-wrap > img {
     transform: scale(1.06);
 }
 
-/* Legend describing the two travel zones. */
 .home-map-legend {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1100,7 +1106,6 @@
     border-bottom: 1px solid rgba(211, 207, 201, 0.13);
 }
 
-/* Individual legend item with a color swatch and explanatory text. */
 .home-map-legend-item {
     display: flex;
     align-items: flex-start;
@@ -1114,7 +1119,6 @@
     border-radius: 9px;
 }
 
-/* Small colored square identifying each travel zone. */
 .home-map-legend-swatch {
     display: block;
     flex: 0 0 13px;
@@ -1137,7 +1141,6 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Stack the title and explanatory text in each legend item. */
 .home-map-legend-text {
     display: flex;
     flex-direction: column;
@@ -1160,7 +1163,6 @@
     opacity: 0.8;
 }
 
-/* Caption displayed beneath the map legend. */
 .home-map-caption {
     display: flex;
     align-items: center;
@@ -1183,20 +1185,17 @@
 }
 
 /********************************
-******** ETHICS AND VALUES ******
+******** ETHICS AND VALUES *******
 ********************************/
 
-/* Add a small offset above the ethics section. */
 .home-ethics {
     padding-top: 5px;
 }
 
-/* Adjust the spacing beneath the ethics introduction. */
 .home-ethics .home-section-heading {
     margin-bottom: 38px;
 }
 
-/* Two-column grid for the ethics cards. */
 .home-ethics-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1204,19 +1203,16 @@
     gap: 24px;
 }
 
-/* Dedicated wrappers for the scroll-reveal animations. */
 .home-ethics-card-reveal {
     display: flex;
     min-width: 0;
 }
 
-/* Allow each ethics card to fill the available wrapper height. */
 .home-ethics-card-reveal > .home-ethics-card {
     width: 100%;
     flex: 1;
 }
 
-/* Base appearance of an ethics card. */
 .home-ethics-card {
     min-width: 0;
     overflow: hidden;
@@ -1238,7 +1234,6 @@
         box-shadow 0.35s ease;
 }
 
-/* Hover effect for ethics cards. */
 .home-ethics-card:hover {
     transform: translateY(-4px);
     border-color: rgba(217, 135, 28, 0.6);
@@ -1248,7 +1243,6 @@
         0 0 18px rgba(217, 135, 28, 0.05);
 }
 
-/* Fixed-ratio image area at the top of each ethics card. */
 .home-ethics-image {
     position: relative;
 
@@ -1260,7 +1254,6 @@
     border-bottom: 1px solid rgba(217, 135, 28, 0.24);
 }
 
-/* Darken the bottom of the image to complement the icon overlay. */
 .home-ethics-image::after {
     position: absolute;
     inset: 0;
@@ -1275,7 +1268,6 @@
     content: "";
 }
 
-/* Fill the image area and add a subtle hover zoom. */
 .home-ethics-image > img {
     width: 100%;
     height: 100%;
@@ -1287,7 +1279,6 @@
     transform: scale(1.035);
 }
 
-/* Icon badge overlapping the bottom edge of the card image. */
 .home-ethics-image-icon {
     position: absolute;
     right: 20px;
@@ -1310,12 +1301,10 @@
     font-size: 1.1rem;
 }
 
-/* Inner content area of each ethics card. */
 .home-ethics-content {
     padding: 25px 26px 28px;
 }
 
-/* Small uppercase label introducing the card's theme. */
 .home-card-kicker {
     display: flex;
     align-items: center;
@@ -1336,7 +1325,6 @@
     font-size: 0.9rem;
 }
 
-/* Ethics card heading. */
 .home-ethics-content h3 {
     margin: 0 0 12px;
 
@@ -1346,7 +1334,6 @@
     line-height: 1.45;
 }
 
-/* Justify the explanatory text inside ethics cards. */
 .home-ethics-content > p {
     margin: 0;
 
@@ -1359,7 +1346,6 @@
     text-justify: inter-word;
 }
 
-/* Centered quotation highlighting the educational approach. */
 .home-ethics-quote {
     display: flex;
     flex-direction: column;
@@ -1403,10 +1389,9 @@
 }
 
 /********************************
-******** HOME VISITS ************
+******** HOME VISITS *************
 ********************************/
 
-/* Two-column layout for the image and home-visit explanation. */
 .home-homevisit {
     display: grid;
     grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
@@ -1414,14 +1399,12 @@
     gap: clamp(35px, 5vw, 75px);
 }
 
-/* Position the decorative corner and image together. */
 .home-homevisit-visual {
     position: relative;
     min-width: 0;
     padding: 17px 0 24px 17px;
 }
 
-/* Decorative corner placed behind the home-visit image. */
 .home-homevisit-visual::before {
     position: absolute;
     top: 0;
@@ -1438,7 +1421,6 @@
     content: "";
 }
 
-/* Image container with a fixed aspect ratio. */
 .home-homevisit-photo {
     position: relative;
 
@@ -1453,7 +1435,6 @@
     border-radius: 12px;
 }
 
-/* Image crop and hover zoom for the home-visit photo. */
 .home-homevisit-photo > img {
     width: 100%;
     height: 100%;
@@ -1467,7 +1448,6 @@
     transform: scale(1.03);
 }
 
-/* Gradient overlay behind the badge at the bottom of the photo. */
 .home-homevisit-photo::after {
     position: absolute;
     inset: 0;
@@ -1482,7 +1462,6 @@
     content: "";
 }
 
-/* Label displayed over the bottom of the home-visit photo. */
 .home-homevisit-photo-badge {
     position: absolute;
     bottom: 16px;
@@ -1513,17 +1492,14 @@
     font-size: 1rem;
 }
 
-/* Text column describing the home-visit approach. */
 .home-homevisit-copy {
     min-width: 0;
 }
 
-/* Space the home-visit paragraphs consistently. */
 .home-homevisit-copy > p {
     margin-bottom: 16px;
 }
 
-/* List of principles applied during sessions. */
 .home-homevisit-list {
     display: flex;
     flex-direction: column;
@@ -1535,7 +1511,6 @@
     list-style: none;
 }
 
-/* Align each list icon with its descriptive text. */
 .home-homevisit-list > li {
     display: flex;
     align-items: flex-start;
@@ -1554,16 +1529,14 @@
     font-size: 0.9rem;
 }
 
-/* Use red for the item describing what is not done. */
 .home-homevisit-list > li.home-homevisit-not > svg {
     color: #e05252;
 }
 
 /********************************
-******** CONTACT CALL TO ACTION *
+******** CONTACT CALL TO ACTION **
 ********************************/
 
-/* Highlighted contact section at the bottom of the page. */
 .home-contact-cta {
     position: relative;
     margin: 0 auto;
@@ -1576,20 +1549,17 @@
     border-radius: 20px;
 }
 
-/* Keep the CTA content above the decorative paw print. */
 .home-contact-cta > *:not(.home-cta-paw) {
     position: relative;
     z-index: 1;
 }
 
-/* Center the label above the contact heading. */
 .home-contact-cta > .home-eyebrow {
     display: flex;
     justify-content: center;
     color: var(--color-green);
 }
 
-/* Main contact heading. */
 .home-contact-cta h2 {
     max-width: 850px;
     margin: 0 auto 18px;
@@ -1602,7 +1572,6 @@
     text-transform: uppercase;
 }
 
-/* Keep the CTA text centered for a compact, promotional layout. */
 .home-contact-cta > p {
     max-width: 750px;
     margin: 0 auto 28px;
@@ -1612,7 +1581,6 @@
     line-height: 1.85;
 }
 
-/* Large decorative paw print behind the contact CTA content. */
 .home-cta-paw {
     position: absolute;
     top: 50%;
@@ -1638,13 +1606,12 @@
     mask-size: contain;
 }
 
-
 /********************************
-******** RESPONSIVE *************
+******** RESPONSIVE **************
 ********************************/
 
 /********************************
-******** MOBILE PORTRAIT ********
+******** MOBILE PORTRAIT *********
 ********************************/
 
 @media (max-width: 767px) and (orientation: portrait) {
@@ -1709,11 +1676,12 @@
     }
 
     .home-hero-actions {
-        flex-direction: column;
-        align-items: stretch;
+        grid-template-columns: minmax(0, 1fr);
         gap: 10px;
         width: 100%;
+        padding:0;
     }
+
 
     .home-container .home-button {
         width: 100%;
@@ -1722,17 +1690,17 @@
     }
 
     .home-hero-credentials {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 12px;
+
         margin-top: 22px;
         padding-top: 17px;
     }
 
     .home-hero-credential {
-        justify-content: flex-start;
         font-size: 0.73rem;
-        text-align: left;
     }
 
     .home-hero-credential-divider {
@@ -1830,69 +1798,94 @@
     }
 
     /* Services */
-    .home-services-grid {
+    .home-services-spotlight {
         grid-template-columns: minmax(0, 1fr);
-        gap: 15px;
+        gap: 25px;
     }
 
-    .home-service-card {
-        padding: 22px 19px;
+    .home-services-copy {
+        text-align: center;
+    }
+
+    .home-services-copy .home-eyebrow {
+        justify-content: center;
+    }
+
+    .home-services-copy .home-section-title {
+        text-align: center;
+    }
+
+    .home-services-copy > p {
+        font-size: 0.9rem;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .home-container .home-services-button {
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        margin: 15px auto 0;
+        padding: 13px 18px;
+        font-size: 0.87rem;
+    }
+
+    .home-services-footnote {
+        font-size: 0.69rem;
+        text-align: center;
+    }
+
+    .home-services-overview {
+        padding: 22px 18px;
         border-radius: 14px;
     }
 
-    .home-service-card-header {
-        margin-bottom: 17px;
-    }
-
-    .home-service-icon {
-        width: 46px;
-        height: 46px;
-        border-radius: 10px;
-        font-size: 1.05rem;
-    }
-
-    .home-service-card h3 {
-        margin-bottom: 10px;
-        font-size: 1.04rem;
-    }
-
-    .home-service-price {
-        align-items: center;
-        flex-direction: row;
+    .home-services-overview-heading {
         margin-bottom: 15px;
-        padding: 11px 0;
+        padding-bottom: 14px;
     }
 
-    .home-service-price > strong {
-        font-size: 1.55rem;
+    .home-services-overview-heading h3 {
+        font-size: 1.12rem;
     }
 
-    .home-service-price > span {
-        font-size: 0.72rem;
+    .home-services-overview-link {
+        gap: 11px;
+        padding: 14px 0;
     }
 
-    .home-service-card > p {
-        margin-bottom: 18px;
-        font-size: 0.84rem;
-        line-height: 1.8;
+    .home-services-overview-icon {
+        width: 39px;
+        height: 39px;
+        border-radius: 9px;
+        font-size: 0.95rem;
     }
 
-    .home-service-card-footer {
+    .home-services-overview-text strong {
+        font-size: 0.8rem;
+    }
+
+    .home-services-overview-text small {
+        font-size: 0.69rem;
+    }
+
+    .home-services-overview-arrow {
+        font-size: 0.75rem;
+    }
+
+    .home-services-overview-footer {
+        margin-top: 12px;
         padding-top: 14px;
-        font-size: 0.73rem;
     }
 
-    .home-services-cta {
-        align-items: stretch;
-        flex-direction: column;
-        gap: 16px;
-        margin-top: 23px;
-        padding: 18px;
+    .home-services-overview-footer > span {
+        font-size: 0.7rem;
     }
 
-    .home-services-cta > p {
-        font-size: 0.83rem;
-        line-height: 1.8;
+    .home-services-overview-paw {
+        right: -20px;
+        bottom: -20px;
+        font-size: 8rem;
     }
 
     /* Service area */
@@ -2071,7 +2064,7 @@
 }
 
 /********************************
-******** MOBILE LANDSCAPE *******
+******** MOBILE LANDSCAPE ********
 ********************************/
 
 @media (max-width: 950px)
@@ -2098,6 +2091,18 @@
     .home-hero-subtitle {
         margin-bottom: 19px;
         font-size: 0.88rem;
+    }
+
+    .home-hero-actions {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        width: 100%;
+        padding:0 50px;
+    }
+
+    .home-container .home-button {
+        min-width: min(100%, 280px);
+        
     }
 
     .home-hero-credentials {
@@ -2138,33 +2143,45 @@
         max-height: 370px;
     }
 
-    .home-services-grid {
+    /* Services */
+    .home-services-spotlight {
         grid-template-columns: minmax(0, 1fr);
-        gap: 13px;
+        gap: 25px;
     }
 
-    .home-service-card {
-        padding: 20px;
+    .home-services-copy {
+        text-align: center;
     }
 
-    .home-service-card-header {
-        margin-bottom: 14px;
+    .home-services-copy .home-eyebrow {
+        justify-content: center;
     }
 
-    .home-service-price {
-        align-items: center;
-        flex-direction: row;
+    .home-services-copy .home-section-title {
+        text-align: center;
     }
 
-    .home-service-card > p {
-        margin-bottom: 17px;
+    .home-services-copy > p {
+        text-align: left;
     }
 
-    .home-services-cta {
-        align-items: flex-start;
-        flex-direction: column;
+    .home-container .home-services-button {
+        display: flex;
+        width: fit-content;
+        margin: 15px auto 0;
     }
 
+    .home-services-footnote {
+        text-align: center;
+    }
+
+    .home-services-overview {
+        width: min(100%, 650px);
+        margin: 0 auto;
+        padding: 23px;
+    }
+
+    /* Ethics */
     .home-ethics-grid {
         grid-template-columns: minmax(0, 1fr);
         gap: 17px;
@@ -2200,7 +2217,6 @@
         text-align: center;
     }
 
-    /* Center home buttons horizontally in mobile landscape. */
     .home-container .home-button {
         display: flex;
         width: fit-content;
@@ -2211,14 +2227,13 @@
 }
 
 /********************************
-******** TABLET PORTRAIT ********
+******** TABLET PORTRAIT *********
 ********************************/
 
 @media (min-width: 768px)
     and (max-width: 1100px)
     and (orientation: portrait) {
 
-    /* General tablet adjustments */
     .home-hero {
         min-height: 670px;
         padding: 45px 4%;
@@ -2239,6 +2254,18 @@
     .home-hero-title {
         font-size: clamp(2.2rem, 5.5vw, 3.2rem);
     }
+
+    .home-hero-actions {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        width: 100%;
+        padding:0 50px;
+    }
+
+    .home-container .home-button {
+        min-width: min(100%, 280px);
+    }
+
 
     .home-hero-credentials {
         gap: 15px;
@@ -2267,7 +2294,7 @@
 
     .home-section-title {
         font-size: clamp(1.65rem, 3.3vw, 2.15rem);
-        text-align:center;
+        text-align: center;
     }
 
     .home-intro-photo-label {
@@ -2305,41 +2332,42 @@
     }
 
     /* Services */
-    .home-services-grid {
+    .home-services-spotlight {
         grid-template-columns: minmax(0, 1fr);
-        gap: 16px;
+        gap: 30px;
     }
 
-    .home-service-card {
-        padding: 24px;
+    .home-services-copy {
+        max-width: 760px;
+        margin: 0 auto;
+        text-align: center;
     }
 
-    .home-service-card-header {
-        margin-bottom: 17px;
+    .home-services-copy .home-eyebrow {
+        justify-content: center;
     }
 
-    .home-service-card h3 {
-        font-size: 1rem;
+    .home-services-copy .home-section-title {
+        text-align: center;
     }
 
-    .home-service-card > p {
-        font-size: 0.82rem;
+    .home-services-copy > p {
+        text-align: left;
     }
 
-    .home-service-price {
-        align-items: center;
-        flex-direction: row;
+    .home-container .home-services-button {
+        display: flex;
+        width: fit-content;
+        margin: 18px auto 0;
     }
 
-    .home-service-price > strong {
-        font-size: 1.55rem;
+    .home-services-footnote {
+        text-align: center;
     }
 
-    .home-services-cta {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 18px;
-        padding: 20px;
+    .home-services-overview {
+        width: min(100%, 760px);
+        margin: 0 auto;
     }
 
     /* Ethics */
@@ -2373,7 +2401,6 @@
         min-height: 300px;
     }
 
-    /* Center home buttons horizontally in tablet portrait. */
     .home-container .home-button {
         display: flex;
         width: fit-content;
@@ -2384,7 +2411,7 @@
 }
 
 /********************************
-******** TABLET LANDSCAPE *******
+******** TABLET LANDSCAPE ********
 ********************************/
 
 @media (min-width: 768px)
@@ -2436,13 +2463,13 @@
         width: 100%;
         text-align: center;
     }
-    
+
     .home-section-title {
         font-size: clamp(1.65rem, 3.3vw, 2.15rem);
-        text-align:center;
+        text-align: center;
     }
 
-    .home-intro-photo-frame img{
+    .home-intro-photo-frame img {
         object-position: 80%;
     }
 
@@ -2456,35 +2483,40 @@
     }
 
     /* Services */
-    .home-services-grid {
-        gap: 15px;
+    .home-services-spotlight {
+        gap: 28px;
     }
 
-    .home-service-card {
-        padding: 23px 18px;
+    .home-services-copy > p {
+        font-size: 0.9rem;
+        line-height: 1.8;
     }
 
-    .home-service-card h3 {
-        font-size: 1rem;
+    .home-services-overview {
+        padding: 24px;
     }
 
-    .home-service-card > p {
-        font-size: 0.82rem;
+    .home-services-overview-link {
+        gap: 11px;
+        padding: 15px 0;
     }
 
-    .home-service-price {
-        align-items: flex-start;
-        flex-direction: column;
+    .home-services-overview-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 0.95rem;
     }
 
-    .home-service-price > strong {
-        font-size: 1.55rem;
+    .home-services-overview-text strong {
+        font-size: 0.81rem;
     }
 
-    .home-services-cta {
-        align-items: flex-start;
-        gap: 18px;
-        padding: 20px;
+    .home-services-overview-text small {
+        font-size: 0.7rem;
+    }
+
+    .home-services-overview-heading h3 {
+        font-size: 1.15rem;
     }
 
     /* Ethics */
@@ -2502,5 +2534,19 @@
 
     .home-ethics-content > p {
         font-size: 0.83rem;
+    }
+}
+
+/********************************
+******** LARGE SCREEN TEXT *******
+********************************/
+
+@media (min-width: 900px) {
+    .home-intro-copy > p,
+    .home-area-copy > p,
+    .home-homevisit-copy > p,
+    .home-ethics-content > p {
+        text-align: justify;
+        hyphens: auto;
     }
 }

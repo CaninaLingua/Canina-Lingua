@@ -628,7 +628,7 @@ function Home() {
                                 <div className="home-ethics-image">
                                     <img
                                         src={dogEducation}
-                                        alt="Canina Lingua - Photo accueil Éducation"
+                                        alt="Canina Lingua - Photo accueil Éducation émotions"
                                         loading="lazy"
                                     />
 
@@ -846,7 +846,7 @@ function Home() {
                         <div className="home-map-lightbox-image-wrap">
                             <img
                                 src={zoneChalandise}
-                                alt="Carte agrandie de la zone d'intervention de Canina Lingua autour de Boulogne-sur-Mer"
+                                alt="Canina Lingua - Carte agrandie de la zone d'intervention de Canina Lingua autour de Boulogne-sur-Mer"
                             />
                         </div>
                     </div>

@@ -84,15 +84,15 @@ function Photos() {
                 PHOTOS GALLERY
             ========================= */}
             <div
-                className="photos-gallery-container fade-in-up"
+                className="photos-gallery-container"
                 id="photos-gallery"
                 aria-label="Galerie photos de Canina Lingua"
             >
 
                 {/* Gallery introduction */}
-                <section
-                    className="photos-gallery-intro"
-                    aria-labelledby="photos-gallery-intro-title"
+                <div
+                    className="photos-gallery-intro fade-in-up"
+                    aria-label="photos-gallery-intro-title"
                 >
                     <div className="photos-gallery-intro-heading">
                         <span className="photos-gallery-eyebrow">
@@ -121,7 +121,7 @@ function Photos() {
                             autrement qu'à travers les mots.
                         </p>
                     </div>
-                </section>
+                </div>
 
 
                 {/* Loading state */}

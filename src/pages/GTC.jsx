@@ -5,7 +5,7 @@ import usePageMetaData from '../hooks/usePageMetaData';
 import NavLink from "../components/NavLink.jsx";
 import '../css/GTC.css';
 
-// Conditions générales de vente
+// Conditions générales de ventes
 function GTC() {
     // Set page title + description on component mount
     usePageMetaData(
@@ -15,7 +15,7 @@ function GTC() {
 
     return (
         <main className="GTC-container">
-            <h1>Conditions générales de vente</h1>
+            <h1>Conditions générales de ventes</h1>
 
             <div className="gtc-section">
                 <h2>Article 1 – Mission, prestataire et client</h2>

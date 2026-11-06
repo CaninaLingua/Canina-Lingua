@@ -794,7 +794,7 @@ function Home() {
                         to="/contact"
                         className="home-button"
                     >
-                        Contactez Canina Lingua
+                        Contacter Canina Lingua
                         <FontAwesomeIcon icon={faArrowRight} />
                     </Link>
                 </div>

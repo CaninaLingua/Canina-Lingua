@@ -25,7 +25,7 @@ body{
     color: var(--color-dark-gray);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    min-height:100vh;
+    min-height: 100vh;
 }
 
 
@@ -37,7 +37,7 @@ body{
 .content{
     position: relative;
     overflow : hidden;
-    min-height:80vh;
-    background: #bbc4b4;
+    min-height: 80vh;
+    background: rgba(91, 145, 78, 0.25);
 }
 

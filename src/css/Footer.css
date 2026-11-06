@@ -120,6 +120,9 @@
     letter-spacing: 2px;
     font-weight: 800;
     z-index: 10;
+    text-shadow:
+        0 0 5px var(--color-gold),
+        0 0 10px var(--color-gold);
 }
 
 .footer-stars {
@@ -129,8 +132,13 @@
     font-size: 1.4rem;
     margin-bottom: 18px;
     z-index: 10;
-    -webkit-text-stroke: 1px var(--color-dark-gray);
-    filter: drop-shadow(0 0px 6px #d9871c8a);
+    
+}
+
+.footer-stars svg {
+    filter:
+        drop-shadow(0 0 5px rgba(217, 135, 28, 0.6))
+        drop-shadow(0 0 6px rgba(217, 135, 28, 0.8));
 }
 
 .footer-reviews-btn {
@@ -361,6 +369,9 @@
     letter-spacing: 2px;
     font-weight: 800;
     z-index: 10;
+    text-shadow:
+        0 0 5px var(--color-gold),
+        0 0 10px var(--color-gold);
 }
 
 .footer-schedules-hours {
@@ -376,6 +387,9 @@
     -webkit-text-stroke: 1px var(--color-dark-gray);
     letter-spacing: 2px;
     font-weight: 800; 
+    text-shadow:
+        0 0 5px var(--color-gold),
+        0 0 10px var(--color-gold);
 }
 
 .footer-schedules-h3 {
@@ -384,6 +398,9 @@
     font-weight: 800; 
     -webkit-text-stroke: 0.6px var(--color-dark-gray);
     letter-spacing: 1px;
+    text-shadow:
+        0 0 5px var(--color-white),
+        0 0 6px var(--color-white);
 }
 
 /**************************

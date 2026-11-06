@@ -22,7 +22,7 @@ function PhotoItem({ file }) {
             <div className="zoom-animation">
                 <img
                     src={file.webContentLink}
-                    alt={`CaninaLingua_${file.name}`}
+                    alt={`Canina_Lingua_${file.name}`}
                     className="photos-gallery-image"
                     onError={(e) => {
                         e.target.src = file.webContentLink;

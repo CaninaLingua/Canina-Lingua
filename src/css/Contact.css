@@ -46,23 +46,6 @@
     transform: translate(0, 0);
 }
 
-.zoom-animation {
-    width: 100%;
-    opacity: 0;
-    transform: scale(0.1);
-    filter: blur(4px);
-
-    transition:
-        opacity 1s ease-out,
-        transform 0.8s ease-out,
-        filter 0.8s ease-out;
-}
-
-.zoom-animation.visible {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-}
 
 
 /* Alert entrance animation */
@@ -480,6 +463,9 @@
     letter-spacing: 2px;
     font-weight: 800;
     z-index: 10;
+    text-shadow:
+        0 0 5px var(--color-gold),
+        0 0 10px var(--color-gold);
 }
 
 .contact-infos-schedules-hours {
@@ -495,6 +481,9 @@
     -webkit-text-stroke: 1px var(--color-dark-gray);
     letter-spacing: 2px;
     font-weight: 800;
+    text-shadow:
+        0 0 5px var(--color-gold),
+        0 0 10px var(--color-gold);
 }
 
 .contact-infos-schedules-h3 {
@@ -503,6 +492,9 @@
     font-weight: 800;
     -webkit-text-stroke: 0.6px var(--color-dark-gray);
     letter-spacing: 1px;
+    text-shadow:
+        0 0 5px var(--color-white),
+        0 0 6px var(--color-white);
 }
 
 /***** Social Media Section ******/

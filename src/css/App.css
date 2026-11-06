@@ -38,5 +38,6 @@ body{
     position: relative;
     overflow : hidden;
     min-height:80vh;
-    background: var(--color-white);
+    background: #bbc4b4;
 }
+

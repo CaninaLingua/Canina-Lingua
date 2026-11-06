@@ -49,24 +49,6 @@
     transform: translate(0, 0);
 }
 
-.zoom-animation {
-    width: 100%;
-    opacity: 0;
-    transform: scale(0.1);
-    filter: blur(4px);
-
-    transition:
-        opacity 1s ease-out,
-        transform 0.8s ease-out,
-        filter 0.8s ease-out;
-}
-
-.zoom-animation.visible {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-}
-
 /********************************
 ******** CONTAINER ***************
 ********************************/
@@ -660,6 +642,10 @@
 #services-main-contact:focus-visible {
     outline: 3px solid var(--color-green);
     outline-offset: 4px;
+}
+
+.service-card [id^="service-contact-"] {
+    align-self: flex-end;
 }
 
 /********************************

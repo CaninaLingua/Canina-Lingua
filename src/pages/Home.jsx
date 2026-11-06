@@ -22,6 +22,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import useRevealOnScroll from "../hooks/useRevealOnScroll";
+import usePageMetaData from '../hooks/usePageMetaData';
 
 import davidWithDogPhoto1 from "../assets/img/img_david_level/Canina_Lingua_David_Level_photo_1.webp";
 import davidWithDogPhoto2 from "../assets/img/img_david_level/Canina_Lingua_David_Level_photo_2.webp";
@@ -45,10 +46,11 @@ function Home() {
         ".fade-in-up, .fade-in-side-left, .fade-in-side-right"
     );
 
-    useEffect(() => {
-        document.title =
-            "Canina Lingua - Éducateur comportementaliste canin";
-    }, []);
+    // Set page title + description on component mount
+    usePageMetaData(
+        "Canina Lingua - Éducateur comportementaliste canin",
+        "Éducateur canin et comportementaliste diplômé d'État à Boulogne-sur-Mer et ses alentours. Une méthode éthique et éthologique, fondée sur la compréhension du chien et de ses émotions."
+    );
 
     // Gestion de la carte agrandie
     useEffect(() => {

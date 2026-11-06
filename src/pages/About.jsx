@@ -11,6 +11,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import useRevealOnScroll from "../hooks/useRevealOnScroll";
+import usePageMetaData from '../hooks/usePageMetaData';
+
 import NavLink from "../components/NavLink.jsx";
 
 import "../css/About.css";
@@ -25,6 +27,12 @@ import davidWorkingPortrait from "../assets/img/img_david_level/Canina_Lingua_Da
 function About() {
     useRevealOnScroll(
         ".fade-in-up, .fade-in-side-left, .fade-in-side-right"
+    );
+
+    // Set page title + description on component mount
+    usePageMetaData(
+        "Canina Lingua - À propos de moi & Mes valeurs",
+        "Découvrez mon parcours, les raisons qui m'ont amené à créer Canina Lingua et les valeurs qui guident mon métier d'éducateur canin. Passionné par les chiens et leur bien-être, je privilégie une approche éthique et éthologique, fondée sur la compréhension de leurs comportements, de leurs émotions et de leurs besoins."
     );
 
     useEffect(() => {

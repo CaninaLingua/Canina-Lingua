@@ -1,11 +1,20 @@
 import React, { useEffect } from 'react';
 
+import usePageMetaData from '../hooks/usePageMetaData';
+
 import '../css/Legal.css';
 
 import NavLink from "../components/NavLink.jsx";
 
 // legal & privacy politics page
 function Legal() {
+    // Set page title + description on component mount
+    usePageMetaData(
+        "Canina Lingua - Mentions légales et politique de confidentialité",
+        "Retrouvez les mentions légales et la politique de confidentialité de Canina Lingua."
+    );
+
+
     // change the title
     useEffect(() => {
         document.title = "Canina Lingua - Mentions légales et politique de confidentialité";

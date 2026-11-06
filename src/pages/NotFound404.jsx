@@ -1,11 +1,16 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+
+import usePageMetaData from '../hooks/usePageMetaData';
+
 import '../css/NotFound404.css';
 
 function NotFound404() {
-    useEffect(() => {
-        document.title = "Canina Lingua - Page non trouvée";
-    }, []);
+    // Set page title + description on component mount
+    usePageMetaData(
+        "Canina Lingua - Page non trouvée",
+        "Erreur 404 : la page que vous recherchez n'existe pas."
+    );
 
     return (
         <div className="notfound-container">

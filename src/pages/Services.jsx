@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import useRevealOnScroll from "../hooks/useRevealOnScroll";
+import usePageMetaData from '../hooks/usePageMetaData';
+
 import NavLink from "../components/NavLink.jsx";
 import ServiceCard from "../components/ServiceCard.jsx";
 import servicesGroups from "../data/servicesGroups.js";
@@ -18,9 +20,11 @@ function Services() {
         ".fade-in-up, .fade-in-side-left, .fade-in-side-right"
     );
 
-    useEffect(() => {
-        document.title = "Canina Lingua - Mes prestations & Tarifs";
-    }, []);
+    // Set page title + description on component mount
+    usePageMetaData(
+        "Canina Lingua - Mes prestations & Tarifs",
+        "Découvrez mes prestations et tarifs en éducation canine à Boulogne-sur-Mer et ses alentours : bilans comportementaux, séances individuelles, accompagnement éducatif, balades..."
+    );
 
     // Scroll to the requested service section or card.
     useEffect(() => {

@@ -1,12 +1,17 @@
 import React, { useEffect } from 'react';
+
+import usePageMetaData from '../hooks/usePageMetaData';
+
 import NavLink from "../components/NavLink.jsx";
 import '../css/GTC.css';
 
 // Conditions générales de vente
 function GTC() {
-    useEffect(() => {
-        document.title = "Canina Lingua - Conditions générales de vente";
-    }, []);
+    // Set page title + description on component mount
+    usePageMetaData(
+        "Canina Lingua - Conditions générales de vente",
+        "Consultez les conditions générales de vente de Canina Lingua."
+    );
 
     return (
         <main className="GTC-container">

@@ -4,6 +4,7 @@ import PhotoItem from '../components/PhotoItem';
 import '../css/Photos.css';
 
 import useRevealOnScroll from "../hooks/useRevealOnScroll";
+import usePageMetaData from '../hooks/usePageMetaData';
 
 // Photos gallery page
 function Photos() {
@@ -13,9 +14,13 @@ function Photos() {
     useRevealOnScroll(".fade-in-up");
     useRevealOnScroll(".zoom-animation", images);
 
-    useEffect(() => {
-        document.title = "Canina Lingua - Galerie photos";
+    // Set page title + description on component mount
+    usePageMetaData(
+        "Canina Lingua - Galerie photos",
+        "Des séances d’éducation aux moments partagés en balade, découvrez le quotidien de Canina Lingua à travers des photos prises dans les environnements de vie des chiens, à domicile comme en extérieur."
+    );
 
+    useEffect(() => {
         const url = `https://script.google.com/macros/s/AKfycbzBUcyxZY1naHAliQ0NwNreurJG8pds3TstxytTt9NGwWjZGKu5bv4k4G6Q7CBs3q3v/exec`;
 
         fetch(url)

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../css/Contact.css';
 
 import useRevealOnScroll from '../hooks/useRevealOnScroll';
+import usePageMetaData from '../hooks/usePageMetaData';
 
 import Schedules from '../components/Schedules';
 import NavLink from '../components/NavLink';
@@ -15,10 +16,11 @@ function Contact() {
     // Scroll reveal animation initialization
     useRevealOnScroll(".fade-in-up, .fade-in-side-left, .fade-in-side-right");
 
-    // Set page title on component mount
-    useEffect(() => {
-        document.title = "Canina Lingua - Contactez-moi !";
-    }, []);
+    // Set page title + description on component mount
+    usePageMetaData(
+        "Canina Lingua - Contactez-moi !",
+        "Vous souhaitez être accompagné dans l’éducation de votre chien, améliorer un comportement ou simplement obtenir un renseignement ? Contactez-moi par téléphone (de préférence) ou par écrit."
+    );
 
     // Form input state management
     const [formData, setFormData] = useState({

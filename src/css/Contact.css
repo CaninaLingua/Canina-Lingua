@@ -555,6 +555,8 @@
         0 5px 15px rgba(0, 0, 0, 0.2),
         inset 0 1px 0 rgba(211, 207, 201, 0.07),
         inset 0 -1px 0 rgba(0, 0, 0, 0.35);
+
+    scroll-margin-top: 110px;
 }
 
 .contact-form-title {

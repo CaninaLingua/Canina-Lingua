@@ -1,5 +1,6 @@
+import React, { useEffect, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-import React, { useState } from 'react';
 import '../css/Contact.css';
 
 import useRevealOnScroll from '../hooks/useRevealOnScroll';
@@ -14,6 +15,14 @@ import { faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 function Contact() {
+    // Retrieve URL search parameters
+    const [searchParams] = useSearchParams();
+
+    const requestedSubject = searchParams.get('sujet')?.trim() || '';
+
+    // Reference to the contact form section
+    const contactFormRef = useRef(null);
+
     // Scroll reveal animation initialization
     useRevealOnScroll(".fade-in-up, .fade-in-side-left, .fade-in-side-right");
 
@@ -31,9 +40,31 @@ function Contact() {
         name: '',
         email: '',
         phone: '',
-        subject: '',
+        subject: requestedSubject,
         message: ''
     });
+
+    // Update the subject when the URL parameter changes
+    useEffect(() => {
+        setFormData(prevState => ({
+            ...prevState,
+            subject: requestedSubject
+        }));
+    }, [requestedSubject]);
+
+    // Automatically scroll to the contact form when arriving from a service CTA
+    useEffect(() => {
+        if (!requestedSubject) return;
+
+        const animationFrame = window.requestAnimationFrame(() => {
+            contactFormRef.current?.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+
+        return () => window.cancelAnimationFrame(animationFrame);
+    }, [requestedSubject]);
 
     // Form submission status
     const [status, setStatus] = useState({
@@ -264,7 +295,10 @@ function Contact() {
                 </div>
 
                 {/* Right Side: Contact Form Section */}
-                <div className="contact-form-section fade-in-side-right">
+                <div
+                    className="contact-form-section fade-in-side-right"
+                    ref={contactFormRef}
+                >
                     <h1 className="contact-form-title">Me contacter</h1>
 
                     <form

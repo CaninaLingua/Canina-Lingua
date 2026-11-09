@@ -1,8 +1,9 @@
-
 import React from "react";
 import NavLink from "./NavLink.jsx";
 
 function ServiceCard({ service, index }) {
+    const contactSubject = `Demande de rendez-vous pour ${service.name}`;
+
     return (
         <div
             className="service-card-reveal fade-in-up"
@@ -57,7 +58,7 @@ function ServiceCard({ service, index }) {
                     </ul>
 
                     <NavLink
-                        to="/contact"
+                        to={`/contact?sujet=${encodeURIComponent(contactSubject)}`}
                         content={service.cta}
                         id={`service-contact-${service.id}`}
                     />

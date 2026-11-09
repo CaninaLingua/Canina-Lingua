@@ -96,20 +96,31 @@ function Contact() {
         try {
             // Prepare data for SilentForms
             const payload = {
+                // Configuration SilentForms
                 accessKey: SILENTFORMS_ACCESS_KEY,
+
+                // Nom affiché comme expéditeur
                 from_name: "Canina Lingua",
 
-                name: formData.name.trim(),
-                email: formData.email.trim(),
-
+                // Informations du visiteur
+                "Nom complet": formData.name.trim(),
+                "Adresse e-mail": formData.email.trim(),
                 "Numéro de téléphone": phone || "Non renseigné",
+
+                // Contenu de la demande
                 "Sujet du message": formData.subject.trim(),
                 "Message": formData.message.trim(),
 
+                // Adresse utilisée pour répondre directement au visiteur
+                replyto: formData.email.trim(),
+
+                // Objet de l'e-mail reçu par David
                 subject: `🐾🐶 Nouveau message de contact : ${formData.subject.trim()}`,
 
+                // Protection antispam
                 sf_extra: honeypotRef.current?.value || ""
             };
+
 
             // Send AJAX request to SilentForms
             const response = await fetch(

@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState } from 'react';
 import '../css/Contact.css';
 
 import useRevealOnScroll from '../hooks/useRevealOnScroll';
@@ -25,9 +25,6 @@ function Contact() {
 
     // SilentForms access key from environment variables
     const SILENTFORMS_ACCESS_KEY = import.meta.env.VITE_SILENTFORMS_KEY;
-
-    // Honeypot reference (anti-spam)
-    const honeypotRef = useRef(null);
 
     // Form input state management
     const [formData, setFormData] = useState({
@@ -64,12 +61,16 @@ function Contact() {
         }));
     };
 
-    // Handle form submission via SilentForms AJAX endpoint
+    // Handle form submission via SilentForms
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Retrieve all form fields using FormData
+        const form = e.currentTarget;
+        const fields = Object.fromEntries(new FormData(form));
+
         // Validate the optional French phone number
-        const phone = formData.phone.trim();
+        const phone = String(fields.phone || '').trim();
         const normalizedPhone = phone.replace(/[ .-]/g, '');
         const phoneRegex = /^(?:0[1-9]\d{8}|\+33[1-9]\d{8})$/;
 
@@ -94,51 +95,45 @@ function Contact() {
         setStatus({ loading: true, success: null });
 
         try {
-            // Prepare data for SilentForms
-            const payload = {
-                // Configuration SilentForms
+            // Build the payload from the actual form fields
+            const data = {
+                // SilentForms configuration
                 accessKey: SILENTFORMS_ACCESS_KEY,
-
-                // Nom affiché comme expéditeur
                 from_name: "Canina Lingua",
 
-                // Informations du visiteur
-                "Nom complet": formData.name.trim(),
-                "Adresse e-mail": formData.email.trim(),
+                // Visitor information
+                "Nom complet": String(fields.name || '').trim(),
+                "Adresse e-mail": String(fields.email || '').trim(),
                 "Numéro de téléphone": phone || "Non renseigné",
 
-                // Contenu de la demande
-                "Sujet du message": formData.subject.trim(),
-                "Message": formData.message.trim(),
+                // Message content
+                "Sujet du message": String(fields.subject || '').trim(),
+                "Message": String(fields.message || '').trim(),
 
-                // Adresse utilisée pour répondre directement au visiteur
-                replyto: formData.email.trim(),
+                // Reply-To address
+                replyto: String(fields.email || '').trim(),
 
-                // Objet de l'e-mail reçu par David
-                subject: `🐾🐶 Nouveau message de contact : ${formData.subject.trim()}`,
-
-                // Protection antispam
-                sf_extra: honeypotRef.current?.value || ""
+                // Notification email subject
+                subject: `🐾🐶 Nouveau message de contact : ${String(fields.subject || '').trim()}`
             };
 
-
-            // Send AJAX request to SilentForms
+            // Send request to SilentForms
             const response = await fetch(
-                "https://silentforms.com/api/submit",
+                'https://silentforms.com/api/submit',
                 {
-                    method: "POST",
+                    method: 'POST',
                     headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json"
+                        'Content-Type': 'application/json',
+                        Accept: 'application/json'
                     },
-                    body: JSON.stringify(payload)
+                    body: JSON.stringify(data)
                 }
             );
 
-            const data = await response.json().catch(() => null);
+            const result = await response.json();
 
-            // Check the API response
-            if (response.ok && data?.status === "success") {
+            // Handle the API response
+            if (response.ok && result.status === 'success') {
                 setStatus({ loading: false, success: true });
 
                 // Reset form input fields
@@ -150,17 +145,12 @@ function Contact() {
                     message: ''
                 });
 
-                // Reset honeypot
-                if (honeypotRef.current) {
-                    honeypotRef.current.value = '';
-                }
-
                 setPhoneError('');
             } else {
                 console.error(
                     "Erreur SilentForms :",
-                    data?.message || `Erreur HTTP ${response.status}`,
-                    data
+                    result.message || `Erreur HTTP ${response.status}`,
+                    result
                 );
 
                 setStatus({ loading: false, success: false });
@@ -242,7 +232,7 @@ function Contact() {
                         </p>
                     </div>
 
-                    {/* Direct Contact Buttons (Phone & Email) */}
+                    {/* Direct Contact Buttons */}
                     <div className="contact-direct-actions">
                         <PhoneButton className="contact-direct-btn" />
 
@@ -297,27 +287,6 @@ function Contact() {
                         onSubmit={handleSubmit}
                         className="contact-form-element"
                     >
-                        {/* SilentForms anti-spam honeypot */}
-                        <div
-                            aria-hidden="true"
-                            style={{
-                                position: 'absolute',
-                                left: '-9999px',
-                                width: '1px',
-                                height: '1px',
-                                overflow: 'hidden'
-                            }}
-                        >
-                            <input
-                                ref={honeypotRef}
-                                type="text"
-                                id="sf_extra"
-                                name="sf_extra"
-                                tabIndex={-1}
-                                autoComplete="off"
-                            />
-                        </div>
-
                         <div className="contact-form-group">
                             <label htmlFor="name">Nom complet*</label>
                             <input

@@ -23,8 +23,8 @@ function Contact() {
         "Vous souhaitez être accompagné dans l’éducation de votre chien, améliorer un comportement ou simplement obtenir un renseignement ? Contactez-moi par téléphone (de préférence) ou par écrit."
     );
 
-    // SilentForms access key from environment variables
-    const SILENTFORMS_ACCESS_KEY = import.meta.env.VITE_SILENTFORMS_KEY;
+    // RG Forms endpoint from environment variables
+    const FORM_SCRIPT_URL = import.meta.env.VITE_FORM_SCRIPT_URL;
 
     // Form input state management
     const [formData, setFormData] = useState({
@@ -61,16 +61,12 @@ function Contact() {
         }));
     };
 
-    // Handle form submission via SilentForms
+    // Handle form submission via RG Forms / Google Apps Script
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Retrieve all form fields using FormData
-        const form = e.currentTarget;
-        const fields = Object.fromEntries(new FormData(form));
-
         // Validate the optional French phone number
-        const phone = String(fields.phone || '').trim();
+        const phone = formData.phone.trim();
         const normalizedPhone = phone.replace(/[ .-]/g, '');
         const phoneRegex = /^(?:0[1-9]\d{8}|\+33[1-9]\d{8})$/;
 
@@ -82,10 +78,10 @@ function Contact() {
             return;
         }
 
-        // Check that the environment variable is configured
-        if (!SILENTFORMS_ACCESS_KEY) {
+        // Check that the RG Forms endpoint is configured
+        if (!FORM_SCRIPT_URL) {
             console.error(
-                "Erreur : la variable VITE_SILENTFORMS_KEY est introuvable."
+                "Erreur : la variable VITE_FORM_SCRIPT_URL est introuvable."
             );
             setStatus({ loading: false, success: false });
             return;
@@ -95,45 +91,32 @@ function Contact() {
         setStatus({ loading: true, success: null });
 
         try {
-            // Build the payload from the actual form fields
-            const data = {
-                // SilentForms configuration
-                accessKey: SILENTFORMS_ACCESS_KEY,
-                from_name: "Canina Lingua",
-
-                // Visitor information
-                "Nom complet": String(fields.name || '').trim(),
-                "Adresse e-mail": String(fields.email || '').trim(),
-                "Numéro de téléphone": phone || "Non renseigné",
-
-                // Message content
-                "Sujet du message": String(fields.subject || '').trim(),
-                "Message": String(fields.message || '').trim(),
-
-                // Reply-To address
-                replyto: String(fields.email || '').trim(),
-
-                // Notification email subject
-                subject: `🐾🐶 Nouveau message de contact : ${String(fields.subject || '').trim()}`
+            // Prepare the fields using the exact RG Forms field keys
+            const fields = {
+                nom_complet: formData.name.trim(),
+                adresse_e_mail: formData.email.trim(),
+                numero_de_telephone_optionnel: phone || "Non renseigné",
+                sujet_du_message: formData.subject.trim(),
+                message: formData.message.trim(),
             };
 
-            // Send request to SilentForms
-            const response = await fetch(
-                'https://silentforms.com/api/submit',
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Accept: 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                }
-            );
+            // Send the request to RG Forms
+            const response = await fetch(FORM_SCRIPT_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain'
+                },
+                body: JSON.stringify({
+                    tab: 'contact',
+                    fields: fields
+                })
+            });
 
+            // Parse the API response
             const result = await response.json();
 
-            // Handle the API response
-            if (response.ok && result.status === 'success') {
+            // Check the response returned by Google Apps Script
+            if (response.ok && result.result === 'success') {
                 setStatus({ loading: false, success: true });
 
                 // Reset form input fields
@@ -146,10 +129,11 @@ function Contact() {
                 });
 
                 setPhoneError('');
+
             } else {
                 console.error(
-                    "Erreur SilentForms :",
-                    result.message || `Erreur HTTP ${response.status}`,
+                    "Erreur RG Forms :",
+                    result.error || `Erreur HTTP ${response.status}`,
                     result
                 );
 
@@ -158,7 +142,7 @@ function Contact() {
 
         } catch (error) {
             console.error(
-                "Erreur lors de l'envoi du formulaire :",
+                "Erreur lors de l'envoi du formulaire RG Forms :",
                 error
             );
 
@@ -232,7 +216,7 @@ function Contact() {
                         </p>
                     </div>
 
-                    {/* Direct Contact Buttons */}
+                    {/* Direct Contact Buttons (Phone & Email) */}
                     <div className="contact-direct-actions">
                         <PhoneButton className="contact-direct-btn" />
 

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+
+import React, { useEffect, useState, useRef } from 'react';
 import '../css/Contact.css';
 
 import useRevealOnScroll from '../hooks/useRevealOnScroll';
@@ -21,6 +22,12 @@ function Contact() {
         "Canina Lingua - Contactez-moi !",
         "Vous souhaitez être accompagné dans l’éducation de votre chien, améliorer un comportement ou simplement obtenir un renseignement ? Contactez-moi par téléphone (de préférence) ou par écrit."
     );
+
+    // SilentForms access key from environment variables
+    const SILENTFORMS_ACCESS_KEY = import.meta.env.VITE_SILENTFORMS_KEY;
+
+    // Honeypot reference (anti-spam)
+    const honeypotRef = useRef(null);
 
     // Form input state management
     const [formData, setFormData] = useState({
@@ -57,8 +64,8 @@ function Contact() {
         }));
     };
 
-    // Handle form submission via FormSubmit AJAX endpoint
-    const handleSubmit = (e) => {
+    // Handle form submission via SilentForms AJAX endpoint
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Validate the optional French phone number
@@ -74,34 +81,53 @@ function Contact() {
             return;
         }
 
+        // Check that the environment variable is configured
+        if (!SILENTFORMS_ACCESS_KEY) {
+            console.error(
+                "Erreur : la variable VITE_SILENTFORMS_KEY est introuvable."
+            );
+            setStatus({ loading: false, success: false });
+            return;
+        }
+
         setPhoneError('');
         setStatus({ loading: true, success: null });
 
-        // Send AJAX request to avoid external page redirection
-        fetch("https://formsubmit.co/ajax/a08fb2b7d86ca96e76a05666333d5e97", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-           body: JSON.stringify({
-                "Nom complet": formData.name,
-                email: formData.email,
-                "Numéro de téléphone": formData.phone || "Non renseigné",
-                "Sujet du message": formData.subject,
-                "Message": formData.message,
-                _replyto: formData.email,
-                _subject: `🐾🐶 Nouveau message de contact : ${formData.subject}`,
-                _template: "box"
-            })
-        })
-        .then(async (response) => {
-            const data = await response.json();
+        try {
+            // Prepare data for SilentForms
+            const payload = {
+                accessKey: SILENTFORMS_ACCESS_KEY,
+                from_name: "Canina Lingua",
 
-            if (
-                response.ok &&
-                (data.success === "true" || data.success === true)
-            ) {
+                name: formData.name.trim(),
+                email: formData.email.trim(),
+
+                "Numéro de téléphone": phone || "Non renseigné",
+                "Sujet du message": formData.subject.trim(),
+                "Message": formData.message.trim(),
+
+                subject: `🐾🐶 Nouveau message de contact : ${formData.subject.trim()}`,
+
+                sf_extra: honeypotRef.current?.value || ""
+            };
+
+            // Send AJAX request to SilentForms
+            const response = await fetch(
+                "https://silentforms.com/api/submit",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                }
+            );
+
+            const data = await response.json().catch(() => null);
+
+            // Check the API response
+            if (response.ok && data?.status === "success") {
                 setStatus({ loading: false, success: true });
 
                 // Reset form input fields
@@ -113,16 +139,30 @@ function Contact() {
                     message: ''
                 });
 
+                // Reset honeypot
+                if (honeypotRef.current) {
+                    honeypotRef.current.value = '';
+                }
+
                 setPhoneError('');
             } else {
-                console.error("Erreur FormSubmit :", data);
+                console.error(
+                    "Erreur SilentForms :",
+                    data?.message || `Erreur HTTP ${response.status}`,
+                    data
+                );
+
                 setStatus({ loading: false, success: false });
             }
-        })
-        .catch((error) => {
-            console.error("Erreur lors de l'envoi du formulaire :", error);
+
+        } catch (error) {
+            console.error(
+                "Erreur lors de l'envoi du formulaire :",
+                error
+            );
+
             setStatus({ loading: false, success: false });
-        });
+        }
     };
 
     return (
@@ -246,6 +286,27 @@ function Contact() {
                         onSubmit={handleSubmit}
                         className="contact-form-element"
                     >
+                        {/* SilentForms anti-spam honeypot */}
+                        <div
+                            aria-hidden="true"
+                            style={{
+                                position: 'absolute',
+                                left: '-9999px',
+                                width: '1px',
+                                height: '1px',
+                                overflow: 'hidden'
+                            }}
+                        >
+                            <input
+                                ref={honeypotRef}
+                                type="text"
+                                id="sf_extra"
+                                name="sf_extra"
+                                tabIndex={-1}
+                                autoComplete="off"
+                            />
+                        </div>
+
                         <div className="contact-form-group">
                             <label htmlFor="name">Nom complet*</label>
                             <input

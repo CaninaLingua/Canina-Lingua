@@ -91,7 +91,7 @@
     transform: translate(-50%, -50%);
 
     background: var(--color-green);
-    opacity: 0.35;
+    opacity: 0.6;
 
     -webkit-mask-image: var(--dog-paw-svg);
     mask-image: var(--dog-paw-svg);
@@ -139,7 +139,7 @@
     letter-spacing: 2px;
     font-weight: 700;
     z-index: 10;
-    
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 .footer-stars {
@@ -374,7 +374,7 @@
     transform: translate(-50%, -50%);
 
     background: var(--color-green);
-    opacity: 0.35;
+    opacity: 0.6;
 
     -webkit-mask-image: var(--dog-paw-svg);
     mask-image: var(--dog-paw-svg);
@@ -422,7 +422,7 @@
     letter-spacing: 2px;
     font-weight: 700;
     z-index: 10;
-    
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 .footer-schedules-hours {

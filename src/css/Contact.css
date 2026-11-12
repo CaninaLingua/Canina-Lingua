@@ -419,7 +419,7 @@
     align-items: center;
     text-align: center;
     margin: 20px 0;
-    background-color: #bfd7b02f;
+        background: linear-gradient(160deg, var(--color-gold) 0%, rgba(217, 135, 28, 0.35) 50%, var(--color-green) 100%);
 
     clip-path: polygon(
         50% 0%,
@@ -440,7 +440,7 @@
     height: 70%;
     transform: translate(-50%, -50%);
     background: var(--color-green);
-    opacity: 0.7;
+    opacity: 0.6;
     -webkit-mask-image: var(--dog-paw-svg);
     mask-image: var(--dog-paw-svg);
     -webkit-mask-repeat: no-repeat;
@@ -454,18 +454,35 @@
     pointer-events: none;
 }
 
+.contact-infos-schedules::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    z-index: -2;
+
+    background: linear-gradient(160deg, #2b2621 0%, #1f1c19 100%);
+
+    clip-path: polygon(
+        50% 0%,
+        100% 25%,
+        100% 75%,
+        50% 100%,
+        0% 75%,
+        0% 25%
+    );
+
+    pointer-events: none;
+}
+
 .contact-infos-schedules-h1 {
     color: var(--color-gold);
-    -webkit-text-stroke: 1.2px var(--color-dark-gray);
     font-size: 1.5rem;
     margin-bottom: 6px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: 800;
+    font-weight: 700;
     z-index: 10;
-    text-shadow:
-        0 0 5px var(--color-gold),
-        0 0 10px var(--color-gold);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 .contact-infos-schedules-hours {
@@ -478,23 +495,16 @@
 .contact-infos-schedules-h2 {
     font-size: 1.4rem;
     color: var(--color-gold);
-    -webkit-text-stroke: 1px var(--color-dark-gray);
     letter-spacing: 2px;
-    font-weight: 800;
-    text-shadow:
-        0 0 5px var(--color-gold),
-        0 0 10px var(--color-gold);
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 .contact-infos-schedules-h3 {
     font-size: 1.1rem;
     color: var(--color-white);
-    font-weight: 800;
-    -webkit-text-stroke: 0.6px var(--color-dark-gray);
+    font-weight: 500;
     letter-spacing: 1px;
-    text-shadow:
-        0 0 2px var(--color-white),
-        0 0 2px var(--color-white);
 }
 
 /***** Social Media Section ******/

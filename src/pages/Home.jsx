@@ -707,7 +707,7 @@ function Home() {
 
                         <h2 className="home-section-title">
                             Chez vous et en balade
-                            <span> Jamais sur un terrain d’entraînement clos</span>
+                            <span> Dans tout type d’environnement du quotidien</span>
                         </h2>
 
                         <p>
@@ -720,9 +720,8 @@ function Home() {
                         <p>
                             Je réalise les séances à domicile ou sur les lieux
                             de vos balades quotidiennes. J’interviens dans votre
-                            environnement réel, en tenant compte des émotions
-                            et des besoins de votre compagnon, jamais sur un
-                            terrain d’entraînement clos.
+                            environnement réel, en situation du quotidien, en tenant compte
+                            des émotions et des besoins de votre compagnon.
                         </p>
 
                         <ul className="home-homevisit-list">
@@ -748,10 +747,8 @@ function Home() {
                             </li>
 
                             <li className="home-homevisit-not">
-                                <FontAwesomeIcon icon={faXmark} />
-                                <span>
-                                    Jamais sur un terrain d’entraînement clos
-                                </span>
+                                <FontAwesomeIcon icon={faCheck} />
+                                <span> Dans tout type d’environnement du quotidien</span>
                             </li>
                         </ul>
 

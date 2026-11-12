@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -119,7 +118,7 @@ function About() {
 
                         <p>
                             C'est cette vision de la relation entre
-                            le maître et le chien qui guide aujourd'hui
+                            l'humain et le chien qui guide aujourd'hui
                             mon métier : vous aider à mieux comprendre
                             votre compagnon pour avancer ensemble.
                         </p>
@@ -243,7 +242,7 @@ function About() {
                                     le Brevet Professionnel d'Éducateur
                                     Canin et de développer les connaissances
                                     nécessaires pour accompagner les
-                                    chiens et leurs maîtres.
+                                    chiens et leurs humains.
                                 </p>
                             </div>
                         </div>
@@ -490,11 +489,10 @@ function About() {
                         </h2>
 
                         <p>
-                            Les apprentissages ne s'arrêtent pas à un
-                            terrain d'entraînement. Ils doivent pouvoir
-                            trouver leur place dans la vie quotidienne :
-                            à la maison, pendant les sorties et dans
-                            les lieux que le chien rencontre régulièrement.
+                            Les apprentissages prennent tout leur sens
+                            lorsqu'ils trouvent leur place dans la vie
+                            quotidienne : à la maison, pendant les sorties
+                            et dans les lieux que le chien rencontre régulièrement.
                         </p>
 
                         <p>
@@ -503,7 +501,7 @@ function About() {
                             adaptés à la situation. Cela permet de
                             prendre en compte l'environnement, les
                             habitudes et les difficultés réelles
-                            rencontrées par le chien et son maître.
+                            rencontrées par le chien et son humain.
                         </p>
 
                         <div className="about-field-note">
@@ -531,12 +529,12 @@ function About() {
                         </span>
 
                         <h2>
-                            Chaque duo maître-chien a son histoire
+                            Chaque duo humain-chien a son histoire
                         </h2>
 
                         <p>
                             Un chiot qui découvre le monde, un chien qui
-                            rencontre des difficultés ou un maître qui
+                            rencontre des difficultés ou un humain qui
                             cherche à mieux comprendre son compagnon :
                             les situations sont différentes et méritent
                             d'être abordées individuellement.
@@ -655,8 +653,8 @@ function About() {
                             du quotidien, dans mon secteur principal autour de
                             Boulogne-sur-Mer. Les sorties sont organisées sur
                             différents sites naturels de la Côte d'Opale ou dans
-                            des lieux adaptés aux besoins du chien. Je n'interviens
-                            pas sur des terrains d'entraînement clos.
+                            des lieux adaptés aux besoins du chien, pour travailler
+                            en situation, dans tout type d'environnement du quotidien.
                         </p>
 
                         <div

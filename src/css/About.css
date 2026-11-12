@@ -1006,19 +1006,9 @@
         0 12px 30px rgba(0, 0, 0, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.025);
 
-    transition:
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+
 }
 
-.about-area:hover {
-    border-color: rgba(217, 135, 28, 0.5);
-    border-left-color: var(--color-green);
-
-    box-shadow:
-        0 16px 35px rgba(0, 0, 0, 0.28),
-        0 0 18px rgba(217, 135, 28, 0.05);
-}
 
 .about-area-distance {
     display: flex;

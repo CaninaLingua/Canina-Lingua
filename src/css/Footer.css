@@ -66,7 +66,7 @@
     margin: 10px 0;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: transform;
-    background-color: #bfd7b02f;
+        background: linear-gradient(160deg, var(--color-gold) 0%, rgba(217, 135, 28, 0.35) 50%, var(--color-green) 100%);
 
     clip-path: polygon(
         50% 0%,
@@ -91,7 +91,7 @@
     transform: translate(-50%, -50%);
 
     background: var(--color-green);
-    opacity: 0.7;
+    opacity: 0.35;
 
     -webkit-mask-image: var(--dog-paw-svg);
     mask-image: var(--dog-paw-svg);
@@ -111,18 +111,35 @@
     pointer-events: none;
 }
 
+.footer-reviews::after{
+    content: "";
+    position: absolute;
+    inset: 2px;
+    z-index: -2;
+
+    background: linear-gradient(160deg, #2b2621 0%, #1f1c19 100%);
+
+    clip-path: polygon(
+        50% 0%,
+        100% 25%,
+        100% 75%,
+        50% 100%,
+        0% 75%,
+        0% 25%
+    );
+
+    pointer-events: none;
+}
+
 .footer-reviews-title {
     color: var(--color-gold);
-    -webkit-text-stroke: 1.2px var(--color-dark-gray);
     font-size: 1.6rem;
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: 800;
+    font-weight: 700;
     z-index: 10;
-    text-shadow:
-        0 0 5px var(--color-gold),
-        0 0 10px var(--color-gold);
+    
 }
 
 .footer-stars {
@@ -231,11 +248,7 @@
     text-decoration: none;
     margin-left: 12px;
     text-align: center;
-    transition: text-shadow 0.3s ease;
-}
-
-.footer-brand .logo:hover .logo-text-container {
-    text-shadow: 0 0 12px var(--color-gold);
+    
 }
 
 .footer-brand .logo-title {
@@ -244,7 +257,14 @@
     font-weight: 800;
     margin: 0;
     line-height: 1.1;
+    transition: text-shadow 0.3s ease;
 }
+
+.footer-brand .logo:hover .logo-title {
+    text-shadow: 0 0 12px var(--color-gold);
+}
+
+
 
 .footer-brand .logo-subtitle {
     font-size: 0.85rem;
@@ -252,6 +272,20 @@
     font-weight: 600;
     margin: 0;
     line-height: 1.2;
+    transition: text-shadow 0.3s ease;
+}
+
+.footer-brand .logo:hover .logo-subtitle {
+    text-shadow: 0 0 12px var(--color-gold);
+}
+
+.footer-brand .logo-diploma {
+    color: var(--color-green);
+    transition: text-shadow 0.3s ease;
+}
+
+.footer-brand .logo:hover .logo-diploma {
+    text-shadow: 0 0 12px var(--color-green);
 }
 
 .footer-brand .footer-phone-btn {
@@ -317,7 +351,7 @@
     align-items: center;
     text-align: center;
     margin: 10px 0;
-    background-color: #bfd7b02f;
+        background: linear-gradient(160deg, var(--color-gold) 0%, rgba(217, 135, 28, 0.35) 50%, var(--color-green) 100%);
 
     clip-path: polygon(
         50% 0%,
@@ -340,7 +374,7 @@
     transform: translate(-50%, -50%);
 
     background: var(--color-green);
-    opacity: 0.7;
+    opacity: 0.35;
 
     -webkit-mask-image: var(--dog-paw-svg);
     mask-image: var(--dog-paw-svg);
@@ -360,18 +394,35 @@
     pointer-events: none;
 }
 
+.footer-schedules::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    z-index: -2;
+
+    background: linear-gradient(160deg, #2b2621 0%, #1f1c19 100%);
+
+    clip-path: polygon(
+        50% 0%,
+        100% 25%,
+        100% 75%,
+        50% 100%,
+        0% 75%,
+        0% 25%
+    );
+
+    pointer-events: none;
+}
+
 .footer-schedules-h1 {
     color: var(--color-gold);
-    -webkit-text-stroke: 1.2px var(--color-dark-gray);
     font-size: 1.6rem;
     margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: 800;
+    font-weight: 700;
     z-index: 10;
-    text-shadow:
-        0 0 5px var(--color-gold),
-        0 0 10px var(--color-gold);
+    
 }
 
 .footer-schedules-hours {
@@ -384,23 +435,16 @@
 .footer-schedules-h2 {
     font-size: 1.5rem;
     color: var(--color-gold);
-    -webkit-text-stroke: 1px var(--color-dark-gray);
     letter-spacing: 2px;
-    font-weight: 800; 
-    text-shadow:
-        0 0 5px var(--color-gold),
-        0 0 10px var(--color-gold);
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 .footer-schedules-h3 {
     font-size: 1.2rem;
     color: var(--color-white);
-    font-weight: 800; 
-    -webkit-text-stroke: 0.6px var(--color-dark-gray);
+    font-weight: 500;
     letter-spacing: 1px;
-    text-shadow:
-        0 0 2px var(--color-white),
-        0 0 2px var(--color-white);
 }
 
 /**************************

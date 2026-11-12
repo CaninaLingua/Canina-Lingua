@@ -143,16 +143,13 @@
     max-width: min(80vw, 500px);
 
     object-fit: contain;
-}
-
-/* Logo transitions */
-.header-banner-container .logo-img,
-.header-banner-container .logo-text-container {
     transition:
         filter 0.3s ease,
         transform 0.3s ease,
         text-shadow 0.3s ease;
+
 }
+
 
 /* Image hover effect */
 .header-banner-container .logo:hover .logo-img {
@@ -160,11 +157,7 @@
     transform: scale(1.03);
 }
 
-/* Text hover effect */
-.header-banner-container .logo:hover .logo-text-container {
-    text-shadow: 0 0 15px var(--color-gold);
-    transform: scale(1.02);
-}
+
 
 /* Logo text */
 .header-banner-container .logo-text-container {
@@ -184,12 +177,38 @@
 .header-banner-container .logo-title {
     font-size: 4rem;
     text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Text title hover effect */
+.header-banner-container .logo:hover .logo-title {
+    text-shadow: 0 0 15px var(--color-gold);
+    transform: scale(1.02);
 }
 
 /* Subtitle */
 .header-banner-container .logo-subtitle {
     font-size: 1.4rem;
     text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Text title hover effect */
+.header-banner-container .logo:hover .logo-subtitle {
+    text-shadow: 0 0 15px var(--color-gold);
+    transform: scale(1.02);
+}
+
+/* Diploma line */
+.header-banner-container .logo-diploma {
+    color: var(--color-green);
+    transition: all 0.3s ease;
+}
+
+/* Text title hover effect */
+.header-banner-container .logo:hover .logo-diploma {
+    text-shadow: 0 0 15px var(--color-green);
+    transform: scale(1.02);
 }
 
 /*********************************

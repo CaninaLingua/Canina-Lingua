@@ -42,6 +42,9 @@ function Logo() {
                 <h4 className="logo-subtitle">
                     Éducateur comportementaliste canin
                 </h4>
+                <h4 className="logo-subtitle logo-diploma">
+                    Diplômé d'État
+                </h4>
             </div>
         </NavLink>
     );

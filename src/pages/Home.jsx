@@ -35,6 +35,9 @@ import dogsWalking from "../assets/img/img_chiens_accueil/Canina_Lingua_chien_ac
 
 import "../css/Home.css";
 
+// Contact link with the behavioral assessment subject pre-filled
+const BILAN_CONTACT_LINK = `/contact?sujet=${encodeURIComponent("Demande de rendez-vous pour premier Bilan comportemental/chiot")}`;
+
 // Home page
 function Home() {
     const [isMapOpen, setIsMapOpen] = useState(false);
@@ -446,6 +449,56 @@ function Home() {
                             </div>
 
                         </div>
+                    </div>
+
+                    {/* PRIOR BEHAVIORAL ASSESSMENT */}
+                    <div className="home-bilan-notice fade-in-up">
+                        <div className="home-bilan-notice-icon" aria-hidden="true">
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        </div>
+
+                        <div className="home-bilan-notice-content">
+                            <span className="home-bilan-notice-badge">
+                                Première étape indispensable
+                            </span>
+
+                            <h3 className="home-bilan-notice-title">
+                                Tout commence par un bilan comportemental
+                            </h3>
+
+                            <p className="home-bilan-notice-text">
+                                Avant toute prestation, la réalisation d’un bilan comportemental ou 
+                                d’un bilan chiot à votre domicile est indispensable. 
+                                Ce premier rendez-vous me permet de bien cerner vos besoins 
+                                et ceux de votre chien, et de vous apporter dès le départ 
+                                des conseils concrets pour la vie de tous les jours.
+                            </p>
+
+                            <ul className="home-bilan-notice-points">
+                                <li>
+                                    <FontAwesomeIcon icon={faHouse} aria-hidden="true" />
+                                    <span>À votre domicile</span>
+                                </li>
+
+                                <li>
+                                    <FontAwesomeIcon icon={faComments} aria-hidden="true" />
+                                    <span>Des conseils pour le quotidien</span>
+                                </li>
+
+                                <li>
+                                    <FontAwesomeIcon icon={faPaw} aria-hidden="true" />
+                                    <span>Un accompagnement adapté à vos besoins</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <Link
+                            to={BILAN_CONTACT_LINK}
+                            className="home-button home-bilan-notice-button"
+                        >
+                            Contacter pour un premier bilan
+                            <FontAwesomeIcon icon={faArrowRight} />
+                        </Link>
                     </div>
                 </div>
 

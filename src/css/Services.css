@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&display=swap');
 
 /********************************
@@ -366,6 +365,165 @@
 }
 
 /********************************
+******** BILAN NOTICE ************
+********************************/
+
+.services-bilan-notice {
+    position: relative;
+    isolation: isolate;
+
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(20px, 3vw, 35px);
+
+    margin: 0 auto 80px;
+    padding: 32px clamp(24px, 3.5vw, 42px);
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        rgba(217, 135, 28, 0.14) 0%,
+        rgba(53, 53, 52, 0.78) 45%,
+        rgba(24, 26, 27, 0.98) 100%
+    );
+
+    border: 2px solid rgba(217, 135, 28, 0.65);
+    border-radius: 18px;
+
+    box-shadow:
+        0 16px 36px rgba(0, 0, 0, 0.3),
+        0 0 28px rgba(217, 135, 28, 0.12);
+}
+
+/* Accent bar */
+.services-bilan-notice::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 6px;
+
+    background: linear-gradient(180deg, var(--color-gold), var(--color-green));
+    pointer-events: none;
+
+    content: "";
+}
+
+/* Paw watermark */
+.services-bilan-notice::after {
+    position: absolute;
+    right: -30px;
+    bottom: -40px;
+    z-index: -1;
+
+    width: 190px;
+    height: 190px;
+
+    background: var(--color-green);
+    opacity: 0.07;
+
+    -webkit-mask-image: var(--dog-paw-svg);
+    mask-image: var(--dog-paw-svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transform: rotate(-15deg);
+    pointer-events: none;
+
+    content: "";
+}
+
+.services-bilan-notice-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 74px;
+    height: 74px;
+
+    color: var(--color-dark-gray);
+    background: var(--color-gold);
+    border-radius: 50%;
+
+    font-size: 1.75rem;
+
+    box-shadow:
+        0 0 0 8px rgba(217, 135, 28, 0.15),
+        0 0 26px rgba(217, 135, 28, 0.35);
+}
+
+.services-bilan-notice-content {
+    min-width: 0;
+}
+
+.services-bilan-notice-badge {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 5px 14px;
+
+    color: var(--color-dark-gray);
+    background: var(--color-green);
+    border-radius: 30px;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.services-bilan-notice-title {
+    margin: 0 0 10px;
+
+    color: var(--color-gold);
+    font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+    font-weight: 800;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.services-bilan-notice-text {
+    margin: 0 0 16px;
+
+    color: var(--color-white);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.services-bilan-notice-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.services-bilan-notice-points > li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--color-white);
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.services-bilan-notice-points > li > svg {
+    flex-shrink: 0;
+    color: var(--color-green);
+}
+
+/********************************
 ******** SERVICE CATALOG *********
 ********************************/
 
@@ -593,7 +751,8 @@
 
 .service-card [id^="service-contact-"],
 #services-area-contact,
-#services-main-contact {
+#services-main-contact,
+#services-bilan-contact {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -627,7 +786,8 @@
 
 .service-card [id^="service-contact-"]:hover,
 #services-area-contact:hover,
-#services-main-contact:hover {
+#services-main-contact:hover,
+#services-bilan-contact:hover {
     box-shadow:
         0 0 15px rgba(91, 145, 78, 0.5),
         0 6px 16px rgba(0, 0, 0, 0.3);
@@ -639,13 +799,19 @@
 
 .service-card [id^="service-contact-"]:focus-visible,
 #services-area-contact:focus-visible,
-#services-main-contact:focus-visible {
+#services-main-contact:focus-visible,
+#services-bilan-contact:focus-visible {
     outline: 3px solid var(--color-green);
     outline-offset: 4px;
 }
 
 .service-card [id^="service-contact-"] {
     align-self: flex-end;
+}
+
+#services-bilan-contact {
+    margin-top: 0;
+    white-space: nowrap;
 }
 
 /********************************
@@ -898,6 +1064,27 @@
 
     .services-contact-cta {
         padding: 45px 30px;
+    }
+
+    /* Bilan notice */
+    .services-bilan-notice {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        gap: 18px;
+        margin-bottom: 55px;
+        text-align: center;
+    }
+
+    .services-bilan-notice::before {
+        right: 0;
+        bottom: auto;
+        width: auto;
+        height: 5px;
+        background: linear-gradient(90deg, var(--color-gold), var(--color-green));
+    }
+
+    .services-bilan-notice-points {
+        justify-content: center;
     }
 }
 
@@ -1176,7 +1363,8 @@
 
     .service-card [id^="service-contact-"],
     #services-area-contact,
-    #services-main-contact {
+    #services-main-contact,
+    #services-bilan-contact {
         width: 100%;
     }
 
@@ -1222,6 +1410,46 @@
     .services-cta-paw {
         width: 170px;
         height: 170px;
+    }
+
+    /* Bilan notice */
+    .services-bilan-notice {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        gap: 16px;
+        margin-bottom: 55px;
+        padding: 30px 18px 24px;
+        text-align: center;
+        border-radius: 14px;
+    }
+
+    .services-bilan-notice::before {
+        right: 0;
+        bottom: auto;
+        width: auto;
+        height: 5px;
+        background: linear-gradient(90deg, var(--color-gold), var(--color-green));
+    }
+
+    .services-bilan-notice-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.4rem;
+    }
+
+    .services-bilan-notice-badge {
+        font-size: 0.64rem;
+        letter-spacing: 1px;
+    }
+
+    .services-bilan-notice-text {
+        font-size: 0.88rem;
+    }
+
+    .services-bilan-notice-points {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
     }
 }
 
@@ -1336,5 +1564,25 @@
     .services-contact-cta {
         padding: 30px 25px;
     }
-}
 
+    /* Bilan notice */
+    .services-bilan-notice {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        gap: 18px;
+        margin-bottom: 55px;
+        text-align: center;
+    }
+
+    .services-bilan-notice::before {
+        right: 0;
+        bottom: auto;
+        width: auto;
+        height: 5px;
+        background: linear-gradient(90deg, var(--color-gold), var(--color-green));
+    }
+
+    .services-bilan-notice-points {
+        justify-content: center;
+    }
+}

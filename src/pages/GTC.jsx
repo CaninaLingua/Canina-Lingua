@@ -114,7 +114,7 @@ function GTC() {
 
                     <h3>2. Modalités</h3>
                     <p>
-                        Les règlements seront effectués par chèque bancaire ou postal à l’ordre de <strong>« David Level - Canina Lingua »</strong>, par espèces ou par virement.
+                        Les règlements seront effectués par chèque bancaire ou postal (à l’ordre de <strong>« David Level »</strong> ou de <strong>« Canina Lingua »</strong>), par espèces ou par virement.
                     </p>
 
                     <h3>3. Retard de paiement</h3>

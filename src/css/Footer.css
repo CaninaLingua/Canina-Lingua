@@ -243,7 +243,7 @@
 
 .footer-brand .logo-text-container {
     color: var(--color-gold);
-    -webkit-text-stroke: 0.5px var(--color-dark-gray);
+    
     text-transform: uppercase;
     text-decoration: none;
     margin-left: 12px;

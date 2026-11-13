@@ -1,6 +1,13 @@
-
 import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faMagnifyingGlass,
+    faHouse,
+    faComments,
+    faPaw,
+    faArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 import useRevealOnScroll from "../hooks/useRevealOnScroll";
 import usePageMetaData from '../hooks/usePageMetaData';
@@ -12,6 +19,9 @@ import servicesGroups from "../data/servicesGroups.js";
 import "../css/Services.css";
 
 import baladePlageImage from "../assets/img/img_prestations/Canina_Lingua_prestation_balade_plage.webp";
+
+// Contact link with the behavioral assessment subject pre-filled
+const BILAN_CONTACT_LINK = `/contact?sujet=${encodeURIComponent("Demande de rendez-vous pour premier Bilan comportemental/chiot")}`;
 
 function Services() {
     const location = useLocation();
@@ -133,6 +143,56 @@ function Services() {
                             </p>
                         </div>
                     </div>
+                </div>
+
+                {/* PRIOR BEHAVIORAL ASSESSMENT */}
+                <div className="services-bilan-notice fade-in-up">
+                    <div className="services-bilan-notice-icon" aria-hidden="true">
+                        <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    </div>
+
+                    <div className="services-bilan-notice-content">
+                        <span className="services-bilan-notice-badge">
+                            Première étape indispensable
+                        </span>
+
+                        <h3 className="services-bilan-notice-title">
+                            Tout commence par un bilan comportemental
+                        </h3>
+
+                        <p className="services-bilan-notice-text">
+                            Avant toute prestation, la réalisation d’un bilan comportemental ou 
+                            d’un bilan chiot à votre domicile est indispensable. 
+                            Ce premier rendez-vous me permet de bien cerner vos besoins 
+                            et ceux de votre chien, et de vous apporter dès le départ 
+                            des conseils concrets pour la vie de tous les jours.
+                        </p>
+
+                        <ul className="services-bilan-notice-points">
+                            <li>
+                                <FontAwesomeIcon icon={faHouse} aria-hidden="true" />
+                                <span>À votre domicile</span>
+                            </li>
+
+                            <li>
+                                <FontAwesomeIcon icon={faComments} aria-hidden="true" />
+                                <span>Des conseils pour le quotidien</span>
+                            </li>
+
+                            <li>
+                                <FontAwesomeIcon icon={faPaw} aria-hidden="true" />
+                                <span>Un accompagnement adapté à vos besoins</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <Link
+                        to={BILAN_CONTACT_LINK}
+                        id="services-bilan-contact"
+                    >
+                        Contacter pour un premier bilan
+                        <FontAwesomeIcon icon={faArrowRight} />
+                    </Link>
                 </div>
 
                 {/* SERVICES CATALOG */}

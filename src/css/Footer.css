@@ -159,17 +159,24 @@
 }
 
 .footer-reviews-btn {
-    border: 1px solid rgba(217, 135, 28, 0.2);
-    padding: 14px 32px;
+    border: 2px solid var(--color-gold);
+    width: fit-content;
+    max-width: 100%;
+    padding: 12px 32px;
     border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.9rem;
+    
+    font-weight: 700;
+    line-height: 1.5;
+    font-size: 0.84rem;
     color: var(--color-white);
+    
+
     background-color: var(--color-dark-gray);
     text-decoration: none;
     z-index: 10;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(24, 26, 27, 0.2);
+    transition: all 0.25s ease;
+    
 }
 
 .footer-reviews-btn:hover {

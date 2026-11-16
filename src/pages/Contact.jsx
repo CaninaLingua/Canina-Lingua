@@ -225,7 +225,7 @@ function Contact() {
                     </h2>
 
                     <p className="contact-infos-desc">
-                        Retrouvez ici l'ensemble des informations pratiques concernant nos déplacements, nos horaires d'ouverture et nos moyens de contact direct.
+                        Retrouvez ici l'ensemble des informations pratiques concernant mes déplacements, les horaires d'ouverture et les moyens de contact direct.
                     </p>
 
                     {/* Intervention Zone Section */}

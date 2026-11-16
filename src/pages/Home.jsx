@@ -231,7 +231,7 @@ function Home() {
                             Passionné par les chiens, leur socialité et leur
                             bien-être, je me suis formé à l’éducation canine
                             et à la rééducation comportementale canine.
-                            J’ai choisi le C.F.P.P.P.A de Cibeins pour y préparer
+                            J’ai choisi le C.F.P.P.A de Cibeins pour y préparer
                             et obtenir le Brevet Professionnel d’Éducateur Canin,
                             une formation en accord avec ma vision de la relation
                             humain-chien.

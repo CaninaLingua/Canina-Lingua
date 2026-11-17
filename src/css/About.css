@@ -188,8 +188,8 @@
     line-height: 1.2;
     letter-spacing: 3px;
     text-transform: uppercase;
-    -webkit-text-stroke: 1px var(--color-dark-gray);
-    text-shadow: 0 4px 12px rgba(217, 135, 28, 0.3);
+    -webkit-text-stroke: 0.4px var(--color-dark-gray);
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .about-hero-banner-subtitle {

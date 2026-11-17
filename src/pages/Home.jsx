@@ -115,12 +115,7 @@ function Home() {
 
                 <div className="home-hero-card-reveal fade-in-up">
                     <div className="home-hero-card">
-                        <div className="home-hero-paw-bg" aria-hidden="true">
-                            <FontAwesomeIcon
-                                icon={faPaw}
-                                className="home-paw-icon"
-                            />
-                        </div>
+                        <div className="home-hero-paw-bg"></div>
 
                         <span className="home-hero-eyebrow">
                             <FontAwesomeIcon

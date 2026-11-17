@@ -135,6 +135,11 @@ function Home() {
                             <span>dans le sens du poil</span>
                         </h1>
 
+                        <p className="home-hero-signature">
+                            <strong>David Level & Véga</strong>
+                            <span>Éducateur comportementaliste canin</span>
+                        </p>
+
                         <p className="home-hero-subtitle">
                             Une méthode éthique et éthologique.
                             <strong> Comprendre pour entreprendre.</strong>

@@ -364,15 +364,11 @@
     height: 300px;
 
     color: var(--color-green);
-    opacity: 0.075;
+    opacity: 0.2;
     font-size: 17rem;
 
     pointer-events: none;
     transform: translate(-50%, -50%);
-}
-
-.home-hero-paw-bg .home-paw-icon {
-    color: var(--color-green);
 }
 
 .home-hero-eyebrow {
@@ -412,6 +408,47 @@
 .home-hero-title > span {
     display: block;
     color: var(--color-green);
+}
+
+/* David Level & Véga signature */
+.home-hero-signature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    margin: 0 auto 22px;
+
+    color: var(--color-white);
+    line-height: 1.5;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.65);
+}
+
+.home-hero-signature > strong {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--color-gold);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+}
+
+.home-hero-signature > strong::before,
+.home-hero-signature > strong::after {
+    flex-shrink: 0;
+    width: 45px;
+    height: 1px;
+    content: "";
+    background: var(--color-gold);
+}
+
+.home-hero-signature > span {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    opacity: 0.9;
 }
 
 .home-hero-subtitle {
@@ -2138,6 +2175,24 @@
         margin-bottom: 22px;
         font-size: 0.88rem;
         line-height: 1.8;
+    }
+
+    .home-hero-signature {
+        margin-bottom: 18px;
+    }
+
+    .home-hero-signature > strong {
+        gap: 10px;
+        font-size: 0.98rem;
+    }
+
+    .home-hero-signature > strong::before,
+    .home-hero-signature > strong::after {
+        width: 24px;
+    }
+
+    .home-hero-signature > span {
+        font-size: 0.78rem;
     }
 
     .home-hero-actions {

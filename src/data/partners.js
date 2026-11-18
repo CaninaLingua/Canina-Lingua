@@ -47,7 +47,7 @@ const partners = [
         url: "https://www.monrendezvousveto.fr/clinique/baincthun/clinique-veterinaire-de-la-roseraie",
         logo: CabinetVeterinaireLaRoseraieLogo,
         icon: faStethoscope,
-    },
+    }
 ];
 
 export default partners;

@@ -18,7 +18,7 @@ import CabinetVeterinaireLaRoseraieLogo from "../assets/img/img_logo_partenaires
       vaut false. Une fois passé à true, seuls les partenaires « confirmed: true »
       sont affichés.
 */
-export const SHOW_PARTNERS_SECTION = false;
+export const SHOW_PARTNERS_SECTION = true;
 
 /*
     CHAMPS D'UN PARTENAIRE

@@ -697,6 +697,11 @@
     margin: 0 0 17px;
 }
 
+/* Véga mention */
+.home-intro-copy > p strong {
+    color: var(--color-gold);
+}
+
 .home-intro-signature {
     display: flex;
     align-items: center;

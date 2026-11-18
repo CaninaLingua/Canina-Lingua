@@ -6,7 +6,9 @@ import {
     faBookOpen,
     faHeart,
     faBone,
-    faComments
+    faComments,
+    faDog,
+    faHandHoldingHeart
 } from "@fortawesome/free-solid-svg-icons";
 
 import useRevealOnScroll from "../hooks/useRevealOnScroll";
@@ -22,6 +24,8 @@ import davidWorkingLandscape from "../assets/img/img_david_level/Canina_Lingua_D
 import davidValuesPhoto from "../assets/img/img_david_level/Canina_Lingua_David_Level_photo_4.webp";
 import davidBeachWalk from "../assets/img/img_david_level/Canina_Lingua_David_Level_photo_5.webp";
 import davidWorkingPortrait from "../assets/img/img_david_level/Canina_Lingua_David_Level_photo_6.webp";
+
+import vegaPhoto from "../assets/img/img_vega/Canina_Lingua_Vega_photo_1.webp";
 
 function About() {
     useRevealOnScroll(
@@ -54,10 +58,7 @@ function About() {
 
                     <p className="about-hero-banner-subtitle">
                         Découvrez mon parcours, les raisons qui m'ont amené à créer Canina Lingua et les valeurs
-                        qui guident mon métier d'éducateur canin. Passionné par les chiens
-                        et leur bien-être, je privilégie une approche éthique et éthologique,
-                        fondée sur la compréhension de leurs comportements,
-                        de leurs émotions et de leurs besoins.
+                        qui guident mon métier de passion d'éducateur comportementaliste canin. 
                     </p>
 
                     <div className="about-hero-banner-stats">
@@ -151,6 +152,91 @@ function About() {
                             <span>
                                 Mieux se comprendre pour mieux vivre ensemble
                             </span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* 1 BIS. MEET VÉGA */}
+                <div className="about-vega" id="vega">
+                    <figure className="about-vega-photo fade-in-side-left">
+                        <img
+                            src={vegaPhoto}
+                            alt="Canina Lingua - Véga, l'associée de David Level, assise dans un champ"
+                            loading="lazy"
+                            decoding="async"
+                        />
+
+                        <figcaption className="about-vega-photo-label">
+                            <span>Véga</span>
+                            <small>Associée de Canina Lingua</small>
+                        </figcaption>
+                    </figure>
+
+                    <div className="about-vega-copy fade-in-side-right">
+                        <span className="about-eyebrow">
+                            Mon associée
+                        </span>
+
+                        <h2>
+                            Véga, mon associée à quatre pattes
+                        </h2>
+
+                        <p>
+                            Je vous présente Véga, mon associée. Elle
+                            m'accompagne pour travailler la socialité de
+                            vos Loulous et aider les plus stressés à gagner
+                            en sérénité, par le biais de la facilitation sociale.
+                        </p>
+
+                        <p>
+                            Sa présence posée permet à certains chiens de
+                            prendre exemple sur elle, de se sentir plus en
+                            confiance et d'aborder plus sereinement les
+                            rencontres ou les situations qui les inquiètent.
+                        </p>
+
+                        <div className="about-vega-roles">
+                            <div className="about-vega-role">
+                                <span className="about-vega-role-icon">
+                                    <FontAwesomeIcon
+                                        icon={faDog}
+                                        aria-hidden="true"
+                                    />
+                                </span>
+
+                                <div>
+                                    <strong>
+                                        Travail sur la socialité
+                                    </strong>
+
+                                    <p>
+                                        Aider votre chien à mieux communiquer
+                                        et à vivre plus sereinement ses
+                                        rencontres avec ses congénères.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="about-vega-role">
+                                <span className="about-vega-role-icon">
+                                    <FontAwesomeIcon
+                                        icon={faHandHoldingHeart}
+                                        aria-hidden="true"
+                                    />
+                                </span>
+
+                                <div>
+                                    <strong>
+                                        Facilitation sociale
+                                    </strong>
+
+                                    <p>
+                                        Rassurer les chiens stressés grâce
+                                        à la présence apaisante d'une
+                                        congénère équilibrée.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

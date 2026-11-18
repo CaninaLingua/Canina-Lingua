@@ -69,11 +69,8 @@ function Services() {
                     </h1>
 
                     <p className="services-hero-banner-subtitle">
-                        Découvrez mes prestations d'éducation canine à domicile,
-                        mes bilans comportementaux et mes activités en extérieur.
-                        Une approche positive, éthique et éthologique, attentive
-                        aux besoins et aux émotions de votre chien, dans son
-                        environnement quotidien.
+                        Découvrez mes prestations d'éducation ou de rééducation canine à domicile,
+                        mes différents bilans et mes diverses activités en extérieur.
                     </p>
 
                     <div className="services-hero-banner-stats">

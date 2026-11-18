@@ -57,9 +57,21 @@ function Contact() {
         if (!requestedSubject) return;
 
         const animationFrame = window.requestAnimationFrame(() => {
-            contactFormRef.current?.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
+            const formSection = contactFormRef.current;
+
+            if (!formSection) return;
+
+            // Scroll only the window vertically (scrollIntoView could also
+            // scroll the overflow-hidden container horizontally on mobile)
+            const scrollMarginTop =
+                parseFloat(window.getComputedStyle(formSection).scrollMarginTop) || 0;
+
+            const targetTop =
+                formSection.getBoundingClientRect().top + window.scrollY - scrollMarginTop;
+
+            window.scrollTo({
+                top: targetTop,
+                behavior: "smooth"
             });
         });
 

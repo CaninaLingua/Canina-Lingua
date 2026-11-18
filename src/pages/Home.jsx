@@ -246,6 +246,13 @@ function Home() {
                             dans de bonnes conditions.
                         </p>
 
+                        <p>
+                            Au quotidien, je travaille aux côtés de mon associée
+                            <strong> Véga</strong>, qui m’accompagne notamment pour
+                            travailler la socialité de vos Loulous et aider
+                            les plus stressés à gagner en sérénité.
+                        </p>
+
                         <div className="home-intro-signature">
                             <FontAwesomeIcon
                                 icon={faPaw}
@@ -258,7 +265,7 @@ function Home() {
                             to="/a-propos"
                             className="home-button"
                         >
-                            Découvrir mon parcours
+                            En apprendre plus sur moi
                             <FontAwesomeIcon icon={faArrowRight} />
                         </Link>
                     </div>

@@ -5,9 +5,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 
-import canopeeLogo from "../assets/img/img_logo_partenaires/Canina_Lingua_Logo_partenaire_Canopée_Dog_Walker.png";
-import GardienneDeVos4PattesLogo from "../assets/img/img_logo_partenaires/Canina_Lingua_Logo_partenaire_Gardienne_de_vos_4_pattes.png";
-import CabinetVeterinaireLaRoseraieLogo from "../assets/img/img_logo_partenaires/Canina_Lingua_Logo_partenaire_Cabinet_Vétérinaire_La_Roseraie.png";
+import canopeeLogo from "../assets/img/img_logo_partenaires/Canina_Lingua_Logo_partenaire_Canopée_Dog_Walker.webp";
+import GardienneDeVos4PattesLogo from "../assets/img/img_logo_partenaires/Canina_Lingua_Logo_partenaire_Gardienne_de_vos_4_pattes.webp";
+import CabinetVeterinaireLaRoseraieLogo from "../assets/img/img_logo_partenaires/Canina_Lingua_Logo_partenaire_Cabinet_Vétérinaire_La_Roseraie.webp";
 
 /*
     AFFICHAGE DE LA SECTION PARTENAIRES

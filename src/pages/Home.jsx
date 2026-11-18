@@ -19,10 +19,14 @@ import {
     faPersonWalking,
     faBrain,
     faExpand,
+    faHandshake,
 } from "@fortawesome/free-solid-svg-icons";
 
 import useRevealOnScroll from "../hooks/useRevealOnScroll";
 import usePageMetaData from '../hooks/usePageMetaData';
+
+import PartnersCarousel from "../components/PartnersCarousel";
+import partners, { SHOW_PARTNERS_SECTION } from "../data/partners";
 
 import davidWithDogPhoto1 from "../assets/img/img_david_level/Canina_Lingua_David_Level_photo_1.webp";
 import davidWithDogPhoto2 from "../assets/img/img_david_level/Canina_Lingua_David_Level_photo_2.webp";
@@ -37,6 +41,11 @@ import "../css/Home.css";
 
 // Contact link with the behavioral assessment subject pre-filled
 const BILAN_CONTACT_LINK = `/contact?sujet=${encodeURIComponent("Demande de rendez-vous pour premier Bilan comportemental/chiot")}`;
+
+// Partners: everything is visible in local dev, only confirmed partners in production
+const IS_DEV = import.meta.env.DEV;
+const SHOW_PARTNERS = SHOW_PARTNERS_SECTION || IS_DEV;
+const VISIBLE_PARTNERS = partners.filter((partner) => partner.confirmed || IS_DEV);
 
 // Home page
 function Home() {
@@ -821,6 +830,39 @@ function Home() {
                         </Link>
                     </div>
                 </div>
+
+                {/* =========================
+                    PARTNERS
+                ========================= */}
+                {SHOW_PARTNERS && VISIBLE_PARTNERS.length > 0 && (
+                    <div className="home-section home-partners">
+                        <div className="home-section-heading home-section-heading-centered fade-in-up">
+                            <span className="home-eyebrow">
+                                <FontAwesomeIcon icon={faHandshake} />
+                                Mes partenaires
+                            </span>
+
+                            <h2 className="home-section-title">
+                                Ils me soutiennent,
+                                <span> je leur fais confiance</span>
+                            </h2>
+
+                            <p>
+                                Des professionnels sérieux, qui me soutiennent et 
+                                à qui je fais confiance : voici mes partenaires. 
+                                N’hésitez pas à aller consulter leur activité en 
+                                cliquant sur leur carte.
+                            </p>
+                        </div>
+
+                        <div className="home-partners-reveal fade-in-up">
+                            <PartnersCarousel
+                                partners={VISIBLE_PARTNERS}
+                                showPending={IS_DEV}
+                            />
+                        </div>
+                    </div>
+                )}
 
                 {/* =========================
                     CONTACT CALL TO ACTION

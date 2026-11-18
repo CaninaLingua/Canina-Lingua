@@ -157,7 +157,7 @@ function Services() {
                         </span>
 
                         <h3 className="services-bilan-notice-title">
-                            Tout commence par un bilan comportemental
+                            Tout commence par un bilan
                         </h3>
 
                         <p className="services-bilan-notice-text">

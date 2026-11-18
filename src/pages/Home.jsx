@@ -463,7 +463,7 @@ function Home() {
                             </span>
 
                             <h3 className="home-bilan-notice-title">
-                                Tout commence par un bilan comportemental
+                                Tout commence par un bilan
                             </h3>
 
                             <p className="home-bilan-notice-text">
@@ -799,7 +799,7 @@ function Home() {
                                 </span>
                             </li>
 
-                            <li className="home-homevisit-not">
+                            <li>
                                 <FontAwesomeIcon icon={faCheck} />
                                 <span> Dans tout type d’environnement du quotidien</span>
                             </li>

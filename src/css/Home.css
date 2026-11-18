@@ -2072,6 +2072,7 @@ a.home-partners-card {
     font-size: 1.02rem;
     font-weight: 800;
     line-height: 1.35;
+    min-height:50px;
 }
 
 .home-partners-city {
@@ -2117,28 +2118,6 @@ a.home-partners-card {
 .home-partners-card:hover .home-partners-external {
     color: var(--color-gold);
     border-color: rgba(217, 135, 28, 0.6);
-}
-
-/* Local-only marker for unconfirmed partners */
-.home-partners-pending {
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    z-index: 1;
-
-    background: var(--color-dark-gray);
-
-    padding: 2px 7px;
-
-    color: var(--color-gold);
-    border: 1px dashed var(--color-gold);
-    border-radius: 6px;
-
-    font-size: 0.58rem;
-    font-weight: 700;
-    line-height: 1.4;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
 }
 
 /* Usage hint */
@@ -2976,11 +2955,6 @@ a.home-partners-card {
     .home-partners-external {
         top: 20px;
         right: 20px;
-    }
-
-    .home-partners-pending {
-        top: 20px;
-        left: 20px;
     }
 
     .home-partners-name {

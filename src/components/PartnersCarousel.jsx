@@ -26,7 +26,7 @@ function buildLoopSet(items) {
 }
 
 // Single partner card (link if a URL exists, otherwise a simple block)
-function PartnerCard({ partner, isFocusable, showPending }) {
+function PartnerCard({ partner, isFocusable }) {
     const content = (
         <>
             <span className={`home-partners-logo${partner.logo ? " home-partners-logo-image" : ""}`}>
@@ -66,13 +66,6 @@ function PartnerCard({ partner, isFocusable, showPending }) {
                     aria-hidden="true"
                 />
             )}
-
-            {/* Local-only marker */}
-            {showPending && !partner.confirmed && (
-                <span className="home-partners-pending">
-                    À confirmer
-                </span>
-            )}
         </>
     );
 
@@ -100,7 +93,7 @@ function PartnerCard({ partner, isFocusable, showPending }) {
 }
 
 // Infinite horizontal partners carousel (moved only by the user: drag, swipe, horizontal scroll)
-function PartnersCarousel({ partners, showPending = false }) {
+function PartnersCarousel({ partners }) {
     const viewportRef = useRef(null);
 
     const loopSet = useMemo(() => buildLoopSet(partners), [partners]);
@@ -252,7 +245,6 @@ function PartnersCarousel({ partners, showPending = false }) {
                                     <PartnerCard
                                         partner={partner}
                                         isFocusable={isAccessible}
-                                        showPending={showPending}
                                     />
                                 </li>
                             );

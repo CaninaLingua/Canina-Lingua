@@ -11,7 +11,7 @@ function Schedules(props) {
                 <h2 className={`${className}-schedules-h2`}>Lun - Sam</h2>
                 <h3 className={`${className}-schedules-h3`}>09h00-19h00</h3>
                 <h2 className={`${className}-schedules-h2`}>Dim</h2>
-                <h3 className={`${className}-schedules-h3`}>10h00-19h00</h3>
+                <h3 className={`${className}-schedules-h3`}>Fermé</h3>
             </div>
         </div>
     );
